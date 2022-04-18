@@ -1,6 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
-import { API } from "../../shared/services/api";
+import { API } from "../../shared/Services/api";
 import { useNavigate } from "react-router-dom";
 
 export const RegisterForm = () => {
