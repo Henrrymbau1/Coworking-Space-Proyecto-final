@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@500&display=swap');
+.container-faq{
+    display: flex;
+    width: 100%;
+}
+
+.faq{
+    background-image: url('https://i.pinimg.com/originals/ef/30/18/ef30182c6f7a506bf4e360d7d1be28d8.jpg');
+    width: 50%;
+}
+h1{
+    color: rgb(255, 255, 255);
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 22px;
+}
+form{
+    background-color: rgb(255, 255, 49);
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+}

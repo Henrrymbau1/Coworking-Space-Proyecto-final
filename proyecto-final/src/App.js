@@ -1,5 +1,6 @@
 import "./App.css";
 import Footer from "./Components/footer/Footer";
+import Faq from "./Components/faq/Faq";
 import Navbar from "./Components/navbar/Navbar";
 import SupportChat from "./Components/SupportChat/SupportChat";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -39,12 +40,14 @@ function App() {
       <div className="App">
         <Router>
           <Navbar></Navbar>
+
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
           </Routes>
           <Footer></Footer>
           <SupportChat />
+          <Faq></Faq>
         </Router>
       </div>
     </JwtContext.Provider>
