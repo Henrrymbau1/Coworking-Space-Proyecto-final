@@ -4,18 +4,33 @@
     width: 100%;
 }
 
-.faq{
-    background-image: url('https://i.pinimg.com/originals/ef/30/18/ef30182c6f7a506bf4e360d7d1be28d8.jpg');
-    width: 50%;
+.faq {
+    background-image: url('https://i.pinimg.com/originals/ef/30/18/ef30182.jpg');
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    align-items: flex-start;
 }
-h1{
-    color: rgb(255, 255, 255);
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 22px;
+
+
+h1 {
+    color: rgb(255 255 255);
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 36px;
+    padding: 15px;
+    text-align: left;
+    font-style: italic;
+    text-shadow: -4px 2px #010101;
 }
-form{
+
+
+form {
     background-color: rgb(255, 255, 49);
-    width: 50%;
+    width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-content: center;
+    flex-direction: column;
 }

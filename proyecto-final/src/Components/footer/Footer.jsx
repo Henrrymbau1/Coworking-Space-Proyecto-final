@@ -1,29 +1,32 @@
-import React from "react";
-import "./_footer.scss";
+import React, { useRef } from 'react';
+import emailjs from '@emailjs/browser';
+import "./_footer.scss"
 
-function Footer() {
+
+export const ContactUs = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs.sendForm('service_62cmprg', 'template_va2ibko', form.current, 'bnQweKR5uLmYM447e')
+      .then((result) => {
+        console.log(result.text);
+      }, (error) => {
+        console.log(error.text);
+      });
+    form.current.reset()
+  };
+
   return (
-    <div className="Footer">
-      <div className="newsLetter-container">
-        <div className="newsLetter-wrapper">
-          <h3>Get In Touch</h3>
-          <form className="suscribe-form" method="get">
-            <div>
-              <input
-                type="email"
-                className="email-input"
-                placeholder="your@email.com"
-              ></input>
-            </div>
-            <div>
-              <input></input>
-            </div>
-          </form>
-        </div>
-      </div>
-      <div></div>
-    </div>
+    <form className="newsLetter-container" ref={form} onSubmit={sendEmail}>
+      <label>Name</label>
+      <input className="input-footer" placeholder="Escribe tu nombre" type="text" name="user_name" />
+      <label>Email</label>
+      <input className="input-footer" placeholder="Escribe tu correo" type="email" name="user_email" />
+      <label>Message</label>
+      <textarea name="message" />
+      <input className="input-footer" placeholder="Cuentanos, en que podemos ayudarte" type="submit" value="Send" />
+    </form>
   );
-}
-
-export default Footer;
+};

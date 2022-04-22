@@ -1,5 +1,5 @@
 import "./App.css";
-import Footer from "./Components/footer/Footer";
+import { ContactUs } from "./Components/footer/Footer";
 import Faq from "./Components/faq/Faq";
 import Navbar from "./Components/navbar/Navbar";
 import SupportChat from "./Components/SupportChat/SupportChat";
@@ -45,7 +45,7 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
           </Routes>
-          <Footer></Footer>
+          <ContactUs />
           <SupportChat />
           <Faq></Faq>
         </Router>
