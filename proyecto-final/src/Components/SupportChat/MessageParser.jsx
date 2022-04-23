@@ -3,20 +3,26 @@ class MessageParser {
       this.actionProvider = actionProvider;
     }
   
-    greet() {
-        const greetingMessage = this.createChatBotMessage("Hi, friend.")
-        this.updateChatbotState(greetingMessage)
-      }
+   
 
     parse(message) {
       const lowerCaseMessage = message.toLowerCase();
   
-      if (lowerCaseMessage.includes("hello")) {
+      if (lowerCaseMessage.includes("buenas") || lowerCaseMessage.includes("hola")) {
         this.actionProvider.greet();
       }
   
-      if (lowerCaseMessage.includes("javascript")) {
-        this.actionProvider.handleJavascriptList();
+      if (lowerCaseMessage.includes("saber")) {
+        this.actionProvider.handleAboutList();
+      }
+      if (lowerCaseMessage.includes("tarifa")) {
+        this.actionProvider.handleFaresList();
+      }
+      if (lowerCaseMessage.includes("pregunta")) {
+        this.actionProvider.handleFaqList();
+      }
+      if (lowerCaseMessage.includes("coworking")) {
+        this.actionProvider.handleLocationsList();
       }
     }
   }

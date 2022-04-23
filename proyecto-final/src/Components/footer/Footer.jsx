@@ -29,18 +29,27 @@ export const ContactUs = () => {
         </div>
         <p>Todos los precios sin IVA incluido</p>
       </div>
+
+
       <div className="form-container">
         <h2>Suscribete a nuestra newsletter</h2>
         <form className="form-container" ref={form} onSubmit={sendEmail}>
           <label>Name</label>
-          <input className="input-footer" placeholder="Escribe tu nombre" type="text" name="user_name" />
+          <input className="input-footer" placeholder="Tu nombre" type="text" name="user_name" />
           <label>Email</label>
-          <input className="input-footer" placeholder="Escribe tu correo" type="email" name="user_email" />
+          <input className="input-footer" placeholder="Email" type="email" name="user_email" />
+          <input type="checkbox"/>
+          <span>Acepto recibir noticias e invitaciones a eventos de Spot at Home</span>
+          <input type="checkbox"/>
+          <span>Acepto recibir información sobre productos y servicios de Spot at Home</span>
+          <button classname="btn-footer-enviar">Enviar</button>
           {/* <label>Message</label>
           <textarea name="message" />
           <input className="input-footer" placeholder="Cuentanos, en que podemos ayudarte" type="submit" value="Send" /> */}
         </form>
       </div>
+
+      
       <div className="icon-container">
         <img className="icon-footer" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Youtube_colored_svg-128.png" alt="Youtube" />
         <img className="icon-footer" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-128.png" alt="Linkedin" />

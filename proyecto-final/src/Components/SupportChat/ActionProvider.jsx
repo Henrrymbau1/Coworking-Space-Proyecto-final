@@ -5,15 +5,45 @@ class ActionProvider {
     }
 
     greet() {
-      const greetingMessage = this.createChatBotMessage("Hi, friend.")
+      const greetingMessage = this.createChatBotMessage("Gracias por saludar, hay algo en lo que podemos ayudarte?")
       this.updateChatbotState(greetingMessage)
     }
   
-    handleJavascriptList = () => {
+    handleFaqList = () => {
       const message = this.createChatBotMessage(
-        "Fantastic, I've got the following resources for you on Javascript:",
+        "Tienes alguna duda, aqui esta el apartado de preguntas frecuentes!",
         {
-          widget: "javascriptLinks",
+          widget: "faqLinks",
+        }
+      );
+  
+      this.updateChatbotState(message);
+    };
+    handleLocationsList = () => {
+      const message = this.createChatBotMessage(
+        "Genial, vemos que quieres saber mas sobre los Coworking que tenemos!",
+        {
+          widget: "locationsLinks",
+        }
+      );
+  
+      this.updateChatbotState(message);
+    };
+    handleFaresList = () => {
+      const message = this.createChatBotMessage(
+        "Genial, vemos que quieres saber mas sobre las Tarifas que tenemos!",
+        {
+          widget: "faresLinks",
+        }
+      );
+  
+      this.updateChatbotState(message);
+    };
+    handleAboutList = () => {
+      const message = this.createChatBotMessage(
+        "Genial, vemos que quieres saber mas sobre nuestra familia!",
+        {
+          widget: "aboutLinks",
         }
       );
   

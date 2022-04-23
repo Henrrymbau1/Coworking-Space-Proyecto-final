@@ -1,6 +1,6 @@
 import "./App.css";
 import { ContactUs } from "./Components/footer/Footer";
-import Faq from "./Components/faq/Faq";
+import Faq from "./Pages/faq/Faq";
 import Navbar from "./Components/navbar/Navbar";
 import SupportChat from "./Components/SupportChat/SupportChat";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
@@ -9,6 +9,9 @@ import { JwtContext } from "../src/shared/Context/JwtContext";
 import { LoginPage } from "./Pages/login/LoginPage";
 import { RegisterPage } from "./Pages/resgisterPage/RegisterPage";
 import axios from "axios";
+import { Locations } from "./Pages/Locations/Locations";
+import { Fares } from "./Pages/Fares/Fares";
+import { About } from "./Pages/About/About";
 
 function App() {
   const [coworking, setCoworking] = useState([]);
@@ -45,9 +48,13 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/faq" element={<Faq />} />
+            <Route path="/locations" element={<Locations/>} />
+            <Route path="/fares" element={<Fares/>} />
+            <Route path="/about" element={<About />} />
           </Routes>
-          <ContactUs />
           <SupportChat />
+          <ContactUs />
+          
         </Router>
       </div>
     </JwtContext.Provider>

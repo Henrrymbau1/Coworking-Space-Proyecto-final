@@ -6,6 +6,9 @@
     
     .logo-politicas{
         width: 15%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
         *{
             color: white
         }

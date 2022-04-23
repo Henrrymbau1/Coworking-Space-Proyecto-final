@@ -5,15 +5,23 @@ import "./LearningOptions.scss";
 const LearningOptions = (props) => {
   const options = [
     {
-      text: "Javascript",
-      handler: props.actionProvider.handleJavascriptList,
+      text: "Ubicaciones",
+      handler: props.actionProvider.handleLocationsList,
       id: 1,
     },
-    { text: "Data visualization", handler: () => { }, id: 2 },
-    { text: "APIs", handler: () => { }, id: 3 },
-    { text: "Security", handler: () => { }, id: 4 },
-    { text: "Interview prep", handler: () => { }, id: 5 },
-  ];
+    { 
+      text: "Tarifas", 
+      handler: props.actionProvider.handleFaresList, 
+      id: 2 },
+    { 
+      text: "Saber Mas", 
+      handler: props.actionProvider.handleAboutList,
+      id: 3 },
+    { 
+      text: "FAQ", 
+      handler: props.actionProvider.handleFaqList,
+      id: 4 
+    },];
 
   const optionsMarkup = options.map((option) => (
     <button

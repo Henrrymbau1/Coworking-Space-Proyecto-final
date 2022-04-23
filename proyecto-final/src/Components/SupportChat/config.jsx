@@ -2,10 +2,14 @@ import React from "react";
 import { createChatBotMessage } from 'react-chatbot-kit';
 import LinkList from "./LinkList/LinkList";
 import LearningOptions from "./LearningOptions/LearningOptions";
+import { useNavigate  } from "react-router-dom";
+
+
+
 
 const config = {
   initialMessages: [
-    createChatBotMessage("Hi, I'm here to help. What do you want to 		learn?", {
+    createChatBotMessage("Hola Coworker! Aqui tenemos ciertas sesiones en las que podrias estar interesado. ", {
       widget: "learningOptions",
     }),
   ],
@@ -15,26 +19,53 @@ const config = {
       widgetFunc: (props) => <LearningOptions {...props} />,
     },
     {
-      widgetName: "javascriptLinks",
+      widgetName: "locationsLinks",
       widgetFunc: (props) => <LinkList {...props} />,
       props: {
         options: [
           {
-            text: "Introduction to JS",
-            url:
-              "https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/",
+            text: "Coworking",
+            url: "/locations",
             id: 1,
           },
+        ],
+      },
+    },
+    {
+      widgetName: "aboutLinks",
+      widgetFunc: (props) => <LinkList {...props} />,
+      props: {
+        options: [
           {
-            text: "Mozilla JS Guide",
-            url:
-              "https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide",
-            id: 2,
+            text: "Sobre nosotros",
+            url: "/about",
+            id: 1,
           },
+        ],
+      },
+    },
+    {
+      widgetName: "faqLinks",
+      widgetFunc: (props) => <LinkList {...props} />,
+      props: {
+        options: [
           {
-            text: "Frontend Masters",
-            url: "https://frontendmasters.com",
-            id: 3,
+            text: "Preguntas Frecuentes",
+            url: "/faq",
+            id: 1,
+          },
+        ],
+      },
+    },
+    {
+      widgetName: "faresLinks",
+      widgetFunc: (props) => <LinkList {...props} />,
+      props: {
+        options: [
+          {
+            text: "Tarifas",
+            url: "/fares",
+            id: 1,
           },
         ],
       },

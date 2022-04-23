@@ -7,7 +7,7 @@ import MessageParser from './MessageParser';
 import config from './config';
 
 function SupportChat() {
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
 
   const showChat = () => {
     setShow((show) => !show)
