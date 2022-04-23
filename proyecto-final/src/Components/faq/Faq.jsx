@@ -10,13 +10,14 @@ export default function Faq() {
           profesionales.
         </h1>
       </div>
-      <div className="form">
+      <div class="form-faq">
         <form action="">
           <h2>Solicita información sobre nuestros servicios.</h2>
-          <input type="text" placeholder="Tu nombre" />
-          <input type="text" placeholder="E-mail" />
-          <input type="text" placeholder="Teléfono" />
-
+          <div class="contact">
+            <input type="text" placeholder="Tu nombre" />
+            <input type="text" placeholder="E-mail" />
+            <input type="text" placeholder="Teléfono" />
+          </div>
           <p>
             SPOT AT WORK tratará tus datos únicamente para tramitar tu
             solicitud. Puedes conocer cómo ejercer tus derechos de acceso,

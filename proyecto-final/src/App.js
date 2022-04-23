@@ -44,10 +44,10 @@ function App() {
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
+            <Route path="/faq" element={<Faq />} />
           </Routes>
           <ContactUs />
           <SupportChat />
-          <Faq></Faq>
         </Router>
       </div>
     </JwtContext.Provider>

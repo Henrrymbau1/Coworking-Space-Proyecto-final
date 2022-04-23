@@ -1,8 +1,44 @@
-.newsLetter-container{
-    background-color: pink;
+.footer-container{
+    display: flex;
+    background-color: #404040;
     width: 100%;
+    justify-content: space-around;
+    
+    .logo-politicas{
+        width: 15%;
+        *{
+            color: white
+        }
+        .footer-logo{
+            width: 100px;
+        }
+        .p-footer{
+            
+        }
+    }
+
+
+    .form-container{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 36%;
+        color: white;
+        .input-footer{
+        }
+    }
+
+
+    .icon-container{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+
+        .icon-footer{
+            max-width: 20%;
+
+        }
+    }
+
 }
 
-.input-footer{
-    width: 30%;
-}

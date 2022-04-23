@@ -23,7 +23,7 @@ function Navbar() {
             <div className="button-container">
               <ul className="list-1">
                 <li>About</li>
-                <li>FAQ</li>
+                <NavLink to="/faq"><li>FAQ</li></NavLink>
                 <li>Tarifas</li>
                 <li>Ubicaciones</li>
               </ul>

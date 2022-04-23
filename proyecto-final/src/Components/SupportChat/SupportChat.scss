@@ -1,12 +1,17 @@
-.avatar-container{
-    position: 'absolute';
-    left: 'calc(-100% - 44px - 28px)';
-    top: 'calc(50% - 24px)'; 
-    z-Index: '10000';
-    box-Shadow: '0px 0px 16px 6px rgba(0; 0; 0; 0.33)';
-    padding: '12px 12px 12px 16px';
-    border-Radius: '24px'; 
-    background-Color: green;
-    width: 100%;
-    color: 'black';
+// .avatar-container{
+//     position: 'absolute';
+//     left: 'calc(-100% - 44px - 28px)';
+//     top: 'calc(50% - 24px)'; 
+//     z-Index: '10000';
+//     box-Shadow: '0px 0px 16px 6px rgba(0; 0; 0; 0.33)';
+//     padding: '12px 12px 12px 16px';
+//     border-Radius: '24px'; 
+//     background-Color: green;
+//     width: 100%;
+//     color: 'black';
+// }
+
+.chatbot{
+    display: flex;
+    justify-content: flex-end;
 }
