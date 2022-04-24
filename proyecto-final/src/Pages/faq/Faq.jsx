@@ -47,6 +47,29 @@ export default function Faq() {
           para alcanzar los objetivos de la Agenda 2030. </p>
           
       </div>
+
+      {/* box para servicios */}
+
+      <div>
+        <div class="box-servicios">
+            <h1>Servicios Coworking </h1>
+            <h3>Buscando nuevas ideas</h3>
+        </div>
+            <div class="box-servicios-img">
+                <div class="box">
+                <img src="./assets/services1.jpg" alt="coworking"/>
+                  <p>Todo ello desde ecosistemas vivos donde la colaboración sea la base. Desde nuestra experiencia a nivel global en los últimos 15 años, Impact Hub ofrece diferentes servicios para acompañar a empresas.</p>
+                </div>
+                <div class="box">
+                <img src="./assets/services2.jpg" alt="coworking"/>
+                <p>Todo ello desde ecosistemas vivos donde la colaboración sea la base. Desde nuestra experiencia a nivel global en los últimos 15 años, Impact Hub ofrece diferentes servicios para acompañar a empresas.</p>
+                </div>
+                <div class="box">
+                <img src="./assets/services3.jpg" alt="coworking"/>
+                <p>Todo ello desde ecosistemas vivos donde la colaboración sea la base. Desde nuestra experiencia a nivel global en los últimos 15 años, Impact Hub ofrece diferentes servicios para acompañar a empresas.</p>
+                </div>
+            </div>
+      </div>
     </div>
     
   );
