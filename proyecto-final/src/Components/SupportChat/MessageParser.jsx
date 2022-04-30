@@ -2,10 +2,7 @@ class MessageParser {
     constructor(actionProvider) {
       this.actionProvider = actionProvider;
     }
-  
-   
-
-    parse(message) {
+  parse(message) {
       const lowerCaseMessage = message.toLowerCase();
   
       if (lowerCaseMessage.includes("buenas") || lowerCaseMessage.includes("hola")) {
