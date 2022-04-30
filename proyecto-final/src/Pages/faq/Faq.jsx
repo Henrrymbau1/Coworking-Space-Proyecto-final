@@ -12,7 +12,7 @@ export default function Faq() {
     setShow((show) => !show)
 
   }
-  
+
   return (
 
     <div class="container">
@@ -71,7 +71,7 @@ export default function Faq() {
           <div class="box">
             <img src="./assets/services1.jpg" alt="coworking" />
             <p>Todo ello desde ecosistemas vivos donde la colaboración sea la base. Desde nuestra experiencia a nivel global en los últimos 15 años, Impact Hub ofrece diferentes servicios para acompañar a empresas.</p>
-           
+
           </div>
           <div class="box">
             <img src="./assets/services2.jpg" alt="coworking" />
@@ -87,74 +87,72 @@ export default function Faq() {
 
       {/* preguntas frecuentes */}
       <div class="box-servicios">
-          <h1>Preguntas frecuentes</h1>
-          <h3>Respondemos todas sus consultas</h3>
-        </div>
+        <h1>Preguntas frecuentes</h1>
+        <h3>Respondemos todas sus consultas</h3>
+      </div>
       <div class="container-main-query">
         <div class="box-query">
           <p>¿Qué tan flexible son los espacios que ofrecen en sus despachos? </p>
-          {    number !== 1 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(1)}/> : number === 1 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)}/>
-                }
+          {number !== 1 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(1)} /> : number === 1 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
+          }
         </div>
-         { number === 1 &&
+        {number === 1 &&
           <div ><p>A veces no es fácil saber cuánto espacio necesitas y durante cuánto tiempo. Una alternativa podría ser contratar con un operador de espacios flexibles por una cuota mensual, en lugar de un contrato de alquiler tradicional.
-          Los espacios de oficinas flexibles llevan tiempo siendo una solución viable para autónomos, startups y trabajadores en remoto. Ahora también están ganando adeptos entre las empresas más grandes por su flexibilidad, agilidad y estructura de precios.</p>
-        </div>}
-          
-        <div class="box-query">
-          <p>¿Qué tan flexible son los espacios que ofrecen en sus despachos? </p>
-           {    number !== 2 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(2)}/> : number === 2 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)}/>
-                }
-        </div>
-        
-          { number === 2 &&
-          <div ><p>A veces no es fácil saber cuánto espacio necesitas y durante cuánto tiempo. Una alternativa podría ser contratar con un operador de espacios flexibles por una cuota mensual, en lugar de un contrato de alquiler tradicional.
-          Los espacios de oficinas flexibles llevan tiempo siendo una solución viable para autónomos, startups y trabajadores en remoto. Ahora también están ganando adeptos entre las empresas más grandes por su flexibilidad, agilidad y estructura de precios.</p>
-        </div>}
+            Los espacios de oficinas flexibles llevan tiempo siendo una solución viable para autónomos, startups y trabajadores en remoto. Ahora también están ganando adeptos entre las empresas más grandes por su flexibilidad, agilidad y estructura de precios.</p>
+          </div>}
 
         <div class="box-query">
-        <p>¿Qué tan flexible son los espacios que ofrecen en sus despachos? </p>
-        {    number !== 3 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(3)}/> : number === 3 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)}/>
-                }
+          <p>¿Qué tan flexible son los espacios que ofrecen en sus despachos? </p>
+          {number !== 2 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(2)} /> : number === 2 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
+          }
         </div>
-        
-          { number === 3 &&
+
+        {number === 2 &&
           <div ><p>A veces no es fácil saber cuánto espacio necesitas y durante cuánto tiempo. Una alternativa podría ser contratar con un operador de espacios flexibles por una cuota mensual, en lugar de un contrato de alquiler tradicional.
-          Los espacios de oficinas flexibles llevan tiempo siendo una solución viable para autónomos, startups y trabajadores en remoto. Ahora también están ganando adeptos entre las empresas más grandes por su flexibilidad, agilidad y estructura de precios.</p>
-        </div>}
+            Los espacios de oficinas flexibles llevan tiempo siendo una solución viable para autónomos, startups y trabajadores en remoto. Ahora también están ganando adeptos entre las empresas más grandes por su flexibilidad, agilidad y estructura de precios.</p>
+          </div>}
+
         <div class="box-query">
           <p>¿Qué tan flexible son los espacios que ofrecen en sus despachos? </p>
-          {    number !== 4 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(4)}/> : number === 4 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)}/>
-                }
+          {number !== 3 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(3)} /> : number === 3 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
+          }
         </div>
-        
-          { number === 4 &&
+
+        {number === 3 &&
           <div ><p>A veces no es fácil saber cuánto espacio necesitas y durante cuánto tiempo. Una alternativa podría ser contratar con un operador de espacios flexibles por una cuota mensual, en lugar de un contrato de alquiler tradicional.
-          Los espacios de oficinas flexibles llevan tiempo siendo una solución viable para autónomos, startups y trabajadores en remoto. Ahora también están ganando adeptos entre las empresas más grandes por su flexibilidad, agilidad y estructura de precios.</p>
-        </div>}
+            Los espacios de oficinas flexibles llevan tiempo siendo una solución viable para autónomos, startups y trabajadores en remoto. Ahora también están ganando adeptos entre las empresas más grandes por su flexibilidad, agilidad y estructura de precios.</p>
+          </div>}
         <div class="box-query">
           <p>¿Qué tan flexible son los espacios que ofrecen en sus despachos? </p>
-          {    number !== 5 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(5)}/> : number === 5 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)}/>
-                }
+          {number !== 4 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(4)} /> : number === 4 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
+          }
         </div>
-        
-          { number === 5 &&
+
+        {number === 4 &&
           <div ><p>A veces no es fácil saber cuánto espacio necesitas y durante cuánto tiempo. Una alternativa podría ser contratar con un operador de espacios flexibles por una cuota mensual, en lugar de un contrato de alquiler tradicional.
-          Los espacios de oficinas flexibles llevan tiempo siendo una solución viable para autónomos, startups y trabajadores en remoto. Ahora también están ganando adeptos entre las empresas más grandes por su flexibilidad, agilidad y estructura de precios.</p>
-        </div>}
+            Los espacios de oficinas flexibles llevan tiempo siendo una solución viable para autónomos, startups y trabajadores en remoto. Ahora también están ganando adeptos entre las empresas más grandes por su flexibilidad, agilidad y estructura de precios.</p>
+          </div>}
         <div class="box-query">
           <p>¿Qué tan flexible son los espacios que ofrecen en sus despachos? </p>
-          {    number !== 6 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(6)}/> : number === 6 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)}/>
-                }
+          {number !== 5 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(5)} /> : number === 5 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
+          }
         </div>
-        
-          { number === 6 &&
+
+        {number === 5 &&
           <div ><p>A veces no es fácil saber cuánto espacio necesitas y durante cuánto tiempo. Una alternativa podría ser contratar con un operador de espacios flexibles por una cuota mensual, en lugar de un contrato de alquiler tradicional.
-          Los espacios de oficinas flexibles llevan tiempo siendo una solución viable para autónomos, startups y trabajadores en remoto. Ahora también están ganando adeptos entre las empresas más grandes por su flexibilidad, agilidad y estructura de precios.</p>
-        </div>}
+            Los espacios de oficinas flexibles llevan tiempo siendo una solución viable para autónomos, startups y trabajadores en remoto. Ahora también están ganando adeptos entre las empresas más grandes por su flexibilidad, agilidad y estructura de precios.</p>
+          </div>}
+        <div class="box-query">
+          <p>¿Qué tan flexible son los espacios que ofrecen en sus despachos? </p>
+          {number !== 6 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(6)} /> : number === 6 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
+          }
+        </div>
+
+        {number === 6 &&
+          <div ><p>A veces no es fácil saber cuánto espacio necesitas y durante cuánto tiempo. Una alternativa podría ser contratar con un operador de espacios flexibles por una cuota mensual, en lugar de un contrato de alquiler tradicional.
+            Los espacios de oficinas flexibles llevan tiempo siendo una solución viable para autónomos, startups y trabajadores en remoto. Ahora también están ganando adeptos entre las empresas más grandes por su flexibilidad, agilidad y estructura de precios.</p>
+          </div>}
       </div>
-
-
     </div>
 
   );
