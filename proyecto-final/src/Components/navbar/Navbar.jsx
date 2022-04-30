@@ -15,6 +15,7 @@ function Navbar() {
           <div className="navBar">
             <div className="logo-container">
               <img
+                href="/"
                 className="img-logo"
                 src="https://cdn.discordapp.com/attachments/946038364816162916/965515381236170772/logo.png"
                 alt="logo"
