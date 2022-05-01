@@ -66,30 +66,48 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    align-items: flex-start;
+    align-items: center;
+    justify-content: center;
     display: flex;
+    flex-direction: column;
     align-items:center;
+    
 }
 
 
 h1 {
-    color: rgb(255 255 255);
+    color: rgb(255, 164, 53);
     font-family: "Josefin Sans", sans-serif;
-    font-size: 36px;
-    padding: 15px;
+    font-size: 65px;
+    padding: 0 2rem;
     text-align: left;
-    text-shadow: -4px 2px #010101;
+    margin:  0 3rem;
+    text-shadow: -4px 3px #000000;
+    
+}
+.title2{
+    color: rgb(255, 209, 134);
+    font-family: "Josefin Sans", sans-serif;
+    font-size: 65px;
+    padding: 0 2rem;
+    text-align: justify;
+    margin:  0 3rem;
+    text-shadow: -4px 3px #000000;
 }
 
 
 .form-faq {
-    background-color: rgb(253, 253, 105);
-    width: 100%;
+    background-color: rgb(242, 176, 22);
+    width: 70%;
+    height: 500px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
     align-content: center;
     flex-direction: column;
+    .title-form {
+        font-size: 28px;
+    }
     
 }
 .contact{
@@ -102,6 +120,7 @@ h1 {
 } 
 input{
     width: 310px;
+    height: 30px;
     margin: 10px 0;
 }
 p{
@@ -113,7 +132,7 @@ p{
 
 .box-servicios{
     display: flex;
-    width: 100%;
+    width: 90%;
     justify-content: center;
     flex-direction: column;
     align-items: center;
@@ -152,9 +171,10 @@ p{
         margin-top: -30px;
         margin-right: -10px;
         width: 310px;
+        height: 180px;
         padding: 15px;
         border-radius: 10px;
-        background-color: rgb(235, 248, 138);
+        background-color:  rgb(242, 176, 22);
     }
     
 }
@@ -163,12 +183,23 @@ p{
     width: 100%;
     margin: 10px auto;
     flex-direction: row;
+    justify-content: center;
+    align-items: center;
 
     p{
+        width: 70%;
         font-size: 22px;
         margin: 0 2rem;
         font-family: 'Merriweather', serif;
-        
+                
+    }
+    .request{
+        width: 65%;
+        font-size: 16px;
+        margin: 0 2rem;
+        line-height: 2;
+        font-family: 'Merriweather', serif;
+        color: #292929;
     }
     span{
         margin-right: 30px;
