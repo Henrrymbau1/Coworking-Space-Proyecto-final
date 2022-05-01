@@ -8,6 +8,7 @@ import { useNavigate  } from "react-router-dom";
 
 
 const config = {
+  
   initialMessages: [
     createChatBotMessage("Hola Coworker! Aqui tenemos ciertas sesiones en las que podrias estar interesado. ", {
       widget: "learningOptions",
@@ -51,7 +52,7 @@ const config = {
         options: [
           {
             text: "Preguntas Frecuentes",
-            url: "/faq",
+            navigate: "/faq",
             id: 1,
           },
         ],
