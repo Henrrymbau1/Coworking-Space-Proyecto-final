@@ -9,7 +9,7 @@ class MessageParser {
         this.actionProvider.greet();
       }
   
-      if (lowerCaseMessage.includes("saber")) {
+      if (lowerCaseMessage.includes("saber mas")) {
         this.actionProvider.handleAboutList();
       }
       if (lowerCaseMessage.includes("tarifa")) {

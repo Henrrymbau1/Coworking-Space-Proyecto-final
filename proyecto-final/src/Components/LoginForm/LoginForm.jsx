@@ -2,6 +2,7 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { API } from "../../shared/Services/api";
 import { useNavigate } from "react-router-dom";
+import "./_loginForm.scss"
 
 
 export const LoginForm = () => {
@@ -23,42 +24,46 @@ export const LoginForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <div className="formContainer">
+    
+    <form className="formInfo" onSubmit={handleSubmit(onSubmit)}>
+      <h3 className="login">Iniciar Sesion</h3>
       <label>Email</label>
-      <input
+      <input className="inputEmail"
         type="email"
         name="email"
         {...register("email", {
           required: true,
           pattern:{
             value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-            message: "Recuerda que debe ser un email valido: spotatwork@spotatwork.com"}
+            message: "🚨 Recuerda que debe ser un email valido: spotatwork@spotatwork.com"}
         })}
       />
       {errors.email ? (
         <>
           {errors.email.type === "pattern" && (
-            <p>{errors.email.message}</p>
+            <p className="errorFrase">{errors.email.message}</p>
           )}
         </>): null } 
-      <label>Password</label>
-      <input
+      <label>Contraseña</label>
+      <input className="inputPassword"
         type="password"
         name="password"
         {...register("password", {
           required: true,
           pattern:
           { value:  /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$/,
-          message: 'Recuerda que la contraseña debe tener al menos 8 caracteres, 1 de ellos especial, 1 letra mayuscula, 1 letra minuscula, 1 numero.'}
+          message: '🚨 Recuerda que la contraseña debe tener al menos 8 caracteres y maximo 12, 1 de ellos especial, 1 letra mayuscula, 1 letra minuscula, 1 numero.'}
         })}
       />
         {errors.password ? (
         <>
           {errors.password.type === "pattern" && (
-            <p>{errors.password.message}</p>
+            <p className="errorFrase">{errors.password.message}</p>
           )}
         </>): null } 
-      <button disabled={!isValid}  className="login__button" type="submit">Login</button>
+      <button disabled={!isValid}  className="button-19" type="submit">Login</button>
     </form>
+    </div>
   );
 };

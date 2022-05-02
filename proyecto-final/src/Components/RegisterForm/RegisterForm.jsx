@@ -24,50 +24,53 @@ export const RegisterForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <label>Username</label>
-      <input
+    <div className="formContainer">
+   
+    <form className="formInfo" onSubmit={handleSubmit(onSubmit)}>
+    <h3 className="login">Registrarse</h3>
+      <label>Nombre</label>
+      <input className="inputEmail"
         type="text"
         name="name"
         {...register("name", { 
           required: true,})}
       />
       <label>Email</label>
-      <input
+      <input className="inputEmail"
         type="email"
         name="email"
         {...register("email", {
           required: true,
           pattern:{
             value :/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-            message : 'Chequear que el email es correcto'
+            message : '🚨 Chequear que el email es correcto'
             }
         })}
       />
       {errors.email ? (
                 <>
                   {errors.email.type === "pattern" && (
-                    <p>
+                    <p className="errorFrase">
                       {errors.email.message}
                     </p>
                   )}
                 </>
               ) : null}
-      <label>Password</label>
-      <input
+      <label>Contraseña</label>
+      <input className="inputPassword"
         type="password"
         name="password"
         {...register("password", {
           required: true,
           pattern:
           {  value : /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$/,
-            message : 'Recuerda que la contraseña debe tener al menos 8 caracteres y maximo 12, 1 de ellos especial, 1 letra mayuscula, 1 letra minuscula, 1 numero.'}
+            message : '🚨 Recuerda que la contraseña debe tener al menos 8 caracteres y maximo 12, 1 de ellos especial, 1 letra mayuscula, 1 letra minuscula, 1 numero.'}
         })}
       />
        {errors.password ? (
                 <>
                   {errors.password.type === "pattern" && (
-                    <p>
+                    <p className="errorFrase">
                       {errors.password.message}
                     </p>
                   )}
@@ -75,11 +78,12 @@ export const RegisterForm = () => {
               ) : null}
               <button
               disabled={!isValid}
-              className="register__button"
+              className="button-19"
               type="submit"
             >
       Register
       </button>
     </form>
+    </div>
   );
 };
