@@ -1,17 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
-import { useState } from "react";
 import { ButtonLogout } from "../../shared/Components/ButtonLogout/ButtonLogout";
 import { JwtContext } from "../../shared/Context/JwtContext";
 import "./navbar.scss";
 
 function Navbar() {
-  const [jwt, setJwt] = useState(localStorage.getItem("token"));
+  const { jwt } = useContext(JwtContext);
+  
+
 
   return (
-    <div>
-      <JwtContext.Provider value={{ jwt, setJwt }}>
-        <header>
+    <>
           <div className="navBar">
             <div className="logo-container">
               <img
@@ -22,26 +21,29 @@ function Navbar() {
               ></img>
             </div>
             <div className="button-container">
+            {jwt && (
               <ul className="list-1">
                 <NavLink to="/about"><li>About</li></NavLink>
                 <NavLink to="/faq"><li>FAQ</li></NavLink>
                 <NavLink to="/fares"><li>Tarifas</li></NavLink>
                 <NavLink to="/locations"><li>Ubicaciones</li></NavLink>
-              </ul>
+              </ul>)}
+              {!jwt && (<>
               <ul className="list-2">
                 <NavLink to="/login"><li>Login</li></NavLink>
               </ul>
-              <span>
+             
                 <NavLink to="/register">
                   <button className="button-19">Register</button>
                 </NavLink>
-              </span>
+              
+              </>)}
               {jwt && <ButtonLogout />}
             </div>
           </div>
-        </header>
-      </JwtContext.Provider>
-    </div>
+          </>
+
+        
   );
 }
 

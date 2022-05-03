@@ -9,8 +9,8 @@ export const RegisterForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, isValid },
-  } = useForm({ criteriaMode: "all", mode: "onBlur" });
+    formState: { errors },
+  } = useForm();
 
   console.log(errors.password)
 
@@ -75,9 +75,8 @@ export const RegisterForm = () => {
                     </p>
                   )}
                 </>
-              ) : null}
+              ) : <p className="passFrase">Recuerda que la contraseña debe tener al menos 8 caracteres y maximo 12, 1 de ellos especial, 1 letra mayuscula, 1 letra minuscula, 1 numero.</p>}
               <button
-              disabled={!isValid}
               className="button-19"
               type="submit"
             >

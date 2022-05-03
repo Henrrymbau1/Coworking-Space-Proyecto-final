@@ -52,7 +52,7 @@ const config = {
         options: [
           {
             text: "Preguntas Frecuentes",
-            navigate: "/faq",
+            url: "/faq",
             id: 1,
           },
         ],

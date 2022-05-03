@@ -1,25 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import { useForm } from "react-hook-form";
 import { API } from "../../shared/Services/api";
 import { useNavigate } from "react-router-dom";
 import "./_loginForm.scss"
+import { JwtContext } from "../../shared/Context/JwtContext";
 
 
 export const LoginForm = () => {
   let navigate = useNavigate();
+  const { setJwt } = useContext(JwtContext);
   const { 
     register, 
     handleSubmit ,
-    formState: { errors, isValid },} = useForm({ criteriaMode: "all", mode: "onBlur" });
+    formState: { errors},
+  } = useForm();
   
 
   const onSubmit = (formData) => {
     console.log(formData);
     API.post("users/login", formData).then((response) => {
       console.log(response);
-
+      setJwt(response.data);
       localStorage.setItem("token", response.data);
       navigate("/");
+     
     });
   };
 
@@ -61,8 +65,8 @@ export const LoginForm = () => {
           {errors.password.type === "pattern" && (
             <p className="errorFrase">{errors.password.message}</p>
           )}
-        </>): null } 
-      <button disabled={!isValid}  className="button-19" type="submit">Login</button>
+        </>): <p className="passFrase">Recuerda que la contraseña debe tener al menos 8 caracteres y maximo 12, 1 de ellos especial, 1 letra mayuscula, 1 letra minuscula, 1 numero.</p>} 
+      <button   className="button-19" type="submit">Login</button>
     </form>
     </div>
   );

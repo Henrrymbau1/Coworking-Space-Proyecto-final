@@ -14,6 +14,7 @@ import { Fares } from "./Pages/Fares/Fares";
 import { About } from "./Pages/About/About";
 
 function App() {
+  const [jwt, setJwt] = useState(localStorage.getItem("token"));
   const [coworking, setCoworking] = useState([]);
   const [fares, setFares] = useState([]);
   const url = "https://co-working-back.vercel.app";
@@ -39,11 +40,10 @@ function App() {
   });
 
   return (
-    <JwtContext.Provider>
+    <JwtContext.Provider value={{ jwt, setJwt }}>
       <div className="App">
         <Router>
-          <Navbar></Navbar>
-
+          <Navbar />
           <Routes>
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />

@@ -29,11 +29,11 @@ export default function Faq() {
           <form action="">
             <h2 class="title-form">Solicita información sobre nuestros servicios.</h2>
             <div class="contact">
-              <input type="text" placeholder="Tu nombre" />
-              <input type="text" placeholder="E-mail" />
-              <input type="text" placeholder="Teléfono" />
+              <input className="inputClass" type="text" placeholder="Tu nombre" />
+              <input className="inputClass" type="text" placeholder="E-mail" />
+              <input className="inputClass" type="text" placeholder="Teléfono" />
             </div>
-            <p>
+            <p className="pClass">
               SPOT AT WORK tratará tus datos únicamente para tramitar tu
               solicitud. Puedes conocer cómo ejercer tus derechos de acceso,
               rectificación y supresión en nuestra Política de Privacidad.
@@ -45,16 +45,16 @@ export default function Faq() {
       <div class="container-main">
         <h2 class="subtitle-faq">SPOT AP WORK</h2>
         <h1 class="title-faq">Proyectos y misión </h1>
-        <p>
+        <p className="pClass" >
           Los retos urgentes sociales y medioambientales a los que nos
           enfrentamos exigen que las empresas y organizaciones adopten un
           compromiso de actuación para impulsar una reactivación sostenible.</p>
-        <p>
+        <p className="pClass">
           Para poner en marcha estos cambios necesarios necesitamos nuevas ideas
           de negocio, transformar el tejido empresarial y cambiar nuestros
           hábitos y comportamientos. </p>
 
-        <p>Todo ello desde ecosistemas vivos donde la
+        <p className="pClass">Todo ello desde ecosistemas vivos donde la
           colaboración sea la base. Desde nuestra experiencia a nivel global en
           los últimos 15 años, SPOT AP WORK ofrece diferentes servicios para
           acompañar a empresas, organizaciones y administraciones en su camino
@@ -73,18 +73,18 @@ export default function Faq() {
           <div class="box">
             <img src="./assets/services1.jpg" alt="coworking" />
             
-            <p><b>Puestos flexibles | </b>Los puestos flexibles te permitirán trabajar por horas o días con tu portátil y elegir dónde sentarte cada vez que vengas a Impact Hub. Elige venir por la mañana, por la tarde o el día completo.</p>
+            <p className="pClass"><b>Puestos flexibles | </b>Los puestos flexibles te permitirán trabajar por horas o días con tu portátil y elegir dónde sentarte cada vez que vengas a Impact Hub. Elige venir por la mañana, por la tarde o el día completo.</p>
             <h4>Desde 100 €/mes</h4>
 
           </div>
           <div class="box">
             <img src="./assets/services3.jpg" alt="coworking" />
-            <p><b>Despachos | </b>Encontrarás oficinas de distintos tamaños, desde 2 hasta 20 personas. Tú eliges cuándo tener intimidad para trabajar y cuándo conectar con la comunidad. Espacios ideales para reuniones o eventos privados.</p>
+            <p className="pClass"><b>Despachos | </b>Encontrarás oficinas de distintos tamaños, desde 2 hasta 20 personas. Tú eliges cuándo tener intimidad para trabajar y cuándo conectar con la comunidad. Espacios ideales para reuniones o eventos privados.</p>
             <h4>Desde 290 €/mes</h4>
           </div>
           <div class="box">
             <img src="./assets/services2.jpg" alt="coworking" />
-            <p><b>Bonos diarios o pack 10 días | </b>Conoce  nuestros espacios flexibles donde puedes reservar días para ir a trabajar. Disponemos de espacios con diferentes diseños de interiors. Reserva un pack y ven a tu coworking cuando lo necesites.</p>
+            <p className="pClass"><b>Bonos diarios o pack 10 días | </b>Conoce  nuestros espacios flexibles donde puedes reservar días para ir a trabajar. Disponemos de espacios con diferentes diseños de interiors. Reserva un pack y ven a tu coworking cuando lo necesites.</p>
             <h4> Desde 15 €/día</h4>
           </div>
         </div>
@@ -92,7 +92,7 @@ export default function Faq() {
       {/* box para servicios */}
 
       {/* preguntas frecuentes */}
-      <div class="box-servicios">
+      <div class="box-servicios"> 
         <h1>Preguntas frecuentes</h1>
         <h3>Respondemos todas sus consultas</h3>
       </div>
@@ -100,7 +100,7 @@ export default function Faq() {
         <div class="box-query">
         {number !== 1 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(1)} /> : number === 1 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
           }
-          <p>¿Cómo funciona un espacio coworking?</p>
+          <p className="pClass">¿Cómo funciona un espacio coworking?</p>
          
         </div>
         {number === 1 &&
@@ -110,7 +110,7 @@ export default function Faq() {
         <div class="box-query">
         {number !== 2 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(2)} /> : number === 2 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
           }
-          <p>¿Para qué sirve un coworking? </p>
+          <p className="pClass">¿Para qué sirve un coworking? </p>
           
         </div>
 
@@ -121,7 +121,7 @@ export default function Faq() {
         <div class="box-query">
         {number !== 3 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(3)} /> : number === 3 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
           }
-          <p>¿Qué tan flexible son los espacios que ofrecen en sus despachos? </p>
+          <p className="pClass">¿Qué tan flexible son los espacios que ofrecen en sus despachos? </p>
           
         </div>
 
@@ -132,7 +132,7 @@ export default function Faq() {
         <div class="box-query">
         {number !== 4 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(4)} /> : number === 4 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
           }
-          <p>¿Las oficinas estan todas amuebladas? </p>
+          <p className="pClass">¿Las oficinas estan todas amuebladas? </p>
           
         </div>
 
@@ -142,7 +142,7 @@ export default function Faq() {
         <div class="box-query">
         {number !== 5 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(5)} /> : number === 5 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
           }
-          <p>¿Se puede recibir cualquier tip ode visitas a las oficinas? </p>
+          <p className="pClass">¿Se puede recibir cualquier tip ode visitas a las oficinas? </p>
           
         </div>
 
@@ -152,7 +152,7 @@ export default function Faq() {
         <div class="box-query">
         {number !== 6 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(6)} /> : number === 6 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
           }
-          <p>¿Puedo proponer alguna actividad en la comunidad? </p>
+          <p className="pClass">¿Puedo proponer alguna actividad en la comunidad? </p>
          
         </div>
 
