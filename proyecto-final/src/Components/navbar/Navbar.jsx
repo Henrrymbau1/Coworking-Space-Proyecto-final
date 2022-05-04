@@ -5,7 +5,7 @@ import { JwtContext } from "../../shared/Context/JwtContext";
 import styled from "styled-components";
 import { GiHamburgerMenu } from 'react-icons/gi';
 import { VscChromeClose } from 'react-icons/vsc'
-
+import "./navbar.scss"
 
 function Navbar() {
   const { jwt } = useContext(JwtContext);
@@ -23,7 +23,7 @@ function Navbar() {
               <img
                 href="/"
                 className="img-logo"
-                src="https://cdn.discordapp.com/attachments/946038364816162916/965515381236170772/logo.png"
+                src="./assets/unknown.png"
                 alt="logo"
               ></img>
             </div>
@@ -56,10 +56,10 @@ function Navbar() {
             <CloseWrapper>
               <CustomClose onClick={() => setBurgerStatus(false)} />
             </CloseWrapper>
-            <li><a href="#">About</a></li>
-            <li><a href="#">Preguntas</a></li>
-            <li><a href="#">About us</a></li>
-            <li><a href="#">Locations</a></li>
+            <NavLink to="/about"><li>About</li></NavLink>
+            <NavLink to="/faq"><li>FAQ</li></NavLink>
+            <NavLink to="/fares"><li>Tarifas</li></NavLink>
+            <NavLink to="/locations"><li>Ubicaciones</li></NavLink>
           </BurgerNav>
 
         </div>
@@ -83,7 +83,8 @@ const Nav = styled.div`
     .brand{
       .logo-container{
         img{
-          width: 100px;
+          width: 90px;
+          height: 60px;
         }
       }
     }
@@ -166,7 +167,8 @@ const Nav = styled.div`
   }
 
   @media screen and (min-width: 280px) and (max-width:1080px){
-
+    .navbar-general{
+    }
 
     .button-container{
       display: none;
@@ -179,7 +181,10 @@ const Nav = styled.div`
 
 `
 const CustomMenu = styled(GiHamburgerMenu)`
+  font-size: 40px;
+  size: 30px;
   cursor: pointer;
+  padding-right: 20px;
 `
 
 const BurgerNav = styled.nav`
@@ -201,6 +206,7 @@ const BurgerNav = styled.nav`
 `
 
 const CustomClose = styled(VscChromeClose)`
+  font-size: 20px;
   cursor: pointer;
 `
 

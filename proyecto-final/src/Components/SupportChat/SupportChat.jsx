@@ -15,13 +15,13 @@ function SupportChat() {
 
   return (
     <div className='chatbot'>
-    {number !== 1 ? ( <>
-    <BsFillChatLeftDotsFill style={style}  onClick={() => setNumber(1)} />
-    <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser}></Chatbot>
-    </>
-    ): number === 1 && 
-     <BsFillChatLeftDotsFill style={{size:"100px"}} onClick={() => setNumber(0)}/ >
-          }
+      {number === 1 ? (<>
+        <BsFillChatLeftDotsFill style={style} onClick={() => setNumber(0)} />
+        <Chatbot config={config} actionProvider={ActionProvider} messageParser={MessageParser}></Chatbot>
+      </>
+      ) : number !== 1 &&
+      <BsFillChatLeftDotsFill style={{ size: "100px" }} onClick={() => setNumber(1)} />
+      }
     </div>
   );
 }

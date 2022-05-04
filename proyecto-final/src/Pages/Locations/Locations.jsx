@@ -1,10 +1,68 @@
-import React from 'react'
+import { useState, useEffect } from "react";
+import axios from "axios";
+import styled from "styled-components";
+import { NavLink } from "react-router-dom";
+
 
 
 export const Locations = () => {
+  const [coworkings, setCoworking] = useState([]);
+
+  const urlPage = "https://co-working-back.vercel.app/api/coworking"
+
+  useEffect(() => {
+    axios.get(urlPage).then((response) => {
+      setCoworking(response.data);
+    });
+  }, [urlPage]);
+
   return (
-    <div>
-      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d24306.569013905133!2d-3.73534695!3d40.4017363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1sen!2ses!4v1651334113388!5m2!1sen!2ses" width="600" height="450" style={{ border: 0 }} allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
+    <ContainerLocation>
+
+      {coworkings.map((coworking) => {
+        return (
+          <Coworking>
+            <DescriptionCowork>
+              <h1>{coworking.name}</h1>
+              <p>{coworking.description}</p>
+              <p>{coworking.space}</p>
+              <p>{coworking.location}</p>
+            </DescriptionCowork>
+            <Image>
+              <img src={coworking.img} alt={coworking.name} />
+            </Image>
+
+          </Coworking>
+        )
+      })}
+
+
+    </ContainerLocation>
   )
 }
+
+const ContainerLocation = styled.div`
+  display: flex;
+  width: 100%;
+`
+const DescriptionCowork = styled.div
+  `
+display: flex;
+flex-direction: column;
+`
+const Coworking = styled.div
+  `
+display: flex;
+width: 100%;
+flex-direction:row;
+
+img{
+  width: 100%;
+}
+
+`
+const Image = styled.div`
+display: flex;
+width: 100%;
+
+`

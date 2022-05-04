@@ -48,13 +48,12 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/faq" element={<Faq />} />
-            <Route path="/locations" element={<Locations/>} />
-            <Route path="/fares" element={<Fares/>} />
+            <Route path="/locations" element={<Locations />} />
+            <Route path="/fares" element={<Fares />} />
             <Route path="/about" element={<About />} />
           </Routes>
           <SupportChat />
           <ContactUs />
-          
         </Router>
       </div>
     </JwtContext.Provider>

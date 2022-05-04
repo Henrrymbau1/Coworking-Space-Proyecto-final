@@ -16,12 +16,13 @@ export default function Faq() {
   return (
 
     <div class="container">
+
       <div className="container-faq">
         <div className="faq">
-          <h1>
+          <h1 className="h1Class">
             Potenciamos el trabajo colaborativo.
-            </h1>
-            <h1 class="title2"> Generamos ecosistemas
+          </h1>
+          <h1 class="title2" className="h1Class"> Generamos ecosistemas
             profesionales.
           </h1>
         </div>
@@ -64,15 +65,15 @@ export default function Faq() {
 
       {/* box para servicios */}
 
-      <div>
+      <div className="box-servicios-general">
         <div class="box-servicios">
-          <h1>Servicios Coworking </h1>
+          <h1 className="h1Class">Servicios Coworking </h1>
           <h3>Buscando nuevas ideas</h3>
         </div>
         <div class="box-servicios-img">
           <div class="box">
             <img src="./assets/services1.jpg" alt="coworking" />
-            
+
             <p className="pClass"><b>Puestos flexibles | </b>Los puestos flexibles te permitirán trabajar por horas o días con tu portátil y elegir dónde sentarte cada vez que vengas a Impact Hub. Elige venir por la mañana, por la tarde o el día completo.</p>
             <h4>Desde 100 €/mes</h4>
 
@@ -92,26 +93,26 @@ export default function Faq() {
       {/* box para servicios */}
 
       {/* preguntas frecuentes */}
-      <div class="box-servicios"> 
-        <h1>Preguntas frecuentes</h1>
+      <div class="box-servicios">
+        <h1 className="h1Class">Preguntas frecuentes</h1>
         <h3>Respondemos todas sus consultas</h3>
       </div>
       <div class="container-main-query">
         <div class="box-query">
-        {number !== 1 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(1)} /> : number === 1 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
+          {number !== 1 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(1)} /> : number === 1 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
           }
           <p className="pClass">¿Cómo funciona un espacio coworking?</p>
-         
+
         </div>
         {number === 1 &&
           <div class="box-query" ><p class="request">Los espacios coworking´s que ofrece SPOT AT WORK a sus clientes dispone de una amplia gama de servicios y espacios de trabajo. Puedes ingresar a uno de estos espacios, con tu portali y/o las herramientas de trabajo que necesites y empezar a trabajar enseguida. Segun los servicios que contrates, accederás a diferentes recursos necesarios para tu rutina laboral. Todos los espacios tienen incluidos los gastos básicos de limpieza, electricidad, Wifi, dispenser con agua natural y maquina de café.</p>
           </div>}
 
         <div class="box-query">
-        {number !== 2 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(2)} /> : number === 2 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
+          {number !== 2 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(2)} /> : number === 2 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
           }
           <p className="pClass">¿Para qué sirve un coworking? </p>
-          
+
         </div>
 
         {number === 2 &&
@@ -119,10 +120,10 @@ export default function Faq() {
           </div>}
 
         <div class="box-query">
-        {number !== 3 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(3)} /> : number === 3 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
+          {number !== 3 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(3)} /> : number === 3 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
           }
           <p className="pClass">¿Qué tan flexible son los espacios que ofrecen en sus despachos? </p>
-          
+
         </div>
 
         {number === 3 &&
@@ -130,30 +131,30 @@ export default function Faq() {
             Los espacios de oficinas flexibles llevan tiempo siendo una solución viable para autónomos, startups y trabajadores en remoto. Ahora también están ganando adeptos entre las empresas más grandes por su flexibilidad, agilidad y estructura de precios.</p>
           </div>}
         <div class="box-query">
-        {number !== 4 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(4)} /> : number === 4 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
+          {number !== 4 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(4)} /> : number === 4 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
           }
           <p className="pClass">¿Las oficinas estan todas amuebladas? </p>
-          
+
         </div>
 
         {number === 4 &&
           <div class="box-query" ><p class="request">Si, Todos nuestos despachos estan amueblados y preparados para que simplemente ingreses y no tengas que preocuparte por ningun detalle de confort. </p>
           </div>}
         <div class="box-query">
-        {number !== 5 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(5)} /> : number === 5 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
+          {number !== 5 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(5)} /> : number === 5 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
           }
           <p className="pClass">¿Se puede recibir cualquier tip ode visitas a las oficinas? </p>
-          
+
         </div>
 
         {number === 5 &&
           <div class="box-query" ><p class="request">Sí, por supuesto. Puedes registrar los datos de los visitantes a través de la intranet y nosotros les atenderemos a su llegada.</p>
           </div>}
         <div class="box-query">
-        {number !== 6 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(6)} /> : number === 6 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
+          {number !== 6 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(6)} /> : number === 6 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />
           }
           <p className="pClass">¿Puedo proponer alguna actividad en la comunidad? </p>
-         
+
         </div>
 
         {number === 6 &&

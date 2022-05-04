@@ -11,6 +11,7 @@
     flex-wrap: wrap;
     margin: 0 auto;
     
+    
 }
 .container-faq{
     display: flex;
@@ -75,7 +76,7 @@
 }
 
 
-h1 {
+.h1Class {
     color: rgb(255, 164, 53);
     font-family: "Josefin Sans", sans-serif;
     font-size: 65px;
@@ -97,7 +98,7 @@ h1 {
 
 
 .form-faq {
-    background-color: rgb(242, 176, 22);
+    background-color: rgb(246,180,1);
     width: 70%;
     height: 500px;
     display: flex;
@@ -139,7 +140,7 @@ h1 {
     margin: 20px;
     border-bottom: 1px solid black;
 
-    h1{
+    .h1Class{
         color: rgb(0, 0, 0);
         margin: 0 20px;
         font-size: 40px;
@@ -219,3 +220,51 @@ h1 {
 // #show{
 //     display: none;
 // }
+
+@media screen and (min-width: 280px) and (max-width:1080px){
+    .container{
+        display: flex;
+        
+        .container-faq{
+            display:flex;
+            flex-direction: column;
+
+            .faq{
+                width: 100%;
+                height: 400px;
+                display: flex;
+                justify-content: space-evenly;
+
+                .h1Class{
+                    font-size: 35px;
+                }
+            }
+
+            .form-faq{
+                width: 100%;
+                h2{
+                    font-size: 25px;
+                }
+
+            }
+        }
+
+        .container-main{
+            width: 100%;
+            margin: 0px;
+            padding: 15px
+        }
+
+        .box-servicios-general{
+           width: 100%;
+
+           .box-servicios-img{
+               display: flex;
+               flex-direction: column;
+               align-items: center;
+           }
+        }
+    }
+
+
+}
