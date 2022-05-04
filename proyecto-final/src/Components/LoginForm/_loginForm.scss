@@ -1,10 +1,20 @@
 .formContainer{
     display: flex;
     width: 100%;
-    padding: 20px;
+    height: 600px;
+    align-items: center;
     justify-content: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-image: url('https://impacthubalameda.spaces.nexudus.com/es/business/GetBannerFor?id=15671660&w=1920&h=1080&mode=max');
+    
 }
+
+
+
 .formInfo{
+    background-color: rgb(255,254,254);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -32,4 +42,6 @@
     font-size: 11px;
     text-align: left;
     color: #1CB0F6;
+    width: 300px;
+    text-align: center;
 }

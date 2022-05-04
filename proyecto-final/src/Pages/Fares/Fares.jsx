@@ -1,140 +1,108 @@
-import {
-  faBuilding,
-  faCalendarDays,
-  faPerson,
-} from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./fares.scss";
-import { DateRange } from "react-date-range";
-import { useState } from "react";
-import "react-date-range/dist/styles.css"; // main css file
-import "react-date-range/dist/theme/default.css"; // theme css file
-import { format } from "date-fns";
-import { useNavigate } from "react-router-dom";
-
+import React from 'react'
+import { useState, useEffect } from "react";
+import axios from "axios";
+import styled from "styled-components";
 export const Fares = () => {
-  const [destination, setDestination] = useState("");
-  const [openDate, setOpenDate] = useState(false);
-  const [date, setDate] = useState([
-    {
-      startDate: new Date(),
-      endDate: new Date(),
-      key: "selection",
-    },
-  ]);
-  const [openOptions, setOpenOptions] = useState(false);
-  const [options, setOptions] = useState({
-    adult: 1,
-    children: 0,
-    room: 1,
-  });
+  const [fares, setFares] = useState([]);
+  const url = "https://co-working-back.vercel.app/api/fares"
 
-  const navigate = useNavigate();
-
-  const handleOption = (name, operation) => {
-    setOptions((prev) => {
-      return {
-        ...prev,
-        [name]: operation === "i" ? options[name] + 1 : options[name] - 1,
-      };
+  useEffect(() => {
+    axios.get(url).then((response) => {
+      setFares(response.data);
     });
-  };
-
-  const handleSearch = () => {
-    navigate("/hotels", { state: { destination, date, options } });
-  };
+  }, [url]);
 
   return (
-    <div className='header'>
-      <div className="headerSearch">
-        <div className="headerSearchItem">
-          <FontAwesomeIcon icon={faBuilding} className="headerIcon" />
-          <input
-            type="text"
-            placeholder="Zona de la Oficina"
-            className="headerSearchInput"
-            onChange={(e) => setDestination(e.target.value)}
-          />
-        </div>
-        <div className="headerSearchItem">
-          <FontAwesomeIcon icon={faCalendarDays} className="headerIcon" />
-          <span
-            onClick={() => setOpenDate(!openDate)}
-            className="headerSearchText"
-          >{`${format(date[0].startDate, "MM/dd/yyyy")} to ${format(
-            date[0].endDate,
-            "MM/dd/yyyy"
-          )}`}</span>
-          {openDate && (
-            <DateRange
-              editableDateInputs={true}
-              onChange={(item) => setDate([item.selection])}
-              moveRangeOnFirstSelection={false}
-              ranges={date}
-              className="date"
-              minDate={new Date()}
-            />
-          )}
-        </div>
-        <div className="headerSearchItem">
-          <FontAwesomeIcon icon={faPerson} className="headerIcon" />
-          <span
-            onClick={() => setOpenOptions(!openOptions)}
-            className="headerSearchText"
-          >{`${options.adult} personas · ${options.children} espacios `}</span>
-          {openOptions && (
-            <div className="options">
-              <div className="optionItem">
-                <span className="optionText">Personas</span>
-                <div className="optionCounter">
-                  <button
-                    disabled={options.adult <= 1}
-                    className="optionCounterButton"
-                    onClick={() => handleOption("adult", "d")}
-                  >
-                    -
-                  </button>
-                  <span className="optionCounterNumber">
-                    {options.adult}
-                  </span>
-                  <button
-                    className="optionCounterButton"
-                    onClick={() => handleOption("adult", "i")}
-                  >
-                    +
-                  </button>
+    <>
+      <ContainerFares>
+        {
+          fares.map((fare) => {
+            return (
+              <div className="cardFares">
+                <div className="faresCard">
+                  <div className="faresDescription">
+                    <h1 className="name">{fare.name}</h1>
+                    <p className="description"> {fare.description}</p>
+                    <p className="service"> {fare.service}</p>
+                    <p className="price"> {fare.price} €</p>
+                  </div>
+
+                  {fare.coworking.map((cowork) => {
+                    return (
+                      <div className="coworkImg" style={{ backgroundImage: `url(${cowork.img})` }}>
+
+                      </div>
+                    )
+                  })}
+
                 </div>
               </div>
-              <div className="optionItem">
-                <span className="optionText">Espacios</span>
-                <div className="optionCounter">
-                  <button
-                    disabled={options.children <= 0}
-                    className="optionCounterButton"
-                    onClick={() => handleOption("children", "d")}
-                  >
-                    -
-                  </button>
-                  <span className="optionCounterNumber">
-                    {options.children}
-                  </span>
-                  <button
-                    className="optionCounterButton"
-                    onClick={() => handleOption("children", "i")}
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
-        </div>
-        <div className="headerSearchItem">
-          <button className="headerBtn" onClick={handleSearch}>
-            Search
-          </button>
-        </div>
-      </div>
-    </div>
+            )
+          })
+        }
+
+      </ContainerFares>
+    </>
   )
 }
+const ContainerFares = styled.div`
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+display: flex;
+width: 100%;
+justify-content: center;
+flex-direction: column;
+
+.cardFares{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  padding: 1rem;
+  
+}
+.faresCard{
+  width:100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  
+}
+.faresDescription{
+  width: 100%;
+  height: 300px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(246,180,1);
+}
+.name{
+  font-size: 26px;
+}
+.description{
+  width: 90%;
+  font-size: 20px;
+  margin: 0;
+}
+.service{
+  font-size: 18px;
+  margin: 10px 0;
+  
+}
+.price{
+  font-size: 28px;
+  font-family: 'Anton', sans-serif;
+  margin: 0 auto;
+}
+
+.coworkImg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+`

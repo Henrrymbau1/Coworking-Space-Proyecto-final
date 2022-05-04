@@ -16,53 +16,86 @@ export const Locations = () => {
     });
   }, [urlPage]);
 
-  return (
-    <ContainerLocation>
 
-      {coworkings.map((coworking) => {
-        return (
-          <Coworking>
-            <DescriptionCowork>
-              <h1>{coworking.name}</h1>
-              <p>{coworking.description}</p>
-              <p>{coworking.space}</p>
-              <p>{coworking.location}</p>
-            </DescriptionCowork>
-            <Image>
-              <img src={coworking.img} alt={coworking.name} />
-            </Image>
+  return (<>
+    <h1 className="locationTitle">Ubicaciones</h1>
+    <Container>
+      <div className="infoContainer">
+        {coworkings.map((coworking) => {
 
-          </Coworking>
-        )
-      })}
+          return (
 
+            <div className="cardContainer">
+              <h3 className="coworkTitle">Spot at Work</h3>
 
-    </ContainerLocation>
+              <div className="coworkCard">
+
+                <div className="coworkImg" style={{ backgroundImage: `url(${coworking.img})` }}>
+
+                  <div className="frontText">
+                    <p className="spaceText">{coworking.space}</p>
+                    <p className="locationText">{coworking.location}</p>
+                  </div>
+                </div>
+
+                <div className="coworkInfo">
+                  <h1>{coworking.name}</h1>
+                  <p>{coworking.description}</p>
+                </div>
+
+              </div>
+
+            </div>
+
+          )
+        })}
+      </div>
+    </Container>
+  </>
+
   )
 }
 
-const ContainerLocation = styled.div`
-  display: flex;
-  width: 100%;
-`
-const DescriptionCowork = styled.div
-  `
-display: flex;
-flex-direction: column;
-`
-const Coworking = styled.div
-  `
-display: flex;
-width: 100%;
-flex-direction:row;
+const Container = styled.div`
 
-img{
-  width: 100%;
+.infoContainer{
+  display:flex;
+  flex-wrap:wrap;
 }
 
-`
-const Image = styled.div`
-display: flex;
-width: 100%;
+.cardContainer{
+  width:320px;
+  padding:20px;
+}
 
+.coworkCard{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction:row;
+    flex-wrap: wrap; 
+  }
+
+  .coworkImg{
+    width: 320px;
+    height: 330px;
+    background-repeat: no-repeat;
+
+    .frontText{
+      background-color: rgba(0, 0, 5, 0.3);
+        width: 320px;
+        height: 330px;
+        margin:0;
+        text-align:center;
+        justify-content:center;
+
+      .locationText{
+        margin:0;
+      }
+      .spaceText{
+        margin:0;
+      }
+
+    }
+  }
 `

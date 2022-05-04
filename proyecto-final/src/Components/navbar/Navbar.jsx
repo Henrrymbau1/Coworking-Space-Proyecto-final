@@ -60,6 +60,9 @@ function Navbar() {
             <NavLink to="/faq"><li>FAQ</li></NavLink>
             <NavLink to="/fares"><li>Tarifas</li></NavLink>
             <NavLink to="/locations"><li>Ubicaciones</li></NavLink>
+            <NavLink to="/login"><li>Login</li></NavLink>
+            <NavLink to="/register"><li>Register</li></NavLink>
+
           </BurgerNav>
 
         </div>
