@@ -13,6 +13,7 @@ import { Fares } from "./Pages/Fares/Fares";
 import { About } from "./Pages/About/About";
 import LocationsDetails from "./Pages/Locations/LocationsDetails/LocationsDetails";
 import Home from "./Pages/Home/Home";
+import  FaresDetails  from "./Pages/Fares/Details/FaresDetails";
 
 function App() {
   const [jwt, setJwt] = useState(localStorage.getItem("token"));
@@ -30,6 +31,7 @@ function App() {
             <Route path="/locations" element={<Locations />} />
             <Route path="/locations/:id" element={<LocationsDetails />} />
             <Route path="/fares" element={<Fares />} />
+            <Route path="/fares/:id" element={<FaresDetails/>} />
             <Route path="/about" element={<About />} />
           </Routes>
           <SupportChat />
