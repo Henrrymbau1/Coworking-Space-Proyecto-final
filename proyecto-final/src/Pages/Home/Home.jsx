@@ -1,7 +1,21 @@
-import React from 'react'
 import styled from "styled-components";
+import React, { useState } from 'react';
+import { AiOutlinePrinter } from 'react-icons/ai'
+import { AiOutlineWifi } from 'react-icons/ai'
+import { BiHomeHeart } from 'react-icons/bi'
+import { MdOutlineSocialDistance } from 'react-icons/md'
+import { IoIosPeople } from 'react-icons/io'
+import { BsFillLockFill } from 'react-icons/bs'
+import { MdMicrowave } from 'react-icons/md'
+import { GiKeyCard } from 'react-icons/gi'
+
 
 const Home = () => {
+    const [textStatus, setTextStatus] = useState(false)
+    const textIconChange = () => {
+        setTextStatus(!textStatus)
+    }
+
     return (
         <>
             <Information>
@@ -13,55 +27,67 @@ const Home = () => {
 
                     <div className="form-container">
                         <h3>Que tipo de puesto de coworking necesitas?</h3>
-                        <div className="classCheckBox">
-                            <input type="checkbox" />
-                            <span className="text-checkbox">Smart work</span>
-                        </div>
-                        <div className="classCheckBox">
-                            <input type="checkbox" />
-                            <span className="text-checkbox">Smart work</span>
-                        </div>
-                        <div className="classCheckBox">
-                            <input type="checkbox" />
-                            <span className="text-checkbox">Smart work</span>
-                        </div>
-                        <div className="classCheckBox">
-                            <input type="checkbox" />
-                            <span className="text-checkbox">Smart work</span>
-                        </div>
-                        <div className="classCheckBox">
-                            <input type="checkbox" />
-                            <span className="text-checkbox">Smart work</span>
-                        </div>
-                        <div className="classCheckBox">
-                            <input type="checkbox" />
-                            <span className="text-checkbox">Smart work</span>
+                        <div className="form-1">
+                            <div className="form-11">
+                                <div className="classCheckBox">
+                                    <input type="checkbox" />
+                                    <span className="text-checkbox">Smart work</span>
+                                </div>
+                                <div className="classCheckBox">
+                                    <input type="checkbox" />
+                                    <span className="text-checkbox">Smart work</span>
+                                </div>
+                                <div className="classCheckBox">
+                                    <input type="checkbox" />
+                                    <span className="text-checkbox">Smart work</span>
+                                </div>
+                            </div>
+                            <div className="form-12">
+                                <div className="classCheckBox">
+                                    <input type="checkbox" />
+                                    <span className="text-checkbox">Smart work</span>
+                                </div>
+                                <div className="classCheckBox">
+                                    <input type="checkbox" />
+                                    <span className="text-checkbox">Smart work</span>
+                                </div>
+                                <div className="classCheckBox">
+                                    <input type="checkbox" />
+                                    <span className="text-checkbox">Smart work</span>
+                                </div>
+                            </div>
                         </div>
 
                         <h3>En que espacio?</h3>
-                        <div className="classCheckBox">
-                            <input type="checkbox" />
-                            <span className="text-checkbox">Smart work</span>
-                        </div>
-                        <div className="classCheckBox">
-                            <input type="checkbox" />
-                            <span className="text-checkbox">Smart work</span>
-                        </div>
-                        <div className="classCheckBox">
-                            <input type="checkbox" />
-                            <span className="text-checkbox">Smart work</span>
-                        </div>
-                        <div className="classCheckBox">
-                            <input type="checkbox" />
-                            <span className="text-checkbox">Smart work</span>
-                        </div>
-                        <div className="classCheckBox">
-                            <input type="checkbox" />
-                            <span className="text-checkbox">Smart work</span>
-                        </div>
-                        <div className="classCheckBox">
-                            <input type="checkbox" />
-                            <span className="text-checkbox">Smart work</span>
+                        <div className="form-2">
+                            <div className="form-21">
+                                <div className="classCheckBox">
+                                    <input type="checkbox" />
+                                    <span className="text-checkbox">Smart work</span>
+                                </div>
+                                <div className="classCheckBox">
+                                    <input type="checkbox" />
+                                    <span className="text-checkbox">Smart work</span>
+                                </div>
+                                <div className="classCheckBox">
+                                    <input type="checkbox" />
+                                    <span className="text-checkbox">Smart work</span>
+                                </div>
+                            </div>
+                            <div className="form-22">
+                                <div className="classCheckBox">
+                                    <input type="checkbox" />
+                                    <span className="text-checkbox">Smart work</span>
+                                </div>
+                                <div className="classCheckBox">
+                                    <input type="checkbox" />
+                                    <span className="text-checkbox">Smart work</span>
+                                </div>
+                                <div className="classCheckBox">
+                                    <input type="checkbox" />
+                                    <span className="text-checkbox">Smart work</span>
+                                </div>
+                            </div>
                         </div>
 
                         <div className="input-container">
@@ -101,10 +127,32 @@ const Home = () => {
             </Texto>
 
             <Servicios>
+
                 <div className="incluidos">
                     <h1>Servicios Incluidos</h1>
                     <div className="incluidos-iconos">
                         <div className="iconos">
+                            <HostIcon onClick={textIconChange} />
+                            <PrintIcon onClick={() => setTextStatus(true)} />
+                            <WifiIcon onClick={() => setTextStatus(true)} />
+                            <SocialIcon onClick={() => setTextStatus(true)} />
+                            <MeetingIcon onClick={() => setTextStatus(true)} />
+                            <LockIcon onClick={() => setTextStatus(true)} />
+                            <AreaIcon onClick={() => setTextStatus(true)} />
+                            <KeyIcon onClick={() => setTextStatus(true)} />
+                        </div>
+                        <div className="texto">
+                            <p>{textStatus ? "Acceso Seguro" : "Selecciona algo que te interese"}</p>
+                            <p>{textStatus ? "Accede al espacio con la tarjeta" : ""}</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="carta">
+                    <h1>Servicios a la carta</h1>
+                    <div className="carta-iconos">
+                        <div className="iconos">
+                            <KeyIcon onClick={() => setTextStatus(true)} />
 
                         </div>
                         <div className="texto">
@@ -112,12 +160,11 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <div className="carta">
-                    <h1>Servicios a la carta</h1>
-                    <div className="carta-iconos">
 
-                    </div>
+                <div className="map-container">
+                    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=148O7f5leFm19kzdHAYmvkchFf3EWeVWm&ehbc=2E312F" width="640" height="480"></iframe>
                 </div>
+
 
             </Servicios>
         </>
@@ -162,6 +209,15 @@ const Information = styled.div`
             display: flex;
             flex-direction: column;
             align-items: center;
+
+            .form-1{
+                display: flex;
+            }
+
+            .form-2{
+                display: flex;
+            }
+
         }
     }
     
@@ -169,15 +225,26 @@ const Information = styled.div`
 
 const Texto = styled.div`
 
+    img{
+        max-width: 40%;
+    }
     
 `
 
 const Servicios = styled.div`
 
     .incluidos{
+        
         width: 100%;
         height: 100%;
         background-color: #F6B401;
+        .incluidos-iconos{
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            max-width: 1240px;
+        }
+        
 
     }
 
@@ -187,4 +254,39 @@ const Servicios = styled.div`
             justify-content: flex-end;
         }
     }
+`
+
+const PrintIcon = styled(AiOutlinePrinter)`
+    font-size: 45px;
+    cursor: pointer;
+`
+
+const WifiIcon = styled(AiOutlineWifi)`
+    font-size: 45px;
+    cursor: pointer;
+`
+const HostIcon = styled(BiHomeHeart)`
+    font-size: 45px;
+    cursor: pointer;
+`
+const SocialIcon = styled(MdOutlineSocialDistance)`
+    font-size: 45px;
+    cursor: pointer;
+`
+
+const MeetingIcon = styled(IoIosPeople)`
+    font-size: 45px;
+    cursor: pointer;
+`
+const LockIcon = styled(BsFillLockFill)`
+    font-size: 45px;
+    cursor: pointer;
+`
+const AreaIcon = styled(MdMicrowave)`
+    font-size: 45px;
+    cursor: pointer;
+`
+const KeyIcon = styled(GiKeyCard)`
+    font-size: 45px;
+    cursor: pointer;
 `
