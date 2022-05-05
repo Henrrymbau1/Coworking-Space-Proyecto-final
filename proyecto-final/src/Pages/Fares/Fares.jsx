@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
-import {Link, useNavigate} from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 export const Fares = () => {
   const [fares, setFares] = useState([]);
   const url = "https://co-working-back.vercel.app/api/fares";
@@ -15,28 +15,28 @@ export const Fares = () => {
   return (
     <>
       <ContainerService>
-      <div className="service">
-        <div className="servicesIntro">
-          <h1 className="textServices">Tarifas y Servicios </h1>
+        <div className="service">
+          <div className="servicesIntro">
+            <h1 className="textServices">Tarifas y Servicios </h1>
+
+          </div>
+          <div className='servicesForm'>
+            <form className="form" action="">
+              <h2 class="title-form">Solicita información sobre las tarifas.</h2>
+              <div class="contact">
+                <input className="inputClass" type="text" placeholder="Tu nombre" />
+                <input className="inputClass" type="text" placeholder="E-mail" />
+                <input className="inputClass" type="text" placeholder="Teléfono" />
+              </div>
+              <p className="pClass">
+                SPOT AT WORK tratará tus datos únicamente para tramitar tu
+                solicitud. Puedes conocer cómo ejercer tus derechos de acceso,
+                rectificación y supresión en nuestra Política de Privacidad.
+              </p>
+            </form>
+          </div>
 
         </div>
-        <div className='servicesForm'>
-        <form className="form" action="">
-            <h2 class="title-form">Solicita información sobre las tarifas.</h2>
-            <div class="contact">
-              <input className="inputClass" type="text" placeholder="Tu nombre" />
-              <input className="inputClass" type="text" placeholder="E-mail" />
-              <input className="inputClass" type="text" placeholder="Teléfono" />
-            </div>
-            <p className="pClass">
-              SPOT AT WORK tratará tus datos únicamente para tramitar tu
-              solicitud. Puedes conocer cómo ejercer tus derechos de acceso,
-              rectificación y supresión en nuestra Política de Privacidad.
-            </p>
-          </form>
-        </div>
-
-      </div>
 
       </ContainerService>
 
@@ -50,28 +50,28 @@ export const Fares = () => {
                     <h1 className="name">{fare.name}</h1>
                     <p className="description"> {fare.description}</p>
                     {fare.service.map((s) => {
-                      return ( <p className="service"> {s}</p>)}
+                      return (<p className="service">HOLA COLOCAR SERVICE</p>)
+                    }
 
-                    )}    
-                    <p className="price"> Desde {fare.price} €</p>               
-                    
+                    )}
+                    <p className="price"> Desde {fare.price} €</p>
+
                   </div>
 
                   {fare.coworking.map((cowork) => {
                     return (
                       <div className="coworkImg" style={{ backgroundImage: `url(${cowork.img})` }}>
-                      <div className="textCowork">
-                        <h1 className="nameCowork">{cowork.name}</h1>
-                        <h2 className="location"> {cowork.location}</h2>
-                        <h3 className="space"> Espacio disponible {cowork.space} m²</h3>
-                        <h3 className="capacity"> Capacidad para {cowork.capacity}</h3>
-                        <h3 className="category"> {cowork.category}</h3>
-                        <Link to={`/fares/${cowork._id}`}> <button className='btn'>Ver detalles</button></Link>
-                      </div>
+                        <div className="textCowork">
+                          <h1 className="nameCowork">{cowork.name}</h1>
+                          <h2 className="location"> {cowork.location}</h2>
+                          <h3 className="space"> Espacio disponible {cowork.space} m²</h3>
+                          <h3 className="capacity"> Capacidad para {cowork.capacity}</h3>
+                          <h3 className="category"> {cowork.category}</h3>
+                        </div>
                       </div>
                     )
                   })}
-
+                  <Link to={`/fares/${fare._id}`}> <button className='btn'>Ver detalles</button></Link>
                 </div>
               </div>
             )
@@ -82,7 +82,7 @@ export const Fares = () => {
     </>
   )
 }
-const ContainerService =styled.div `
+const ContainerService = styled.div`
 display:flex;
 flex-direction: row;
 width: 100%;

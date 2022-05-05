@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import {useParams} from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import styled from "styled-components";
 
 const FaresDetails = () => {
@@ -11,17 +11,17 @@ const FaresDetails = () => {
   useEffect(() => {
     axios.get(urlPage).then((response) => {
       setFares(response.data.find((fare) => fare._id === id));
-      
-    });
-}, [id]);
 
-const { name, description } = fares;
-    console.log(name);
+    });
+  }, [id]);
+
+  const { name, description } = fares;
+  console.log(name);
   return (
 
     <>
-       <h3>holaaa</h3>
- </>
+      <h3>{name}</h3>
+    </>
   )
 
 }

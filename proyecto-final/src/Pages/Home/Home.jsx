@@ -35,25 +35,25 @@ const Home = () => {
                                 </div>
                                 <div className="classCheckBox">
                                     <input type="checkbox" />
-                                    <span className="text-checkbox">Smart work</span>
+                                    <span className="text-checkbox">Despachos</span>
                                 </div>
                                 <div className="classCheckBox">
                                     <input type="checkbox" />
-                                    <span className="text-checkbox">Smart work</span>
+                                    <span className="text-checkbox">Puestos flexibles</span>
                                 </div>
                             </div>
                             <div className="form-12">
                                 <div className="classCheckBox">
                                     <input type="checkbox" />
-                                    <span className="text-checkbox">Smart work</span>
+                                    <span className="text-checkbox">Oficina virtual</span>
                                 </div>
                                 <div className="classCheckBox">
                                     <input type="checkbox" />
-                                    <span className="text-checkbox">Smart work</span>
+                                    <span className="text-checkbox">Bono 10 dias</span>
                                 </div>
                                 <div className="classCheckBox">
                                     <input type="checkbox" />
-                                    <span className="text-checkbox">Smart work</span>
+                                    <span className="text-checkbox">Bono Bussines</span>
                                 </div>
                             </div>
                         </div>
@@ -96,7 +96,7 @@ const Home = () => {
                             <input placeholder="Telefono" type="text" className="form-control" />
                         </div>
 
-                        <div>
+                        <div className="condiciones">
                             <p>Spot at Work trata tus datos unicamente para tramitar tu solicitud. Puedes conocer como ejercer tus derechos de acceso, rectificacion y supervision en nuestra politica de privacidad</p>
 
                             <div className="checkbox-container">
@@ -177,7 +177,6 @@ const Information = styled.div`
 
     .info-container{
         width: 100%;
-        height: 100%;
         display: flex;
         .img-container{
             width: 60%;
@@ -185,6 +184,7 @@ const Information = styled.div`
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
+            min-height: 700px;
             height: 100%;
             display: flex;
             flex-direction: column;
@@ -206,6 +206,7 @@ const Information = styled.div`
             background-color: #F6B401;
             width: 40%;
             height: 100%;
+            min-height: 700px;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -216,6 +217,15 @@ const Information = styled.div`
 
             .form-2{
                 display: flex;
+            }
+
+            .input-container{
+                display: flex;
+                flex-direction: column;
+            }
+
+            .condiciones{
+                
             }
 
         }
