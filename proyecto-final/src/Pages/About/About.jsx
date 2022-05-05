@@ -20,24 +20,29 @@ export const About = () => {
             <input placeholder="Telefono" type="text" className="form-control" />
           </div>
 
-          <p>Spot at work tratara tus datos unicamente para tramitar tu solicitud. Puedes conocer como ejercer tus derechos de acceso, rectificacion y supresion en nuestra Politica de Privacidad</p>
-          <div className="checkbox-text">
-            <input type="checkbox" />
-            <span className="text-footer">Recibir noticias e invitaciones a eventos de Spot at work</span>
+          <div className="form-text">
+            <p>Spot at work tratara tus datos unicamente para tramitar tu solicitud. Puedes conocer como ejercer tus derechos de acceso, rectificacion y supresion en nuestra Politica de Privacidad</p>
+            <div className="checkbox-text">
+              <input type="checkbox" />
+              <span className="text-footer">Recibir noticias e invitaciones a eventos de Spot at work</span>
+            </div>
+            <div className="checkbox-text">
+              <input type="checkbox" />
+              <span className="text-footer">Recibir comunicaciones comerciales que puedan ser de mi interes</span>
+            </div>
+            <button>Me interesa</button>
           </div>
-          <div className="checkbox">
-            <input type="checkbox" />
-            <span className="text-footer">Recibir comunicaciones comerciales que puedan ser de mi interes</span>
-          </div>
-          <button>Me interesa</button>
 
         </div>
       </InformationContainer>
 
       <Impulso>
-        <h2>Spot at work</h2>
-        <h1>Impulso al Emprendimiento</h1>
-        <p>Fomentamos una cultura emprendedora mediante procesos de innovacion abierta, metodologias de diseno estrategico e iniciativas para el desarrollo de habilidades, ideas y experiencias con impacto positivo</p>
+
+        <div className="texto-impulso">
+          <h2>Spot at work</h2>
+          <h1>Impulso al Emprendimiento</h1>
+          <p>Fomentamos una cultura emprendedora mediante procesos de innovacion abierta, metodologias de diseno estrategico e iniciativas para el desarrollo de habilidades, ideas y experiencias con impacto positivo</p>
+        </div>
 
         <div className="general-container">
           <div className="double-container">
@@ -71,19 +76,19 @@ export const About = () => {
         <h1>Por que Spot at Work</h1>
         <div className='box-container'>
           <div className='vox'>
-            <p>lorem ipsum</p>
+            <p>Contamos con una solida metodologia y experiencia ayudando a grandes y pequenas corporaciones a desarrollar programas con proposito de impacto positivo desarrollada desde el ano</p>
             <h2>2010</h2>
-            <p>Lorem ipsum</p>
+            <p>tanto a nivel local como a nivel regional a traves de nuestra red.</p>
           </div>
           <div className='vox'>
-            <p>lorem ipsum</p>
-            <h2>2010</h2>
-            <p>Lorem ipsum</p>
+            <p>Colaboramos con multitud de stakeholders y participamos activamente en redes y alianzas que promueven el desarrollo sostenible y la economia de impacto. El </p>
+            <h2>85%</h2>
+            <p>de nuestros miembros aborda los ODS en su trabajo</p>
           </div>
           <div className='vox'>
-            <p>lorem ipsum</p>
-            <h2>2010</h2>
-            <p>Lorem ipsum</p>
+            <p>Somos expertos en dinamizar comunidades y resolver retos complejos, articulando conversaciones valiosas y creando vinculos. El </p>
+            <h2>83%</h2>
+            <p>de los miembros confia en la comunidad de Spot at Work</p>
           </div>
         </div>
 
@@ -114,25 +119,92 @@ const InformationContainer = styled.div`
 
   .form-container{
     background-color: #F6B401;
+    padding-left: 30px;
 
     .inputs-container{
       display: flex;
       flex-direction: column;
+      gap: 0.5em;
       
       input{
         width: 294px;
+        border: 1px solid;
+        border-color: white;
+        background-color: transparent;
+        ::placeholder { color: white; }
+      }
+
+      }
+
+      .form-text{
+        p{
+          max-width: 320px;
+        }
+        .checkbox-text{
+          max-width: 320px;
+          .text-footer{
+            max-width: 320px;
+          }
+        }
+
+        button{
+          position: relative;
+          top: 20px;
+          padding: 5px 15px 5px 15px;
+          border: 2px solid;
+          background-color: transparent;
+          border-color: white;
+          color: white;
+        }
+    }
+
+  }
+
+  @media screen and (min-width: 280px) and (max-width:1080px){
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+
+    .logo-container{
+      width: 100%;
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+    
+      h1{
+        position: relative;
+        top: 0; left: 0;
+        padding: 0;
+        margin: 0;
+        font-size: 30px;
       }
     }
 
+    .form-container{
+      width: 100%;
+      height: 100%;
+      background-color: #F6B401;
+      padding: 0 0 50px 0;
+    }
+  
   }
 
 `
 
 const Impulso = styled.div`
   position: relative;
+  padding-left: 60px;
 
+  .texto-impulso{
+    p{
+      max-width: 1100px;
+    }
+  }
 
   .general-container{
+    padding-right: 80px;
 
     .double-container{
       display: flex;
@@ -149,23 +221,65 @@ const Impulso = styled.div`
     }
 
   }
+
+  @media screen and (min-width: 280px) and (max-width:1080px){
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    text-align: center;
+    .general-container{
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+
+      .double-container{
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+  }
   
 `
 
 const Porque = styled.div`
   position: relative;
-  
-
-  align-items: center;
+  text-align: center;
 
   .box-container{
     display: flex;
     justify-content: center;
+    gap: 3px;
+    padding-bottom: 40px;
+
     .vox{
       width: 314px;
-      height: 449px;
+      height: 400px;
       background-color: #CDCCCD;
-      text-align: center;
+
+      h2{
+        position: relative;
+        left: 40px; top:10px;
+        text-align: left; 
+      }
+
+      p{
+        position: relative;
+        left: 40px; top:10px;
+        max-width: 250px;
+        text-align: left;
+      }
+    }
+  }
+
+  @media screen and (min-width: 280px) and (max-width:1080px){
+
+    .box-container{
+      width: 100%;
+      align-items: center;
+      display: flex;
+    flex-direction: column;
     }
   }
 `
+
