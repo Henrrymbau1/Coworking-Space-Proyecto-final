@@ -62,24 +62,67 @@
 
 @media screen and (min-width: 280px) and (max-width:1080px){
     .footer-container{
+        width: 100%;
         display: flex;
         flex-direction: column;
-        width: 100%;
-        
+        align-items: center;
 
         .logo-politicas{
-            
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             width: 100%;
         }
 
         .form-container{
-            // padding: 0px 30px 30px 30px;
             width: 100%;
-            // padding-right: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+
+            button {
+                padding: 5px 25px;
+                border: unset;
+                border-radius: 15px;
+                color: #212121;
+                z-index: 1;
+                background: #e8e8e8;
+                position: relative;
+                font-weight: 1000;
+                font-size: 17px;
+                -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+                box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+                transition: all 250ms;
+                overflow: hidden;
+               }
+               
+               button::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 0;
+                border-radius: 15px;
+                background-color: #212121;
+                z-index: -1;
+                -webkit-box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+                box-shadow: 4px 8px 19px -3px rgba(0,0,0,0.27);
+                transition: all 250ms
+               }
+               
+               button:hover {
+                color: #e8e8e8;
+               }
+               
+               button:hover::before {
+                width: 100%;
+               }
 
             .form-container2{
                 display: flex;
                 flex-direction: column;
+                align-items: center;
             }
         
             .input-footer{
@@ -90,7 +133,6 @@
             }
             
             .classCheckBox{
-                // padding: 10px 0px 0px 0px;
                 width: 320px;
                 font-size: 10px;
             }
@@ -103,7 +145,7 @@
             flex-direction: row;
             
             .icon-footer{
-                padding-top: 10px;
+                padding-top: 20px;
                 padding-bottom: 30px;
                 width: 20px;
             }
@@ -114,6 +156,7 @@
 }
 
 #btn-footer-enviar{
+    cursor: pointer;
     margin-top: 10px;
     width: 100px;
 }

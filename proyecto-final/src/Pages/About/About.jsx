@@ -107,10 +107,10 @@ const InformationContainer = styled.div`
     background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTU3fHxvZmZpY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60');
     background-repeat: no-repeat;
     background-size: cover;
-    width: 675px;
+    width: 60%;
 
     h1{
-
+      max-width: 675px;
       position: relative;
       top: 40px; left: 40px;
       font-size: 70px;
@@ -120,6 +120,14 @@ const InformationContainer = styled.div`
   .form-container{
     background-color: #F6B401;
     padding-left: 30px;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    h2{
+      max-width: 320px;
+    }
 
     .inputs-container{
       display: flex;
@@ -155,12 +163,13 @@ const InformationContainer = styled.div`
           background-color: transparent;
           border-color: white;
           color: white;
+          cursor: pointer;
         }
     }
 
   }
 
-  @media screen and (min-width: 280px) and (max-width:1080px){
+  @media screen and (min-width: 280px) and (max-width:1023px){
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -168,7 +177,8 @@ const InformationContainer = styled.div`
 
     .logo-container{
       width: 100%;
-      height: 100%;
+      height: 559px;
+
       justify-content: center;
       align-items: center;
       margin: 0;
@@ -183,10 +193,16 @@ const InformationContainer = styled.div`
     }
 
     .form-container{
+      h2{
+        text-align: center;
+      }
+      display: flex;
+      flex-direction: column;
+      align-items: center;
       width: 100%;
       height: 100%;
       background-color: #F6B401;
-      padding: 0 0 50px 0;
+      padding: 0 0 50px;
     }
   
   }
@@ -206,6 +222,7 @@ const Impulso = styled.div`
   .general-container{
     padding-right: 80px;
 
+
     .double-container{
       display: flex;
       flex-direction: row;
@@ -222,19 +239,41 @@ const Impulso = styled.div`
 
   }
 
-  @media screen and (min-width: 280px) and (max-width:1080px){
+  @media screen and (min-width: 280px) and (max-width:1023px){
     width: 100%;
     height: 100%;
     padding: 0;
     text-align: center;
+    .texto-impulso{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      p{
+        width: 70%;
+      }
+    }
+
     .general-container{
       display: flex;
       flex-direction: column;
-      text-align: center;
+      padding: 0;
+
 
       .double-container{
         display: flex;
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .card{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+
+          p{
+            max-width: 80%;
+          }
+        }
       }
     }
 
@@ -272,7 +311,7 @@ const Porque = styled.div`
     }
   }
 
-  @media screen and (min-width: 280px) and (max-width:1080px){
+  @media screen and (min-width: 280px) and (max-width:1023px){
 
     .box-container{
       width: 100%;
