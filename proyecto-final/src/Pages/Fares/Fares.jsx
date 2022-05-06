@@ -59,12 +59,16 @@ export const Fares = () => {
                   <div className="faresDescription">
                     <h1 className="name">{fare.name}</h1>
                     <p className="description"> {fare.description}</p>
+                    <p className="service">Servicios incluidos:</p>
+                    <div className="serviceInclude">
                     {fare.service.map((s) => {
                       return (
-                        <p className="service">Servicios incluidos: {s}</p>)
+                         
+                        <p className="serviceList"> | { s } | </p>
+                        )
                     }
 
-                    )}
+                    )}</div>
                     <p className="price"> Desde {fare.price} €</p>
                     <Link to={`/fares/${fare._id}`}><button className='btn'>Ver detalles</button></Link>
                   </div>
@@ -207,7 +211,16 @@ flex-direction: column;
   font-size: 18px;
   margin: 10px 0;
   color: white;
-  
+}
+.serviceList{
+  margin: 0px;
+  font-size: 18px;
+  color: white;
+}
+.serviceInclude{
+  display: flex;
+  flex-direction: row;
+  width: 400px;
 }
 .price{
   font-size: 28px;
