@@ -41,6 +41,16 @@ export const Fares = () => {
       </ContainerService>
 
       <ContainerFares>
+      
+        <div>
+                <h1 className="title">Tarifas | SPOT AT WORK</h1>
+                <p className="parrafo"> Conoce nuestra oferta de servicios para empresas, pymes y profesionales autónomos. Consulta nuestras tarifas de coworking, eventos, salas para reuniones, rodajes o convenciones, servicios de consultoría y proyectos, todos a tu disposición y adaptados a tus necesidades.</p>
+                <p className="parrafo">
+                Te presentamos una variada oferta para que te sumes a la mayor comunidad profesional que trabaja para crear impacto en la sociedad, tejiendo sinergias, sumando talento y aprendizaje para encontrar soluciones hacia una reactivación económica y social sostenible.
+                </p>
+      </div>
+
+
         {
           fares.map((fare) => {
             return (
@@ -50,12 +60,13 @@ export const Fares = () => {
                     <h1 className="name">{fare.name}</h1>
                     <p className="description"> {fare.description}</p>
                     {fare.service.map((s) => {
-                      return (<p className="service">HOLA COLOCAR SERVICE</p>)
+                      return (
+                        <p className="service">Servicios incluidos: {s}</p>)
                     }
 
                     )}
                     <p className="price"> Desde {fare.price} €</p>
-
+                    <Link to={`/fares/${fare._id}`}><button className='btn'>Ver detalles</button></Link>
                   </div>
 
                   {fare.coworking.map((cowork) => {
@@ -71,7 +82,7 @@ export const Fares = () => {
                       </div>
                     )
                   })}
-                  <Link to={`/fares/${fare._id}`}> <button className='btn'>Ver detalles</button></Link>
+                  
                 </div>
               </div>
             )
@@ -118,6 +129,7 @@ height: 400px;
 
 `
 
+
 const ContainerFares = styled.div`
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
@@ -125,6 +137,8 @@ display: flex;
 width: 100%;
 justify-content: center;
 flex-direction: column;
+
+
 
 .cardFares{
   width:100%;
@@ -162,12 +176,25 @@ flex-direction: column;
 
 }
 .btn{
-  background-color: none;
+  display: flex;
+  background-color: Transparent;
   border-radius: 5px;
-  border: 1 solid black;
+  width: 60px;
+  color: white;
   width: 30%;
-  margin: 10px auto;
+  text-align: center;
+  margin: 5px auto;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  letter-spacing: 0.7px;
 }
+.btn:hover {
+ 
+  animation: bn54rotate 0.7s ease-in-out both;
+    background-color:#f4c973;
+}
+
 .description{
   width: 95%;
   font-size: 21px;
@@ -185,7 +212,7 @@ flex-direction: column;
 .price{
   font-size: 28px;
   font-family: 'Anton', sans-serif;
-  margin: 0px;
+  margin: 0 auto;
   color:#CA6F1E; 
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
@@ -271,7 +298,7 @@ flex-direction: column;
 .price{
   font-size: 15px;
   font-family: 'Anton', sans-serif;
-  margin: 0 auto;
+  
 }
 .nameCowork{
   font-size: 24px;
