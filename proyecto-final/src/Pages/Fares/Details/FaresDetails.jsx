@@ -38,6 +38,11 @@ const FaresDetails = () => {
         <h1>{name}</h1>
         <p>{description}</p>
         <p>{price}</p>
+        {service && service.map((s)=> {
+          return( 
+            <h1 style={{color: "green"}}>{s}</h1>
+          )
+        })}
 
 
       </div>
