@@ -97,6 +97,7 @@ export const About = () => {
   )
 }
 
+//Detalle px hamburger
 
 const InformationContainer = styled.div`
   width: 100%;
@@ -266,6 +267,7 @@ const Impulso = styled.div`
         align-items: center;
 
         .card{
+          width: 100%;
           display: flex;
           flex-direction: column;
           align-items: center;
@@ -314,10 +316,26 @@ const Porque = styled.div`
   @media screen and (min-width: 280px) and (max-width:1023px){
 
     .box-container{
-      width: 100%;
+      max-width: 100%;
       align-items: center;
       display: flex;
-    flex-direction: column;
+      flex-direction: column;
+
+      .vox{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2{
+        position: relative;
+        left: 0; top:0;
+        text-align: left;
+
+        p{
+          position: relative;
+          left: 0; top:0;
+        }
+      }
     }
   }
 `

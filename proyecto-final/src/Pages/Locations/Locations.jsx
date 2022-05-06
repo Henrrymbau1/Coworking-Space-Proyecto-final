@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import styled from "styled-components";
 import { NavLink } from "react-router-dom";
-
-
+import emailjs from "@emailjs/browser";
 
 export const Locations = () => {
   const [coworkings, setCoworking] = useState([]);
+  const [search, setSearch] = useState([]);
 
   const urlPage = "https://co-working-back.vercel.app/api/coworking"
 
@@ -17,54 +17,312 @@ export const Locations = () => {
   }, [urlPage]);
 
 
+  const searchCoworking = (e) => {
+    let results = coworkings.filter(
+      (cowork) =>
+        cowork.name.toLowerCase().trim().includes(e.target.value) ||
+        cowork.location.toLowerCase().trim().includes(e.target.value)
+
+    );
+    setSearch(results);
+  };
+  console.log(search)
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_62cmprg",
+        "template_va2ibko",
+        form.current,
+        "bnQweKR5uLmYM447e"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    form.current.reset();
+  };
+
+
+
+
   return (<>
+    <FormContainer>
+      <div className="form-container">
+        <h2>Envianos un correo con la Informacion del Coworking que estas interesado!</h2>
+        <form className="form-container2" ref={form} onSubmit={sendEmail}>
+          <label>Nombre</label>
+          <input placeholder="Tu nombre" type="text" name="name" />
+          <label>Email</label>
+          <input placeholder="Email" type="email" name="email" />
+          <label>Informacion</label>
+          <textarea name="message" />
+          <button className="bn54">
+            <span class="bn54span">Enviar</span>
+          </button>
+          <div className="dataSecur">
+            <p className="pClass" >Spot at Work tratará tus datos únicamente para tramitar tu solicitud. Puedes conocer cómo ejercer tus derechos de acceso, rectificación y supresión en nuestra Politica de Privacidad</p>
+          </div>
+        </form>
+
+      </div>
+    </FormContainer>
+    <InputContainer>
+      <h2>Haz tu busqueda colocando el nombre o tu ubicacion favorita.</h2>
+      <input
+        className="searchInput"
+        onChange={(e) => searchCoworking(e)}
+        placeholder="Coloca el nombre o ubicacion del Coworking"
+        type="text"
+      />
+
+    </InputContainer>
     <h1 className="locationTitle">Ubicaciones</h1>
     <Container>
-      <div className="infoContainer">
-        {coworkings.map((coworking) => {
+      {search.length > 0 ? (
 
-          return (
+        <div className="infoContainer">
+          {search.map((searched) => {
 
-            <div className="cardContainer">
+            return (
+
+              <div className="cardContainer" key={searched._id}>
 
 
-              <div className="coworkCard">
+                <div className="coworkCard">
 
-                <div className="coworkImg" style={{ backgroundImage: `url(${coworking.img})` }}>
+                  <div className="coworkImg" style={{ backgroundImage: `url(${searched.img})` }}>
 
-                  <div className="frontText">
-                    <div className="coworkSubtitle">
-                      <h2 className="h2Spot">Spot at Work | Coworking</h2>
-                      <h2 className="h2Class">{coworking.name}</h2>
+                    <div className="frontText">
+                      <div className="coworkSubtitle">
+                        <h2 className="h2Spot">Spot at Work | Coworking</h2>
+                        <h2 className="h2Class">{searched.name}</h2>
+                      </div>
+
+                      <p className="locationText">Ubicacion: {searched.location}</p>
                     </div>
-                    <p className="spaceText">Capacidad: {coworking.space} m²</p>
-                    <p className="locationText">Ubicacion: {coworking.location}</p>
                   </div>
-                </div>
 
-                <div className="coworkInfo">
-                  <h3 className="coworkTitle">Spot at Work</h3>
-                  <h1 className="h1Title">{coworking.name}</h1>
-                  <p>{coworking.description}</p>
+                  <div className="coworkInfo">
+                    <h3 className="coworkTitle">Spot at Work</h3>
+                    <h1 className="h1Title">{searched.name}</h1>
+                    <p>{searched.description}</p>
+                  </div>
+                  <NavLink to={`/locations/${searched._id}`}><button className="bn54">
+                    <span class="bn54span">Ver mas Info</span>
+                  </button></NavLink>
+
                 </div>
-                <NavLink to={`/locations/${coworking._id}`}><button className="bn54">
-                  <span class="bn54span">Ver mas Info</span>
-                </button></NavLink>
 
               </div>
 
+            )
+          })}
+        </div>) : (<>
+
+          <Container>
+            <div className="infoContainer">
+              {coworkings.map((coworking) => {
+
+                return (
+
+                  <div className="cardContainer" key={coworking._id}>
+
+
+                    <div className="coworkCard">
+
+                      <div className="coworkImg" style={{ backgroundImage: `url(${coworking.img})` }}>
+
+                        <div className="frontText">
+                          <div className="coworkSubtitle">
+                            <h2 className="h2Spot">Spot at Work | Coworking</h2>
+                            <h2 className="h2Class">{coworking.name}</h2>
+                          </div>
+
+                          <p className="locationText">Ubicacion: {coworking.location}</p>
+                        </div>
+                      </div>
+
+                      <div className="coworkInfo">
+                        <h3 className="coworkTitle">Spot at Work</h3>
+                        <h1 className="h1Title">{coworking.name}</h1>
+                        <p>{coworking.description}</p>
+                      </div>
+                      <NavLink to={`/locations/${coworking._id}`}><button className="bn54">
+                        <span class="bn54span">Ver mas Info</span>
+                      </button></NavLink>
+
+                    </div>
+
+                  </div>
+
+                )
+              })}
             </div>
-
-          )
-        })}
-      </div>
+          </Container></>)}
     </Container>
-
-
   </>
 
   )
 }
+
+const InputContainer = styled.div`
+display:flex;
+flex-direction: column;
+justify-content:center;
+text-align:center;
+align-items:center;
+background-color:#f7b500;
+padding:25px;
+
+h2{
+  color: white;
+  font-family: "Josefin Sans", sans-serif;
+  text-shadow: -4px 3px #000000;
+  font-size:40px;
+  margin:0;
+  margin-bottom:40px;
+}
+input{
+  width:330px;
+  text-align:center;
+  border: none;
+  border-bottom: 2px solid black;
+  outline:none;
+  background:none;
+  font-size: 14.5px;
+}
+
+
+`
+
+const FormContainer = styled.div`
+
+.form-container{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+    text-align:center;
+    justify-content: center;
+    background-color:#f7b500;
+}
+
+.form-container2{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+input{
+   width:260px;
+   border: none;
+   border-bottom: 2px solid black;
+   outline:none;
+   background:none;
+}
+
+textarea{ 
+    width:260px;
+    height:100px;
+    resize:none;
+    background-color:#E6E6E6;
+    border: none;
+}
+
+label{
+    padding:10px;
+}
+
+.dataSecur{
+    
+    width:350px;
+    padding:20px;
+    text-align:center;
+
+    .pClass{
+        font-size: 12px;
+    }
+}
+
+.bn54 {
+    margin-top:20px;
+    position: relative;
+    outline: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 30px;
+    width: 120px;
+    opacity: 1;
+    background-color: #6E6E6E;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+  }
+  
+  .bn54 .bn54span {
+    color: white;
+    font-size: 13px;
+    font-weight: 15px;
+    letter-spacing: 0.7px;
+  }
+  
+  .bn54:hover {
+    animation: bn54rotate 0.7s ease-in-out both;
+    background-color:#f4a973;
+  }
+  
+  .bn54:hover .bn54span {
+    animation: bn54storm 0.7s ease-in-out both;
+    animation-delay: 0.06s;
+  }
+  
+  @keyframes bn54rotate {
+    0% {
+      transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+    25% {
+      transform: rotate(3deg) translate3d(0, 0, 0);
+    }
+    50% {
+      transform: rotate(-3deg) translate3d(0, 0, 0);
+    }
+    75% {
+      transform: rotate(1deg) translate3d(0, 0, 0);
+    }
+    100% {
+      transform: rotate(0deg) translate3d(0, 0, 0);
+    }
+  }
+  
+  @keyframes bn54storm {
+    0% {
+      transform: translate3d(0, 0, 0) translateZ(0);
+    }
+    25% {
+      transform: translate3d(4px, 0, 0) translateZ(0);
+    }
+    50% {
+      transform: translate3d(-3px, 0, 0) translateZ(0);
+    }
+    75% {
+      transform: translate3d(2px, 0, 0) translateZ(0);
+    }
+    100% {
+      transform: translate3d(0, 0, 0) translateZ(0);
+    }
+  }
+
+
+
+`
 
 const Container = styled.div`
 

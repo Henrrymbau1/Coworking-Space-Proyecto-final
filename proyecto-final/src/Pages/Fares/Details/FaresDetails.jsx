@@ -14,31 +14,32 @@ const FaresDetails = () => {
 
     });
   }, [id]);
+  console.log(fares)
+  const { name, description, service, coworking, price } = fares;
 
-  const { name, description, service, price, coworking } = fares;
-  console.log(name);
+
+
+
   return (
 
     <Header>
-    <div className="headerFares">
-      
+      <div className="headerFares">
+
 
       </div>
-    <div>
-      <h1>Tarifas | SPOT AT WORK</h1>
-      <p> Conoce nuestra oferta de servicios para empresas, pymes y profesionales autónomos. Consulta nuestras tarifas de coworking, eventos, salas para reuniones, rodajes o convenciones, servicios de consultoría y proyectos, todos a tu disposición y adaptados a tus necesidades.</p>
-      <p>
-      Te presentamos una variada oferta para que te sumes a la mayor comunidad profesional que trabaja para crear impacto en la sociedad, tejiendo sinergias, sumando talento y aprendizaje para encontrar soluciones hacia una reactivación económica y social sostenible.
-      </p>
-    </div>
-    <div>
-      <h1>{name}</h1>
-      <p>{description}</p>
-      <p>{price}</p>
-      {service.map((s) => {
-        return (<p> {s}</p>)
-      })}
-    
+      <div>
+        <h1>Tarifas | SPOT AT WORK</h1>
+        <p> Conoce nuestra oferta de servicios para empresas, pymes y profesionales autónomos. Consulta nuestras tarifas de coworking, eventos, salas para reuniones, rodajes o convenciones, servicios de consultoría y proyectos, todos a tu disposición y adaptados a tus necesidades.</p>
+        <p>
+          Te presentamos una variada oferta para que te sumes a la mayor comunidad profesional que trabaja para crear impacto en la sociedad, tejiendo sinergias, sumando talento y aprendizaje para encontrar soluciones hacia una reactivación económica y social sostenible.
+        </p>
+      </div>
+      <div>
+        <h1>{name}</h1>
+        <p>{description}</p>
+        <p>{price}</p>
+
+
       </div>
     </Header>
   )
