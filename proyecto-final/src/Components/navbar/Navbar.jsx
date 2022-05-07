@@ -20,30 +20,25 @@ function Navbar() {
 
           <div className="brand">
             <div className="logo-container">
-              <img
-                href="/"
-                className="img-logo"
-                src="./assets/unknown.png"
-                alt="logo"
-              ></img>
+              <NavLink to="/"><img href="/" className="img-logo" src="./assets/unknown.png" alt="logo"></img></NavLink>
             </div>
           </div>
 
           <div className="button-container">
-            {jwt && (
+            
               <ul className="list-1">
-                <NavLink to="/about"><li>About</li></NavLink>
+                <NavLink to="/about"><li>Saber Mas</li></NavLink>
                 <NavLink to="/faq"><li>FAQ</li></NavLink>
-                <NavLink to="/fares"><li>Tarifas</li></NavLink>
-                <NavLink to="/locations"><li>Ubicaciones</li></NavLink>
-              </ul>)}
+                {jwt && <NavLink to="/fares"><li>Tarifas</li></NavLink>}
+                {jwt && <NavLink to="/locations"><li>Ubicaciones</li></NavLink>}
+              </ul>
             {!jwt && (<>
               <ul className="list-2">
-                <NavLink to="/login"><li>Login</li></NavLink>
+                <NavLink to="/login"><li>Iniciar Sesion</li></NavLink>
               </ul>
 
               <NavLink to="/register">
-                <button className="button-19">Register</button>
+                <button className="button-19">Registrarse</button>
               </NavLink>
 
             </>)}
@@ -56,13 +51,13 @@ function Navbar() {
             <CloseWrapper>
               <CustomClose onClick={() => setBurgerStatus(false)} />
             </CloseWrapper>
-            <NavLink to="/about"><li>About</li></NavLink>
-            <NavLink to="/faq"><li>FAQ</li></NavLink>
-            <NavLink to="/fares"><li>Tarifas</li></NavLink>
-            <NavLink to="/locations"><li>Ubicaciones</li></NavLink>
-            <NavLink to="/login"><li>Login</li></NavLink>
-            <NavLink to="/register"><li>Register</li></NavLink>
-
+            <NavLink to="/about" onClick={() => setBurgerStatus(false)} ><li>Saber Mas</li></NavLink>
+            <NavLink to="/faq" onClick={() => setBurgerStatus(false)} ><li>FAQ</li></NavLink>
+            {jwt && (<><NavLink to="/fares" onClick={() => setBurgerStatus(false)} ><li>Tarifas</li></NavLink>
+            <NavLink to="/locations" onClick={() => setBurgerStatus(false)} ><li>Ubicaciones</li></NavLink></>)}
+            { !jwt && (<><NavLink to="/login" onClick={() => setBurgerStatus(false)} ><li>Iniciar Sesion</li></NavLink>
+            <NavLink to="/register" onClick={() => setBurgerStatus(false)}><li>Registrarse</li></NavLink></>)}
+            { jwt && <ButtonLogout/>}
           </BurgerNav>
 
         </div>
@@ -77,9 +72,11 @@ function Navbar() {
 export default Navbar;
 
 const Nav = styled.div`
+
   .navbar-general{
     display: flex;
-    justify-content: space-between;
+    flex-direction: row;
+    justify-content: space-around;
     width: 100%;
     align-items: center;
 
@@ -99,13 +96,24 @@ const Nav = styled.div`
       
       .list-1{
         display: flex;
-        list-style:none;
+        list-style: none;
         gap: 2rem;
+
+        a{
+          color: black;
+          text-decoration: none;
+        }
+
       }
 
       .list-2{
         display: flex;
         list-style: none;
+
+        a{
+          color: black;
+          text-decoration: none;
+        }
       }
 
     }
@@ -168,6 +176,7 @@ const Nav = styled.div`
       cursor: auto;
     }
   }
+  
 
   @media screen and (min-width: 280px) and (max-width:1080px){
     .navbar-general{
@@ -188,6 +197,10 @@ const CustomMenu = styled(GiHamburgerMenu)`
   size: 30px;
   cursor: pointer;
   padding-right: 20px;
+
+  @media screen and (min-width: 1080px){
+    display: none;
+  }
 `
 
 const BurgerNav = styled.nav`
@@ -205,6 +218,14 @@ const BurgerNav = styled.nav`
   text-align: start;
   transform: ${props => props.show ? 'translateX(0)' : 'translateX(100%)'};
   transition: transform 0.2s;
+  
+
+  a{
+    color: black;
+    text-decoration: none;
+  }
+
+  
 
 `
 
@@ -220,34 +241,3 @@ const CloseWrapper = styled.div`
 
 
 
-/* <div className="navBar">
-  <div className="logo-container">
-    <img
-      href="/"
-      className="img-logo"
-      src="https://cdn.discordapp.com/attachments/946038364816162916/965515381236170772/logo.png"
-      alt="logo"
-    ></img>
-  </div>
-
-  <div className="button-container">
-    {jwt && (
-      <ul className="list-1">
-        <NavLink to="/about"><li>About</li></NavLink>
-        <NavLink to="/faq"><li>FAQ</li></NavLink>
-        <NavLink to="/fares"><li>Tarifas</li></NavLink>
-        <NavLink to="/locations"><li>Ubicaciones</li></NavLink>
-      </ul>)}
-    {!jwt && (<>
-      <ul className="list-2">
-        <NavLink to="/login"><li>Login</li></NavLink>
-      </ul>
-
-      <NavLink to="/register">
-        <button className="button-19">Register</button>
-      </NavLink>
-
-    </>)}
-    {jwt && <ButtonLogout />}
-  </div>
-</div> */

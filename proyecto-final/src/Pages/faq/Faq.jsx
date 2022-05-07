@@ -97,6 +97,7 @@ export default function Faq() {
         <h1 className="h1Class">Preguntas frecuentes</h1>
         <h3>Respondemos todas sus consultas</h3>
       </div>
+
       <div class="container-main-query">
         <div class="box-query">
           {number !== 1 ? <BsFillArrowDownCircleFill id="icon" onClick={() => setNumber(1)} /> : number === 1 && <BsFillArrowUpCircleFill onClick={() => setNumber(0)} />

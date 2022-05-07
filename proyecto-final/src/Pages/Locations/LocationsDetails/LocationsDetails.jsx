@@ -1,16 +1,16 @@
 import React, { useEffect, useState, useRef } from "react";
 import { useParams } from "react-router-dom";
-import axios from "axios";
 import styled from "styled-components";
 import emailjs from "@emailjs/browser";
+import { API } from "../../../shared/Services/api"
 
 const LocationsDetails = () => {
   const [coworkings, setCoworking] = useState([]);
   const { id } = useParams();
-  const urlPage = "https://co-working-back.vercel.app/api/coworking";
+  
 
   useEffect(() => {
-    axios.get(urlPage).then((response) => {
+    API.get("coworking").then((response) => {
       setCoworking(response.data.find((product) => product._id === id));
     });
   }, [id]);
@@ -24,7 +24,13 @@ const LocationsDetails = () => {
     capacity,
     category,
   } = coworkings;
-  console.log(coworkings);
+  
+
+  
+
+
+
+
 
   //----> FormJS
   const form = useRef();

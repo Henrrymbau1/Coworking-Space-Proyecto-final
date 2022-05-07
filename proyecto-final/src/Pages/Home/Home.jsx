@@ -24,7 +24,9 @@ import { BsFillChatLeftDotsFill } from 'react-icons/bs'
 
 
 const Home = () => {
-    const [textStatus, setTextStatus] = useState(false)
+    const [textStatus, setTextStatus] = useState(false);
+    const [number, setNumber] = useState(0);
+
     const textIconChange = () => {
         setTextStatus(!textStatus)
     }
@@ -150,13 +152,13 @@ const Home = () => {
                         <div className="incluidos-iconos">
                             <div className="iconos">
                                 <HostIcon onClick={textIconChange} />
-                                <PrintIcon onClick={() => setTextStatus(true)} />
-                                <WifiIcon onClick={() => setTextStatus(true)} />
-                                <SocialIcon onClick={() => setTextStatus(true)} />
-                                <MeetingIcon onClick={() => setTextStatus(true)} />
-                                <LockIcon onClick={() => setTextStatus(true)} />
-                                <AreaIcon onClick={() => setTextStatus(true)} />
-                                <KeyIcon onClick={() => setTextStatus(true)} />
+                                <PrintIcon onClick={textIconChange} />
+                                <WifiIcon onClick={textIconChange} />
+                                <SocialIcon onClick={textIconChange} />
+                                <MeetingIcon onClick={textIconChange} />
+                                <LockIcon onClick={textIconChange} />
+                                <AreaIcon onClick={textIconChange} />
+                                <KeyIcon onClick={textIconChange} />
                             </div>
                             <div className="texto">
                                 <p>{textStatus ? "Acceso Seguro" : "Selecciona algo que te interese"}</p>
@@ -170,20 +172,32 @@ const Home = () => {
                     <div className="carta-width">
                         <h1>Servicios a la carta</h1>
                         <div className="carta-iconos">
-                            <div className="iconos">
-                                <BsTelephoneIcon onClick={() => setTextStatus(true)} />
-                                <FiSpeakerIcon onClick={() => setTextStatus(true)} />
-                                <AiFillCarIcon onClick={() => setTextStatus(true)} />
-                                <FiCoffeeIcon onClick={() => setTextStatus(true)} />
-                                <BiFoodMenuIcon onClick={() => setTextStatus(true)} />
-                                <BsTranslateIcon onClick={() => setTextStatus(true)} />
-                                <FaTruckLoadingIcon onClick={() => setTextStatus(true)} />
-                                <BsFillChatLeftDotsFillIcon onClick={() => setTextStatus(true)} />
-
+                            {/* <div className="iconos">
+                                <BsTelephoneIcon onClick={textIconChange} />
+                                <FiSpeakerIcon onClick={textIconChange} />
+                                <AiFillCarIcon onClick={textIconChange} />
+                                <FiCoffeeIcon onClick={textIconChange} />
+                                <BiFoodMenuIcon onClick={textIconChange} />
+                                <BsTranslateIcon onClick={textIconChange} />
+                                <FaTruckLoadingIcon onClick={textIconChange} />
+                                <BsFillChatLeftDotsFillIcon onClick={textIconChange} />
                             </div>
                             <div className="texto">
+                                <p>{textStatus ? "Acceso Seguro" : "Selecciona algo que te interese"}</p>
+                                <p>{textStatus ? "Accede al espacio con la tarjeta" : ""}</p>
+                            </div> */}
+
+                            <div className="iconos">
+                             {number !== 1 ? <BsTelephoneIcon  onClick={() => setNumber(1)} /> : number === 1 && <BsTelephoneIcon onClick={() => setNumber(0)} />
+                                }   
+
+                            {/* </div>
+                            {number === 1 &&
+                            <div class="icno" ><p class="request">Los espacios coworking´s que ofrece SPOT AT WORK a sus clientes dispone de una amplia gama de servicios y espacios de trabajo. Puedes ingresar a uno de estos espacios, con tu portali y/o las herramientas de trabajo que necesites y empezar a trabajar enseguida. Segun los servicios que contrates, accederás a diferentes recursos necesarios para tu rutina laboral. Todos los espacios tienen incluidos los gastos básicos de limpieza, electricidad, Wifi, dispenser con agua natural y maquina de café.</p>
+                            </div>}       */}
 
                             </div>
+
                         </div>
                     </div>
                 </div>
@@ -401,8 +415,7 @@ const Servicios = styled.div`
         
 
         .incluidos-width{
-            width: 100%;
-            max-width: 1240px;
+            width: 80%;
             align-items: center;
         }
 
@@ -417,16 +430,21 @@ const Servicios = styled.div`
     }
 
     .carta{
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         
         .carta-width{
-            width: 100%;
-            max-width: 1240px;
+            width: 80%;
             align-items: center;
         }
 
         .carta-iconos{
 
             display: flex;
+            flex-direction: row-reverse;
             align-items: center;
             justify-content: space-around;
             max-width: 1240px;
@@ -563,25 +581,25 @@ const MeetingIcon = styled(IoIosPeople)`
     font-size: 45px;
     cursor: pointer;
     color: white;
-    padding: 0 20px 0 20px;
+    padding: 0 20px 20px 20px;
 `
 const LockIcon = styled(BsFillLockFill)`
     font-size: 45px;
     cursor: pointer;
     color: white;
-    padding: 0 20px 0 20px;
+    padding: 0 20px 20px 20px;
 `
 const AreaIcon = styled(MdMicrowave)`
     font-size: 45px;
     cursor: pointer;
     color: white;
-    padding: 0 20px 0 20px;
+    padding: 0 20px 20px 20px;
 `
 const KeyIcon = styled(GiKeyCard)`
     font-size: 45px;
     cursor: pointer;
     color: white;
-    padding: 0 20px 0 20px;
+    padding: 0 20px 20px 20px;
 `
 
 
@@ -613,23 +631,23 @@ const BiFoodMenuIcon = styled(BiFoodMenu)`
     font-size: 45px;
     cursor: pointer;
     color: #F6B401;
-    padding: 0 20px 0 20px;
+    padding: 0 20px 20px 20px;
 `
 const BsTranslateIcon = styled(BsTranslate)`
     font-size: 45px;
     cursor: pointer;
     color: #F6B401;
-    padding: 0 20px 0 20px;
+    padding: 0 20px 20px 20px;
 `
 const FaTruckLoadingIcon = styled(FaTruckLoading)`
     font-size: 45px;
     cursor: pointer;
     color: #F6B401;
-    padding: 0 20px 0 20px;
+    padding: 0 20px 20px 20px;
 `
 const BsFillChatLeftDotsFillIcon = styled(BsFillChatLeftDotsFill)`
     font-size: 45px;
     cursor: pointer;
     color: #F6B401;
-    padding: 0 20px 0 20px;
+    padding: 0 20px 20px 20px;
 `

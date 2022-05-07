@@ -27,6 +27,11 @@ export const Locations = () => {
     setSearch(results);
   };
   console.log(search)
+
+
+
+
+
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -83,6 +88,7 @@ export const Locations = () => {
         type="text"
       />
 
+
     </InputContainer>
     <h1 className="locationTitle">Ubicaciones</h1>
     <Container>
@@ -115,9 +121,14 @@ export const Locations = () => {
                     <h1 className="h1Title">{searched.name}</h1>
                     <p>{searched.description}</p>
                   </div>
-                  <NavLink to={`/locations/${searched._id}`}><button className="bn54">
+                  <NavLink to={`/locations/${searched._id}`}>
+                  <button className="bn54">
                     <span class="bn54span">Ver mas Info</span>
-                  </button></NavLink>
+                  </button>
+                  </NavLink>
+
+                
+                  
 
                 </div>
 
@@ -160,6 +171,7 @@ export const Locations = () => {
                       </button></NavLink>
 
                     </div>
+                    
 
                   </div>
 
