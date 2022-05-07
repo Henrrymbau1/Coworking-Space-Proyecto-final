@@ -26,6 +26,7 @@ import { BsFillChatLeftDotsFill } from 'react-icons/bs'
 const Home = () => {
     const [textStatus, setTextStatus] = useState(false);
     const [number, setNumber] = useState(0);
+    const [number1, setNumber1] = useState(20);
 
     const textIconChange = () => {
         setTextStatus(!textStatus)
@@ -151,18 +152,62 @@ const Home = () => {
                         <h1>Servicios Incluidos</h1>
                         <div className="incluidos-iconos">
                             <div className="iconos">
-                                <HostIcon onClick={textIconChange} />
-                                <PrintIcon onClick={textIconChange} />
-                                <WifiIcon onClick={textIconChange} />
-                                <SocialIcon onClick={textIconChange} />
-                                <MeetingIcon onClick={textIconChange} />
-                                <LockIcon onClick={textIconChange} />
-                                <AreaIcon onClick={textIconChange} />
-                                <KeyIcon onClick={textIconChange} />
+                                {number1 !== 9 ? <HostIcon onClick={() => setNumber1(9)} /> : number1 === 9 && <HostIcon onClick={() => setNumber1(20)} />}
+                                {number1 !== 10 ? <PrintIcon onClick={() => setNumber1(10)} /> : number1 === 10 && <PrintIcon onClick={() => setNumber1(20)} />}
+                                {number1 !== 11 ? <WifiIcon onClick={() => setNumber1(11)} /> : number1 === 11 && <WifiIcon onClick={() => setNumber1(20)} />}
+                                {number1 !== 12 ? <SocialIcon onClick={() => setNumber1(12)} /> : number1 === 12 && <SocialIcon onClick={() => setNumber1(20)} />}
+                                {number1 !== 13 ? <MeetingIcon onClick={() => setNumber1(13)} /> : number1 === 13 && <MeetingIcon onClick={() => setNumber1(20)} />}
+                                {number1 !== 14 ? <LockIcon onClick={() => setNumber1(14)} /> : number1 === 14 && <LockIcon onClick={() => setNumber1(20)} />}
+                                {number1 !== 15 ? <AreaIcon onClick={() => setNumber1(15)} /> : number1 === 15 && <AreaIcon onClick={() => setNumber1(20)} />}
+                                {number1 !== 16 ? <KeyIcon onClick={() => setNumber1(16)} /> : number1 === 16 && <KeyIcon onClick={() => setNumber1(20)} />}
                             </div>
                             <div className="texto">
-                                <p>{textStatus ? "Acceso Seguro" : "Selecciona algo que te interese"}</p>
-                                <p>{textStatus ? "Accede al espacio con la tarjeta" : ""}</p>
+
+                                {number1 === 20 &&
+                                    <div class="texto-1" >
+                                        <p className="titulo-texto">Incluidos Si o Si!</p>
+                                        <p>Estos son los servivios que ofrecen cualquiera de nuestros espacios</p>
+                                    </div>}
+                                {number1 === 9 &&
+                                    <div class="texto-1" >
+                                        <p className="titulo-texto">Host</p>
+                                        <p>El host es la persona de referencia en tu espacio</p>
+                                    </div>}
+                                {number1 === 10 &&
+                                    <div class="texto-1" >
+                                        <p className="titulo-texto">Impresoras</p>
+                                        <p>Imprime, fotocopia y escanea con tu código personal</p>
+                                    </div>}
+                                {number1 === 11 &&
+                                    <div class="texto-1" >
+                                        <p className="titulo-texto">Wifi</p>
+                                        <p>Alta velocidad y estabilidad en todos los rincones</p>
+                                    </div>}
+                                {number1 === 12 &&
+                                    <div class="texto-1" >
+                                        <p className="titulo-texto">Atencion a visitas</p>
+                                        <p>Recibimos a tus visitas con toda la profesionalidad</p>
+                                    </div>}
+                                {number1 === 13 &&
+                                    <div class="texto-1" >
+                                        <p className="titulo-texto">Salas de reuniones</p>
+                                        <p>Accede a salas para tus reuniones y llamadas</p>
+                                    </div>}
+                                {number1 === 14 &&
+                                    <div class="texto-1" >
+                                        <p className="titulo-texto">Seguridad</p>
+                                        <p>Disfruta de seguro para tu equipamiento</p>
+                                    </div>}
+                                {number1 === 15 &&
+                                    <div class="texto-1" >
+                                        <p className="titulo-texto">Zonas comunes</p>
+                                        <p>Además, office con microondas, nevera, cafetera, etc</p>
+                                    </div>}
+                                {number1 === 16 &&
+                                    <div class="texto-1" >
+                                        <p className="titulo-texto">Acceso seguro</p>
+                                        <p>Accede al espacio con tarjeta electrónica</p>
+                                    </div>}
                             </div>
                         </div>
                     </div>
@@ -172,45 +217,75 @@ const Home = () => {
                     <div className="carta-width">
                         <h1>Servicios a la carta</h1>
                         <div className="carta-iconos">
-                            {/* <div className="iconos">
-                                <BsTelephoneIcon onClick={textIconChange} />
-                                <FiSpeakerIcon onClick={textIconChange} />
-                                <AiFillCarIcon onClick={textIconChange} />
-                                <FiCoffeeIcon onClick={textIconChange} />
-                                <BiFoodMenuIcon onClick={textIconChange} />
-                                <BsTranslateIcon onClick={textIconChange} />
-                                <FaTruckLoadingIcon onClick={textIconChange} />
-                                <BsFillChatLeftDotsFillIcon onClick={textIconChange} />
-                            </div>
-                            <div className="texto">
-                                <p>{textStatus ? "Acceso Seguro" : "Selecciona algo que te interese"}</p>
-                                <p>{textStatus ? "Accede al espacio con la tarjeta" : ""}</p>
-                            </div> */}
-
                             <div className="iconos">
 
-                                <div class="icono-1">
-                                    {number !== 1 ? <BsTelephoneIcon id="icon" onClick={() => setNumber(1)} /> : number === 1 && <BsTelephoneIcon onClick={() => setNumber(0)} />}
-                                </div>
+                                {number !== 1 ? <BsTelephoneIcon onClick={() => setNumber(1)} /> : number === 1 && <BsTelephoneIcon onClick={() => setNumber(0)} />}
+                                {number !== 2 ? <FiSpeakerIcon onClick={() => setNumber(2)} /> : number === 2 && <FiSpeakerIcon onClick={() => setNumber(0)} />}
+                                {number !== 3 ? <AiFillCarIcon onClick={() => setNumber(3)} /> : number === 3 && <AiFillCarIcon onClick={() => setNumber(0)} />}
+                                {number !== 4 ? <FiCoffeeIcon onClick={() => setNumber(4)} /> : number === 4 && <FiCoffeeIcon onClick={() => setNumber(0)} />}
+                                {number !== 5 ? <BiFoodMenuIcon onClick={() => setNumber(5)} /> : number === 5 && <BiFoodMenuIcon onClick={() => setNumber(0)} />}
+                                {number !== 6 ? <BsTranslateIcon onClick={() => setNumber(6)} /> : number === 6 && <BsTranslateIcon onClick={() => setNumber(0)} />}
+                                {number !== 7 ? <FaTruckLoadingIcon onClick={() => setNumber(7)} /> : number === 7 && <FaTruckLoadingIcon onClick={() => setNumber(0)} />}
+                                {number !== 8 ? <BsFillChatLeftDotsFillIcon onClick={() => setNumber(8)} /> : number === 8 && <BsFillChatLeftDotsFillIcon onClick={() => setNumber(0)} />}
 
                             </div>
                             <div className="texto">
-                            
+
+                                {number === 0 &&
+                                    <div class="texto-1" >
+                                        <p className="titulo-texto">A tu Gusto!</p>
+                                        <p>Por un pequeno extra, mira de lo que puedes disfrutar</p>
+                                    </div>}
                                 {number === 1 &&
-                                <div class="texto-1" >
-                                        <p class="request">Telefono</p>
-                                        <p class="request">Tenemos telefono</p>
-                                </div>} 
-                                
+                                    <div class="texto-1" >
+                                        <p className="titulo-texto">Telefonia</p>
+                                        <p>Numeros propios, desvio de llamadas y atencion personalizada</p>
+                                    </div>}
+                                {number === 2 &&
+                                    <div class="texto-1" >
+                                        <p className="titulo-texto">Alquiler de aparatos</p>
+                                        <p>Disponemos de material para conferencias</p>
+                                    </div>}
+                                {number === 3 &&
+                                    <div class="texto-1" >
+                                        <p className="titulo-texto">Parking</p>
+                                        <p>Consulta nuestros acuerdos con parkings cercanos</p>
+                                    </div>}
+                                {number === 4 &&
+                                    <div class="texto-1" >
+                                        <p className="titulo-texto">Cafe y agua para reuniones</p>
+                                        <p>Solicitanos y nos ocupamos</p>
+                                    </div>}
+                                {number === 5 &&
+                                    <div class="texto-1" >
+                                        <p className="titulo-texto">Mensajeria y paqueterias</p>
+                                        <p>Envia tu correspondencia sin moverte de tu espacio</p>
+                                    </div>}
+                                {number === 6 &&
+                                    <div class="texto-1" >
+                                        <p className="titulo-texto">Traduccion</p>
+                                        <p>Consulta nuestras opciones y tarifas</p>
+                                    </div>}
+                                {number === 7 &&
+                                    <div class="texto-1" >
+                                        <p className="titulo-texto">Mudanza</p>
+                                        <p>Te ayudamos a traer tu oficina</p>
+                                    </div>}
+                                {number === 8 &&
+                                    <div class="texto-1" >
+                                        <p className="titulo-texto">Networking</p>
+                                        <p>Conecta con otros miembros de nuestra comunidad</p>
+                                    </div>}
+
                             </div>
 
                         </div>
                     </div>
                 </div>
 
-                <div className="map-container">
+                {/* <div className="map-container">
                     <iframe src="https://www.google.com/maps/d/u/0/embed?mid=148O7f5leFm19kzdHAYmvkchFf3EWeVWm&ehbc=2E312F" width="640" height="480"></iframe>
-                </div>
+                </div> */}
 
 
             </Servicios>
@@ -278,7 +353,6 @@ const Information = styled.div`
                     }
 
                         span{
-                            background-color: red;
                         }
                     }
                 }
@@ -430,6 +504,17 @@ const Servicios = styled.div`
             align-items: center;
             justify-content: space-around;
             max-width: 1240px;
+            height: 100%;
+
+            .texto-1{
+                text-align: center;
+                height: 120px;
+                max-width: 200px;
+
+                .titulo-texto{
+                    font-weight: bold;
+                }
+            }
         }
         
 
@@ -455,6 +540,15 @@ const Servicios = styled.div`
             justify-content: space-around;
             max-width: 1240px;
 
+            .texto-1{
+                text-align: center;
+                height: 120px;
+                max-width: 200px;
+
+                .titulo-texto{
+                    font-weight: bold;
+                }
+            }
             
         }
 
