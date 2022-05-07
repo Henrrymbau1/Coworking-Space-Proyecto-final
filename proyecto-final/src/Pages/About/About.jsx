@@ -1,9 +1,34 @@
 import React from 'react'
 import "./about.scss";
 import styled from "styled-components";
+import emailjs from "@emailjs/browser";
+import {  useRef } from "react";
 
 
 export const About = () => {
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_62cmprg",
+        "template_va2ibko",
+        form.current,
+        "bnQweKR5uLmYM447e"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    form.current.reset();
+  };
+
   return (
     <>
       <InformationContainer>
@@ -14,10 +39,11 @@ export const About = () => {
         <div className="form-container">
 
           <h2> Pide informacion sin compromiso</h2>
+          <form className="form-container2" ref={form} onSubmit={sendEmail}>
           <div className="inputs-container">
-            <input placeholder="Tu nombre" type="text" className="form-control" />
-            <input placeholder="Email" type="text" className="form-control" />
-            <input placeholder="Telefono" type="text" className="form-control" />
+            <input placeholder="Tu nombre" type="text" className="form-control" name='name' />
+            <input placeholder="Email" type="text" className="form-control" name="email" />
+            <input placeholder="Telefono" type="text" className="form-control" name='message' />
           </div>
 
           <div className="form-text">
@@ -30,8 +56,9 @@ export const About = () => {
               <input type="checkbox" />
               <span className="text-footer">Recibir comunicaciones comerciales que puedan ser de mi interes</span>
             </div>
-            <button>Me interesa</button>
+            <button className='button-19'>Me interesa</button>
           </div>
+          </form>
 
         </div>
       </InformationContainer>

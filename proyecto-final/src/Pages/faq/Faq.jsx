@@ -2,16 +2,37 @@ import React from "react";
 import { BsFillArrowDownCircleFill, BsFillArrowUpCircleFill } from "react-icons/bs";
 import { useState } from 'react';
 import "./faq.scss";
+import emailjs from "@emailjs/browser";
+import {  useRef } from "react";
 
 export default function Faq() {
-  const [show, setShow] = useState(false);
+  
   const [number, setNumber] = useState(0);
 
-  console.log(number);
-  const showFaq = () => {
-    setShow((show) => !show)
+  const form = useRef();
 
-  }
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_62cmprg",
+        "template_va2ibko",
+        form.current,
+        "bnQweKR5uLmYM447e"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    form.current.reset();
+  };
+
+  
 
   return (
 
@@ -27,18 +48,19 @@ export default function Faq() {
           </h1>
         </div>
         <div class="form-faq">
-          <form action="">
+          <form className="form-container2" ref={form} onSubmit={sendEmail}>
             <h2 class="title-form">Solicita información sobre nuestros servicios.</h2>
             <div class="contact">
-              <input className="inputClass" type="text" placeholder="Tu nombre" />
-              <input className="inputClass" type="text" placeholder="E-mail" />
-              <input className="inputClass" type="text" placeholder="Teléfono" />
+              <input className="inputClass" type="text" placeholder="Tu nombre" name="nombre"/>
+              <input className="inputClass" type="text" placeholder="E-mail" name="email" />
+              <input className="inputClass" type="text" placeholder="Teléfono" name="message" />
             </div>
             <p className="pClass">
               SPOT AT WORK tratará tus datos únicamente para tramitar tu
               solicitud. Puedes conocer cómo ejercer tus derechos de acceso,
               rectificación y supresión en nuestra Política de Privacidad.
             </p>
+            <button className="button-19">Enviar</button>
           </form>
         </div>
       </div>

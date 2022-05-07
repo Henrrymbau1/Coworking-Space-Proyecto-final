@@ -188,8 +188,9 @@ export const Locations = () => {
 const InputContainer = styled.div`
 display:flex;
 flex-direction: column;
-justify-content:center;
-text-align:center;
+
+justify-content: center;
+
 align-items:center;
 background-color:#f7b500;
 padding:25px;
@@ -351,10 +352,17 @@ const Container = styled.div`
 
 .coworkCard{
     display: flex;
-    width: 100%;
-    height: 100%;
+    width: 100%; 
+     height: 100%;
     flex-direction:row;
     flex-wrap: wrap; 
+    align-content: flex-start;
+    
+  }
+  .coworkInfo{
+    p{
+      text-align: justify;
+    }
   }
 
   .coworkImg{

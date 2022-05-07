@@ -84,10 +84,10 @@ const LocationsDetails = () => {
           <div>
             <img className="imgContainer" src={img} alt={name} />
           </div>
+          <div className="subInfo">
           <div className="titleContainer">
             <h3>{name}</h3>
           </div>
-          <div className="subInfo">
             <p><b>Espacio:</b> {space} m².</p>
             <p><b>Ubicacion:</b> {location}</p>
             <p><b>Capacidad</b> para {capacity}</p>
@@ -231,7 +231,11 @@ const ContainerDetail = styled.div`
   .infoContainer {
     margin-top:20px;
     display: flex;
-    flex-direction:column;
+    flex-wrap: wrap;
+    justify-content: center;
+    
+
+
     align-items:center;
   }
 
@@ -240,7 +244,7 @@ const ContainerDetail = styled.div`
   }
   .titleContainer{
       text-align:center;
-      margin-top:10px;
+      margin: 20px;
       h3{
     color: rgb(255, 164, 53);
     font-family: "Josefin Sans", sans-serif;
@@ -250,10 +254,12 @@ const ContainerDetail = styled.div`
   }
   .subInfo{
       text-align:center;
-      padding:10px;
+     font-size: 30px;
+      width: 70%;
   }
   .pDescrip{
-      padding:15px;
+     text-align: justify;
+     padding-bottom:25px ;
   }
 
 `;
