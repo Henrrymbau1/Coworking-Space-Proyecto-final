@@ -206,12 +206,12 @@ margin: 2rem 0;
   padding: 1rem;
   
 }
-.title{
 
-}
 .parrafo{
   text-align: justify;
-  padding: 1rem;}
+  padding: 0px 2rem;
+  margin: 10px;
+  font-size: 24px;}
 .faresCard{
   width:100%;
   
@@ -258,7 +258,7 @@ margin: 2rem 0;
 .btn:hover {
  
   animation: bn54rotate 0.7s ease-in-out both;
-    background-color:#f4c973;
+    background-color:#D6DBDF;
 }
 .buttonClass{
   text-decoration: none;
@@ -355,6 +355,7 @@ margin: 2rem 0;
   font-size: 45px;
  
 }
+.parrafo{font-size: 16px;}
   .faresCard{
   flex-direction: column;
   max-width:100%;
