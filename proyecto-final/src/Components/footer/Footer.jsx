@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import "./_footer.scss"
+import { AiOutlineYoutube, AiOutlineInstagram, AiOutlineFacebook, AiFillGithub } from 'react-icons/ai';
 
 
 export const ContactUs = () => {
@@ -36,9 +37,9 @@ export const ContactUs = () => {
         <h2>Suscribete a nuestra newsletter</h2>
         <form className="form-container2" ref={form} onSubmit={sendEmail}>
           <label>Name</label>
-          <input className="input-footer" placeholder="Tu nombre" type="text" name="user_name" />
+          <input className="input-footer" placeholder="Tu nombre" type="text" name="name" />
           <label>Email</label>
-          <input className="input-footer" placeholder="Email" type="email" name="user_email" />
+          <input className="input-footer" placeholder="Email" type="email" name="email" />
           <div className="classCheckBox">
             <input type="checkbox" />
             <span className="text-footer">Acepto recibir noticias e invitaciones a eventos de Spot at Home</span>
@@ -53,10 +54,11 @@ export const ContactUs = () => {
 
 
       <div className="icon-container">
-        <img className="icon-footer" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Youtube_colored_svg-128.png" alt="Youtube" />
-        <img className="icon-footer" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Linkedin_unofficial_colored_svg-128.png" alt="Linkedin" />
-        <img className="icon-footer" src="https://cdn1.iconfinder.com/data/icons/social-media-2285/512/Colored_Facebook3_svg-128.png" alt="Facebook" />
-        <img className="icon-footer" src="https://cdn2.iconfinder.com/data/icons/social-media-2285/512/1_Instagram_colored_svg_1-128.png" alt="Instagram" />
+        <h2> <AiOutlineYoutube style={{ color: "white" }} /> </h2>
+        <h2> <AiOutlineInstagram style={{ color: "white" }} /> </h2>
+        <h2> <AiOutlineFacebook style={{ color: "white" }} /> </h2>
+        <h2> <AiFillGithub style={{ color: "white" }} /> </h2>
+        {/* <BsFillChatLeftDotsFill style={{ color: "#F68B3C" }} onClick={() => setNumber(1)} /> */}
       </div>
     </div>
   );

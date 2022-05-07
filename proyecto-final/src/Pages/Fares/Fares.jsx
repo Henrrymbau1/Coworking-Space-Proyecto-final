@@ -2,7 +2,7 @@ import React from 'react'
 import { useState, useEffect } from "react";
 import axios from "axios";
 import styled from "styled-components";
-import { Link, useNavigate } from "react-router-dom"
+import { Link } from "react-router-dom"
 export const Fares = () => {
   const [fares, setFares] = useState([]);
   const url = "https://co-working-back.vercel.app/api/fares";
