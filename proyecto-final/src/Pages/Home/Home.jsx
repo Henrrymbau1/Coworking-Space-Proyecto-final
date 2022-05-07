@@ -188,14 +188,20 @@ const Home = () => {
                             </div> */}
 
                             <div className="iconos">
-                             {number !== 1 ? <BsTelephoneIcon  onClick={() => setNumber(1)} /> : number === 1 && <BsTelephoneIcon onClick={() => setNumber(0)} />
-                                }   
 
-                            {/* </div>
-                            {number === 1 &&
-                            <div class="icno" ><p class="request">Los espacios coworking´s que ofrece SPOT AT WORK a sus clientes dispone de una amplia gama de servicios y espacios de trabajo. Puedes ingresar a uno de estos espacios, con tu portali y/o las herramientas de trabajo que necesites y empezar a trabajar enseguida. Segun los servicios que contrates, accederás a diferentes recursos necesarios para tu rutina laboral. Todos los espacios tienen incluidos los gastos básicos de limpieza, electricidad, Wifi, dispenser con agua natural y maquina de café.</p>
-                            </div>}       */}
+                                <div class="icono-1">
+                                    {number !== 1 ? <BsTelephoneIcon id="icon" onClick={() => setNumber(1)} /> : number === 1 && <BsTelephoneIcon onClick={() => setNumber(0)} />}
+                                </div>
 
+                            </div>
+                            <div className="texto">
+                            
+                                {number === 1 &&
+                                <div class="texto-1" >
+                                        <p class="request">Telefono</p>
+                                        <p class="request">Tenemos telefono</p>
+                                </div>} 
+                                
                             </div>
 
                         </div>

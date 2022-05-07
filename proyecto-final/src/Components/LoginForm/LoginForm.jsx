@@ -65,8 +65,8 @@ export const LoginForm = () => {
           {errors.password.type === "pattern" && (
             <p className="errorFrase">{errors.password.message}</p>
           )}
-        </>): <p className="passFrase">Recuerda que la contraseña debe tener al menos 8 caracteres y maximo 12, 1 de ellos especial, 1 letra mayuscula, 1 letra minuscula, 1 numero.</p>} 
-      <button   className="button-19" type="submit">Login</button>
+        </>): null } 
+      <button   className="button-19" type="submit">Iniciar Sesion</button>
     </form>
     </div>
   );

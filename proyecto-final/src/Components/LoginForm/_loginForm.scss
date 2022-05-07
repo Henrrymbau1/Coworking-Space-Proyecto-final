@@ -20,24 +20,27 @@
     align-items: center;
     justify-content: center;
     width: 360px;
-    height: 400px;
+    height: 360px;
     border-radius: 10px;
-    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+    box-shadow: #f4a973 0px 0px 0px 5px;
 }
 .inputEmail{
     border: none;
-    border-bottom: 2px solid #1CB0F6;
+    border-bottom: 2px solid #f4a973;
     outline: none;
+    width: 200px;
 }
 .inputPassword{
     border: none;
-    border-bottom: 2px solid #1CB0F6;
+    border-bottom: 2px solid #f4a973;
     outline: none;
+    width: 200px
 }
 
 .errorFrase{
+    padding: 10px;
     font-size: 11px;
-    text-align: left;
+    text-align: center;
     color: red;
 }
 .passFrase{

@@ -80,7 +80,7 @@ export const RegisterForm = () => {
               className="button-19"
               type="submit"
             >
-      Register
+      Registrarse
       </button>
     </form>
     </div>
