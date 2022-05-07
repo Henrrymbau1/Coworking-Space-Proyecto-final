@@ -24,28 +24,37 @@ const FaresDetails = () => {
 
     <Header>
       <div className="headerFares">
-
-
       </div>
-      <div>
-        <h1>Tarifas | SPOT AT WORK</h1>
-        <p> Conoce nuestra oferta de servicios para empresas, pymes y profesionales autónomos. Consulta nuestras tarifas de coworking, eventos, salas para reuniones, rodajes o convenciones, servicios de consultoría y proyectos, todos a tu disposición y adaptados a tus necesidades.</p>
-        <p>
-          Te presentamos una variada oferta para que te sumes a la mayor comunidad profesional que trabaja para crear impacto en la sociedad, tejiendo sinergias, sumando talento y aprendizaje para encontrar soluciones hacia una reactivación económica y social sostenible.
-        </p>
-      </div>
-      <div>
-        <h1>{name}</h1>
-        <p>{description}</p>
-        <p>{price}</p>
-        {service && service.map((s)=> {
-          return( 
-            <h1 style={{color: "green"}}>{s}</h1>
-          )
-        })}
+      
+          <div className="headerContain">
+            <h1>Tarifas | SPOT AT WORK</h1>
+            <p> Conoce nuestra oferta de servicios para empresas, pymes y profesionales autónomos. Consulta nuestras tarifas de coworking, eventos, salas para reuniones, rodajes o convenciones, servicios de consultoría y proyectos, todos a tu disposición y adaptados a tus necesidades.</p>
+            
+          </div>
+          <div className="center">
+          <div className="card">
+                  <h1 className="title">{name}</h1>
+                  <p className="parrafo">{description}</p>
+                  <p className="parrafo">Servicios incluidos:</p>
+                  <div className="serviceInclude">
+                  {service && service.map((s)=> {
+                    return( 
+                      <h1 className="service">|{s}|</h1>
+                    )
+                  })}
+                  </div>
+                  <p className="price">desde {price}€</p>
+                  
+          </div>
 
-
-      </div>
+          <div className="cardImg">
+            {coworking && coworking.map((c)=>{
+              return (
+                <img src={c.img} alt=""/>
+              )
+            })}
+            </div>
+          </div>
     </Header>
   )
 
@@ -61,6 +70,56 @@ const Header = styled.div`
   background-size: cover;
   background-position:top;
   background-image: url('https://images.unsplash.com/photo-1556565681-67b9cd907d20?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
+}
+.center{
+  display: flex;
+  width: 90%;
+  height: 100%;
+  margin: 10px auto;
+  flex-direction: row;
+}
+.headerContain{
+  display:flex;
+  flex-direction: column;
+  margin: 0 auto;
+  width: 90%;
+  border-bottom: 2px solid #FAD7A0;
+}
+h1{
+  font-size: 28px;
+  margin: 10px;
+  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #A04000;
+}
+p{
+  font-size: 24px;
+  padding: 2rem;
+  text-align:justify;
+  margin:0px;
+  font-family: 'Merriweather', serif;
+}
+.serviceInclude{
+  display: flex;
+  flex-direction: row;
+  width: 400px;
+}
+.parrafo{
+  font-size: 20px;
+  padding: 1rem;
+  font-family: 'Fira Sans', sans-serif;
+}
+.price{
+  font-size: 30px;
+  padding: 1rem;
+  margin: 2rem auto;
+  border: 2px solid orange;
+  color: orange;
+  font-family: 'Bebas Neue', cursive;
+}
+.service{
+  font-size:18px;
+  color: #EB984E;
+  margin: 0px 2rem;
 }
 .serviceInclude{
   display: flex;
@@ -85,12 +144,28 @@ const Header = styled.div`
   width: 100%;
 }
 .descriptionText{
-  font-size: 16px;
+  font-size: 18px;
   font-family: 'Poppins', sans-serif;
 }
-.serviceInclude{
+.card{
+  display: flex;
+  flex-direction:column;
+  width: 100%;
+  height: 350px;
+  
+}
+.cardImg{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction:column;
+  width: 100%;
+  height: 350px;
+  padding: 1rem 0px;
 
 }
+img{max-width:100%;}
+
 .cowork{
   display: flex;
   margin: 0 auto;
