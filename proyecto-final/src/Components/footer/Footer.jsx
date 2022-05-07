@@ -23,7 +23,7 @@ export const ContactUs = () => {
     <div className="footer-container">
 
       <div className="logo-politicas">
-        <img className="footer-logo" src="https://cdn.discordapp.com/attachments/946038364816162916/965515381236170772/logo.png" alt="" />
+        <img className="footer-logo" src="./logofoot.png" alt="logo foot" />
         <div className="politicas">
           <p className="p-footer">Visita nuestras Oficinas</p>
           <p className="p-footer">Politica de Privacidad</p>
