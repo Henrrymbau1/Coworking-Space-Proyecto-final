@@ -15,9 +15,10 @@ export const Fares = () => {
   return (
     <>
       <ContainerService>
-        <div className="service">
+        <div className="serviceContain">
           <div className="servicesIntro">
             <h1 className="textServices">Tarifas y Servicios </h1>
+            
 
           </div>
           <div className='servicesForm'>
@@ -28,11 +29,13 @@ export const Fares = () => {
                 <input className="inputClass" type="text" placeholder="E-mail" />
                 <input className="inputClass" type="text" placeholder="Teléfono" />
               </div>
-              <p className="pClass">
+              <div className="descriptionFares">
+              <p>
                 SPOT AT WORK tratará tus datos únicamente para tramitar tu
                 solicitud. Puedes conocer cómo ejercer tus derechos de acceso,
                 rectificación y supresión en nuestra Política de Privacidad.
               </p>
+              </div>
             </form>
           </div>
 
@@ -42,7 +45,7 @@ export const Fares = () => {
 
       <ContainerFares>
       
-        <div>
+        <div className="containFares">
                 <h1 className="title">Tarifas | SPOT AT WORK</h1>
                 <p className="parrafo"> Conoce nuestra oferta de servicios para empresas, pymes y profesionales autónomos. Consulta nuestras tarifas de coworking, eventos, salas para reuniones, rodajes o convenciones, servicios de consultoría y proyectos, todos a tu disposición y adaptados a tus necesidades.</p>
                 <p className="parrafo">
@@ -68,9 +71,10 @@ export const Fares = () => {
                         )
                     }
 
-                    )}</div>
+                    )}
+                    </div>
                     <p className="price"> Desde {fare.price} €</p>
-                    <Link to={`/fares/${fare._id}`}><button className='btn'>Ver detalles</button></Link>
+                    <Link className="buttonClass" to={`/fares/${fare._id}`}><button className='btn'>Ver detalles</button></Link>
                   </div>
 
                   {fare.coworking.map((cowork) => {
@@ -101,39 +105,84 @@ const ContainerService = styled.div`
 display:flex;
 flex-direction: row;
 width: 100%;
-height: 400px;
 
-.service{
+
+.serviceContain{
   display:flex;
   width: 100%;
-  
-}
+  height: 100%;
+  align-items: center;
+  margin: 0px;
+ }
+ .servicesForm{
+   display: flex;
+   justify-content: center;
+   width: 100%;
+   height: 100%;
+ }
+ .title-form{
+   padding: 0px 2rem;
+  margin: 0 auto;
+ }
+ .descriptionFares{
+   display: flex;
+   width: 100%;
+   
+ }
+ p{
+  text-align: justify;
+  margin: 0 auto;
+   padding: 0 2rem;
+ }
 .form{
   display:flex;
+  width: 100%;
+  height: 350px;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  padding:10px 1rem;
+  background-color: beige;
+  margin: 0 auto;
 }
 .servicesIntro {
   display: flex;
   flex-direction: column;
+  align-content: center;
+  justify-content: center;
   margin: 0 auto;
+  padding: 0;
   width: 100%;
+  height: 370px;
   background-size: cover;
   background-image: url('https://images.unsplash.com/photo-1503945438517-f65904a52ce6?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80');
 }
 .textServices{
   color: white;
-  margin: 0 auto;
-  align-items: center;
+  text-align: right;
+  line-height: 4.5rem;
   width: 80%;
-  justify-items: center;
-  font-size: 65px;
+  font-size: 85px;
+  text-shadow: -4px 3px #000000;
+}
+@media (max-width: 600px){
+  .serviceContain{
+    flex-direction: column;
+    width: 450px;
+  }
+  .textServices{
+    font-size: 55px;
+    height: 120px;
+    line-height: 2.5rem;
+  }
+  .form{
+    margin: 10px 0px;
+    height: 450px;
+  }
+  
 }
 
 `
-
-
 const ContainerFares = styled.div`
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
@@ -141,18 +190,31 @@ display: flex;
 width: 100%;
 justify-content: center;
 flex-direction: column;
+margin: 2rem 0;
 
-
-
+.containFares{
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  flex-direction: column;
+}
 .cardFares{
   width:100%;
+  height: 600px;
   display: flex;
   flex-direction: row;
   padding: 1rem;
   
 }
+.title{
+
+}
+.parrafo{
+  text-align: justify;
+  padding: 1rem;}
 .faresCard{
   width:100%;
+  
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -162,15 +224,15 @@ flex-direction: column;
 .faresDescription{
   width: 100%;
   height: 300px;
-  padding: 20px;
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
-  background-color: rgb(246,180,1);
 }
 .name{
   font-size: 26px;
-  color: white;
+  color: black;
   font-family: 'Merriweather', serif;
+  text-transform:capitalize;
   
 }
 .containBtn{
@@ -183,14 +245,14 @@ flex-direction: column;
   display: flex;
   background-color: Transparent;
   border-radius: 5px;
+  outline: none;
   width: 60px;
-  color: white;
+  color: black;
   width: 30%;
-  text-align: center;
+  justify-content: center;
   margin: 5px auto;
   font-size: 16px;
   cursor: pointer;
-  text-decoration: none;
   letter-spacing: 0.7px;
 }
 .btn:hover {
@@ -198,24 +260,35 @@ flex-direction: column;
   animation: bn54rotate 0.7s ease-in-out both;
     background-color:#f4c973;
 }
+.buttonClass{
+  text-decoration: none;
+}
 
 .description{
   width: 95%;
-  font-size: 21px;
+  font-size: 24px;
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   margin: 0;
-  color: white;
+  color: black;
   text-align:justify;
 }
 .service{
   font-size: 18px;
   margin: 10px 0;
-  color: white;
+  color: black;
+  font-style:italic;
+  
+}
+.serviceIntro{
+  width: 100%;
+  display:flex;
+  
 }
 .serviceList{
   margin: 0px;
   font-size: 18px;
-  color: white;
+  color: black;
+  letter-spacing:2px;
 }
 .serviceInclude{
   display: flex;
@@ -225,7 +298,7 @@ flex-direction: column;
 .price{
   font-size: 28px;
   font-family: 'Anton', sans-serif;
-  margin: 0 auto;
+  margin: 20px auto;
   color:#CA6F1E; 
   font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
@@ -235,7 +308,9 @@ flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 100%;
+  height: 450px;
+  padding: 0px;
+  margin: 0px;
   background-size: cover;
   background-repeat: no-repeat;
 }
@@ -274,17 +349,23 @@ flex-direction: column;
   text-shadow: -2px 3px #000000;}
 
 @media (max-width: 600px){
+  .textServices{
+  line-height: 2rem;
+  width: 80%;
+  font-size: 45px;
+ 
+}
   .faresCard{
   flex-direction: column;
   max-width:100%;
+  margin: 0px 10px;
+  padding: 0px;
   }
   .faresDescription{
   width: 100%;
-  height: 190px;
-  padding: 15px;
+  padding: 0px 10px;
   display: flex;
   flex-direction: column;
-  background-color: rgb(246,180,1);
 }
 .coworkImg{
   display: flex;
@@ -301,17 +382,26 @@ flex-direction: column;
 .description{
   width: 95%;
   text-align: justify;
-  font-size: 13px;
+  font-size: 14px;
   margin: 0;
 }
 .service{
-  font-size: 11px;
+  font-size: 14px;
   margin: 10px 0;
+}
+.serviceList{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  font-size: 12px;
 }
 .price{
   font-size: 15px;
   font-family: 'Anton', sans-serif;
   
+}
+.btn{
+  width: 35%;
 }
 .nameCowork{
   font-size: 24px;
