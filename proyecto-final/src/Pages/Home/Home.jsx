@@ -38,12 +38,12 @@ const Home = () => {
                 <div className="info-container">
                     <div className="img-container">
                         <h1>Reinventa tu forma de trabajar</h1>
-                        <h2>Coworking a medida para empresas y autónomos</h2>
+                        <h2>Coworking a medida para empresas y autonomos</h2>
                     </div>
 
                     <div className="form-container">
                         <div className="form-witdh">
-                            <h3>¿Que tipo de puesto de coworking necesitas?</h3>
+                            <h3>Que tipo de puesto de coworking necesitas?</h3>
                             <div className="form-1">
                                 <div className="form-11">
                                     <div className="classCheckBox">
@@ -75,7 +75,7 @@ const Home = () => {
                                 </div>
                             </div>
 
-                            <h3>¿En que espacio?</h3>
+                            <h3>En que espacio?</h3>
                             <div className="form-2">
                                 <div className="form-21">
                                     <div className="classCheckBox">
@@ -94,7 +94,7 @@ const Home = () => {
                                 <div className="form-22">
                                     <div className="classCheckBox">
                                         <input type="checkbox" />
-                                        <span className="text-checkbox">Málaga</span>
+                                        <span className="text-checkbox">Malaga</span>
                                     </div>
                                     <div className="classCheckBox">
                                         <input type="checkbox" />
@@ -185,7 +185,7 @@ const Home = () => {
                                     </div>}
                                 {number1 === 12 &&
                                     <div class="texto-1" >
-                                        <p className="titulo-texto">Atención a visitas</p>
+                                        <p className="titulo-texto">Atencion a visitas</p>
                                         <p>Recibimos a tus visitas con toda la profesionalidad</p>
                                     </div>}
                                 {number1 === 13 &&
@@ -233,13 +233,13 @@ const Home = () => {
 
                                 {number === 0 &&
                                     <div class="texto-1" >
-                                        <p className="titulo-texto">A tu Gusto!</p>
-                                        <p>Por un pequeno extra, mira de lo que puedes disfrutar</p>
+                                        <p className="titulo-texto">A tú Gusto!</p>
+                                        <p>Por un pequeño extra, mira de lo que puedes disfrutar.</p>
                                     </div>}
                                 {number === 1 &&
                                     <div class="texto-1" >
-                                        <p className="titulo-texto">Telefonia</p>
-                                        <p>Numeros propios, desvio de llamadas y atencion personalizada</p>
+                                        <p className="titulo-texto">Telefonía</p>
+                                        <p>Números propios, desvió de llamadas y atención personalizada.</p>
                                     </div>}
                                 {number === 2 &&
                                     <div class="texto-1" >
@@ -253,17 +253,17 @@ const Home = () => {
                                     </div>}
                                 {number === 4 &&
                                     <div class="texto-1" >
-                                        <p className="titulo-texto">Cafe y agua para reuniones</p>
-                                        <p>Solicitanos y nos ocupamos</p>
+                                        <p className="titulo-texto">Café y agua para reuniones</p>
+                                        <p>Solicítanos y nos ocupamos</p>
                                     </div>}
                                 {number === 5 &&
                                     <div class="texto-1" >
-                                        <p className="titulo-texto">Mensajeria y paqueterias</p>
-                                        <p>Envia tu correspondencia sin moverte de tu espacio</p>
+                                        <p className="titulo-texto">Mensajería y paqueterías</p>
+                                        <p>Envía tu correspondencia sin moverte de tu espacio</p>
                                     </div>}
                                 {number === 6 &&
                                     <div class="texto-1" >
-                                        <p className="titulo-texto">Traduccion</p>
+                                        <p className="titulo-texto">Traducción</p>
                                         <p>Consulta nuestras opciones y tarifas</p>
                                     </div>}
                                 {number === 7 &&
@@ -311,23 +311,22 @@ const Information = styled.div`
             display: flex;
             flex-direction: column;
             align-items: center;
-            justify-content: center;
 
             h1{
-                color: #E5E7E9;
-                text-align: right;
-                line-height: 4.5rem;
+                color: white;
+                text-align: center;
                 max-width: 647px;
-                font-size: 81px;
+                font-size: 71px;
                 text-shadow: -4px 3px #000000;
+
             }
 
             h2{
-                color: #E5E7E9;
+                color: white;
                 text-align: center;
-                font-size: 45px;
-                width: 90%;
+                font-size: 35px;
                 text-shadow: -4px 3px #000000;
+
             }
         }
 
