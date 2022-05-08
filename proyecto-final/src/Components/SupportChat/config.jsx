@@ -2,7 +2,6 @@ import React from "react";
 import { createChatBotMessage } from 'react-chatbot-kit';
 import LinkList from "./LinkList/LinkList";
 import LearningOptions from "./LearningOptions/LearningOptions";
-import { useNavigate  } from "react-router-dom";
 
 
 
@@ -10,7 +9,7 @@ import { useNavigate  } from "react-router-dom";
 const config = {
   
   initialMessages: [
-    createChatBotMessage("Hola Coworker! Aqui tenemos ciertas sesiones en las que podrias estar interesado. ", {
+    createChatBotMessage("Hola Coworker! Aquí tenemos ciertas sesiones en las que podrías estar interesado. ", {
       widget: "learningOptions",
     }),
   ],
@@ -38,7 +37,7 @@ const config = {
       props: {
         options: [
           {
-            text: "Sobre nosotros",
+            text: "Spot at Work",
             url: "/about",
             id: 1,
           },

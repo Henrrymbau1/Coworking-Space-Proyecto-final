@@ -11,7 +11,7 @@ class ActionProvider {
   
     handleFaqList = () => {
       const message = this.createChatBotMessage(
-        "Tienes alguna duda, aqui esta el apartado de preguntas frecuentes!",
+        "¿Tienes alguna duda? Aquí esta el apartado de preguntas frecuentes!",
         {
           widget: "faqLinks",
         }
@@ -21,7 +21,7 @@ class ActionProvider {
     };
     handleLocationsList = () => {
       const message = this.createChatBotMessage(
-        "Genial, vemos que quieres saber mas sobre los Coworking que tenemos!",
+        "Genial, vemos que quieres saber más sobre nuestros Coworking!",
         {
           widget: "locationsLinks",
         }
@@ -31,7 +31,7 @@ class ActionProvider {
     };
     handleFaresList = () => {
       const message = this.createChatBotMessage(
-        "Genial, vemos que quieres saber mas sobre las Tarifas que tenemos!",
+        "Disponemos de distintos tipos de tarifas, con determinadas caracteristicas. Haz click en el siguiente enlace para verlas!",
         {
           widget: "faresLinks",
         }
@@ -41,7 +41,7 @@ class ActionProvider {
     };
     handleAboutList = () => {
       const message = this.createChatBotMessage(
-        "Genial, vemos que quieres saber mas sobre nuestra familia!",
+        "Spot at Work nacio como un grupo de emprendedores que tiene como mision generar ecosistemas profesionales y ofrecer espacios de trabajo.",
         {
           widget: "aboutLinks",
         }

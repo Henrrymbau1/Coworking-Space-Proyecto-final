@@ -90,7 +90,7 @@ export const Locations = () => {
 
 
     </InputContainer>
-    <h1 className="locationTitle">Ubicaciones</h1>
+    <h1 className="locationTitle">Coworkings</h1>
     <Container>
       {search.length > 0 ? (
 

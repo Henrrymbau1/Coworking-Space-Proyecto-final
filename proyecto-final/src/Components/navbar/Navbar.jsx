@@ -31,7 +31,7 @@ function Navbar() {
           <div className="button-container">
             <ul className="list-1">
               <NavLink to="/about">
-                <li>Saber Mas</li>
+                <li>Nosotros</li>
               </NavLink>
               <NavLink to="/faq">
                 <li>FAQ</li>
@@ -43,7 +43,7 @@ function Navbar() {
               )}
               {jwt && (
                 <NavLink to="/locations">
-                  <li>Ubicaciones</li>
+                  <li>Coworkings</li>
                 </NavLink>
               )}
               {!jwt && (
@@ -68,7 +68,7 @@ function Navbar() {
               <CustomClose onClick={() => setBurgerStatus(false)} />
             </CloseWrapper>
             <NavLink to="/about" onClick={() => setBurgerStatus(false)}>
-              <li>Saber Mas</li>
+              <li>Nosotros</li>
             </NavLink>
             <NavLink to="/faq" onClick={() => setBurgerStatus(false)}>
               <li>FAQ</li>
@@ -79,7 +79,7 @@ function Navbar() {
                   <li>Tarifas</li>
                 </NavLink>
                 <NavLink to="/locations" onClick={() => setBurgerStatus(false)}>
-                  <li>Ubicaciones</li>
+                  <li>Coworkings</li>
                 </NavLink>
               </>
             )}

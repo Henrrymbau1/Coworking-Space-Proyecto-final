@@ -5,7 +5,7 @@ import "./LearningOptions.scss";
 const LearningOptions = (props) => {
   const options = [
     {
-      text: "Ubicaciones",
+      text: "Coworkings",
       handler: props.actionProvider.handleLocationsList,
       id: 1,
     },
@@ -14,7 +14,7 @@ const LearningOptions = (props) => {
       handler: props.actionProvider.handleFaresList, 
       id: 2 },
     { 
-      text: "Saber Mas", 
+      text: "Nosotros", 
       handler: props.actionProvider.handleAboutList,
       id: 3 },
     { 
