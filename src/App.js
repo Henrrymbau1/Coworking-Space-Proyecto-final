@@ -14,6 +14,7 @@ import { About } from "./Pages/About/About";
 import LocationsDetails from "./Pages/Locations/LocationsDetails/LocationsDetails";
 import Home from "./Pages/Home/Home";
 import  FaresDetails  from "./Pages/Fares/Details/FaresDetails";
+import { RequireAuth } from "./shared/Components/RequiereAuth/RequireAuth";
 
 function App() {
   const [jwt, setJwt] = useState(localStorage.getItem("token"));
@@ -28,13 +29,13 @@ function App() {
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/faq" element={<Faq />} />
-            <Route path="/locations" element={<Locations />} />
-            <Route path="/locations/:id" element={<LocationsDetails />} />
-            <Route path="/fares" element={<Fares />} />
-            <Route path="/fares/:id" element={<FaresDetails/>} />
+            <Route path="/locations" element={<RequireAuth><Locations /></RequireAuth>} />
+            <Route path="/locations/:id" element={<RequireAuth><LocationsDetails /></RequireAuth>} />
+            <Route path="/fares" element={<RequireAuth><Fares /></RequireAuth>} />
+            <Route path="/fares/:id" element={<RequireAuth><FaresDetails/></RequireAuth>} />
             <Route path="/about" element={<About />} />
           </Routes>
-          <SupportChat />
+          {jwt && <SupportChat />}
           <ContactUs />
         </Router>
       </div>
