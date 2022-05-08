@@ -5,7 +5,7 @@ import Navbar from "./Components/navbar/Navbar";
 import SupportChat from "./Components/SupportChat/SupportChat";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { useState } from "react";
-import { JwtContext } from "../src/shared/Context/JwtContext";
+import { JwtContext } from "./shared/Context/JwtContext";
 import { LoginPage } from "./Pages/login/LoginPage";
 import { RegisterPage } from "./Pages/resgisterPage/RegisterPage";
 import { Locations } from "./Pages/Locations/Locations";

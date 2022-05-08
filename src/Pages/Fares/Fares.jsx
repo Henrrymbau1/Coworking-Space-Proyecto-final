@@ -1,8 +1,12 @@
 import React from 'react'
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import axios from "axios";
 import styled from "styled-components";
-import { Link } from "react-router-dom"
+import { Link } from "react-router-dom";
+import emailjs from "@emailjs/browser";
+
+
+
 export const Fares = () => {
   const [fares, setFares] = useState([]);
   const url = "https://co-working-back.vercel.app/api/fares";
@@ -11,6 +15,33 @@ export const Fares = () => {
       setFares(response.data);
     });
   }, [url]);
+
+
+
+  const form = useRef();
+
+  const sendEmail = (e) => {
+    e.preventDefault();
+
+    emailjs
+      .sendForm(
+        "service_62cmprg",
+        "template_va2ibko",
+        form.current,
+        "bnQweKR5uLmYM447e"
+      )
+      .then(
+        (result) => {
+          console.log(result.text);
+        },
+        (error) => {
+          console.log(error.text);
+        }
+      );
+    form.current.reset();
+  };
+
+
 
   return (
     <>
@@ -22,13 +53,14 @@ export const Fares = () => {
 
           </div>
           <div className='servicesForm'>
-            <form className="form" action="">
+            <form className="form"  ref={form} onSubmit={sendEmail}>
               <h2 class="title-form">Solicita información sobre las tarifas.</h2>
               <div class="contact">
-                <input className="inputClass" type="text" placeholder="Tu nombre" />
-                <input className="inputClass" type="text" placeholder="E-mail" />
-                <input className="inputClass" type="text" placeholder="Teléfono" />
+                <input className="inputClass" type="text" placeholder="Tu nombre" name='name'/>
+                <input className="inputClass" type="text" placeholder="E-mail" name='email'/>
+                <input className="inputClass" type="text" placeholder="Teléfono" name='message'/>
               </div>
+              <button> Me interesa</button>
               <div className="descriptionFares">
               <p>
                 SPOT AT WORK tratará tus datos únicamente para tramitar tu
@@ -145,6 +177,16 @@ max-width:100%;
   padding:10px 1rem;
   background-color: beige;
   margin: 0 auto;
+
+  button{
+                    margin-bottom: 10px ;
+                    padding: 5px 15px 5px 15px;
+                    border: 2px solid;
+                    background-color: gray;
+                    border-color: white;
+                    color: white;
+                    cursor: pointer;
+                }
 }
 .servicesIntro {
   display: flex;

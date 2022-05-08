@@ -388,6 +388,7 @@ const Information = styled.div`
             .condiciones{
                 width: 100%;
                 max-width: 426px;
+                text-align: justify;
             }
 
             .checkbox-container{
@@ -435,6 +436,7 @@ const Information = styled.div`
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                text-align: justify;
             }
 
             
