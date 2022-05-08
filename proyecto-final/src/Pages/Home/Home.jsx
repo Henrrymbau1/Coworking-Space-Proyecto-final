@@ -311,19 +311,22 @@ const Information = styled.div`
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
 
             h1{
-                color: white;
-                text-align: center;
+                color: #E5E7E9;
+                text-align: right;
+                line-height: 4.5rem;
                 max-width: 647px;
-                font-size: 71px;
+                font-size: 81px;
                 text-shadow: -4px 3px #000000;
             }
 
             h2{
-                color: white;
+                color: #E5E7E9;
                 text-align: center;
-                font-size: 35px;
+                font-size: 45px;
+                width: 90%;
                 text-shadow: -4px 3px #000000;
             }
         }
