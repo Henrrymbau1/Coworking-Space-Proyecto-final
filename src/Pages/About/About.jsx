@@ -1,5 +1,4 @@
 import React from 'react'
-import "./about.scss";
 import styled from "styled-components";
 import emailjs from "@emailjs/browser";
 import {  useRef } from "react";
@@ -33,7 +32,8 @@ export const About = () => {
     <>
       <InformationContainer>
         <div className="logo-container">
-          <h1>Servicios Impulso al Emprendimiento</h1>
+          <h1 className="h1Class">Brindamos servicios de confort y recursos para que tu trabajo sea más eficiente.</h1>
+          
         </div>
 
         <div className="form-container">
@@ -56,7 +56,7 @@ export const About = () => {
               <input type="checkbox" />
               <span className="text-footer">Recibir comunicaciones comerciales que puedan ser de mi interes</span>
             </div>
-            <button className='button-19'>Me interesa</button>
+            <button className='bn54'>Enviar</button>
           </div>
           </form>
 
@@ -68,7 +68,7 @@ export const About = () => {
         <div className="texto-impulso">
           <h2>Spot at work</h2>
           <h1>Impulso al Emprendimiento</h1>
-          <p>Fomentamos una cultura emprendedora mediante procesos de innovacion abierta, metodologias de diseno estrategico e iniciativas para el desarrollo de habilidades, ideas y experiencias con impacto positivo</p>
+          <p className="textimpulso">Fomentamos una cultura emprendedora mediante procesos de innovación abierta, metodologías de diseño estratégico e iniciativas para el desarrollo de habilidades, ideas y experiencias con impacto positivo.</p>
         </div>
 
         <div className="general-container">
@@ -135,7 +135,11 @@ const InformationContainer = styled.div`
     background-image: url('https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTU3fHxvZmZpY2V8ZW58MHx8MHx8&auto=format&fit=crop&w=500&q=60');
     background-repeat: no-repeat;
     background-size: cover;
+    align-items: center;
     width: 60%;
+    max-height: 100%;
+    margin: 0px;
+    
 
     h1{
       max-width: 675px;
@@ -144,7 +148,7 @@ const InformationContainer = styled.div`
       font-size: 70px;
     }
   }
-
+  
   .form-container{
     background-color: #F6B401;
     padding-left: 30px;
@@ -152,6 +156,7 @@ const InformationContainer = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
+
 
     h2{
       max-width: 320px;
@@ -175,6 +180,7 @@ const InformationContainer = styled.div`
       .form-text{
         p{
           max-width: 320px;
+          text-align: justify;
         }
         .checkbox-text{
           max-width: 320px;
@@ -231,6 +237,7 @@ const InformationContainer = styled.div`
       height: 100%;
       background-color: #F6B401;
       padding: 0 0 50px;
+      
     }
   
   }
@@ -243,7 +250,9 @@ const Impulso = styled.div`
 
   .texto-impulso{
     p{
-      max-width: 1100px;
+      max-width: 90%;
+      text-align:justify;
+      font-size:24px;
     }
   }
 
@@ -333,9 +342,10 @@ const Porque = styled.div`
 
       p{
         position: relative;
-        left: 40px; top:10px;
+        padding: 0 10px;
         max-width: 250px;
         text-align: left;
+        
       }
     }
   }
@@ -350,8 +360,11 @@ const Porque = styled.div`
 
       .vox{
         display: flex;
+        width: 354px;
+        height: 400px;
         flex-direction: column;
         align-items: center;
+        justify-items: center;
 
         h2{
         position: relative;
@@ -365,5 +378,6 @@ const Porque = styled.div`
       }
     }
   }
+}
 `
 

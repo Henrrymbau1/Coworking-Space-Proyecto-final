@@ -52,6 +52,7 @@
         text-align: justify;
     }
 }
+
 .container-main-query{
     display: flex;
     flex-direction: column;
@@ -95,7 +96,24 @@
     margin:  0 3rem;
     text-shadow: -4px 3px #000000;
 }
-
+.bn54 {
+    margin-top:20px;
+    position: relative;
+    outline: none;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    height: 30px;
+    width: 120px;
+    opacity: 1;
+    color: white;
+    font-size: 16px;
+    background: none;
+    border: 1px solid rgba(0, 0, 0, 0.6);
+    margin: 0 auto;
+}
 
 .form-faq {
     background-color: rgb(246,180,1);

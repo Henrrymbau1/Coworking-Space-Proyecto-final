@@ -60,7 +60,7 @@ export default function Faq() {
               solicitud. Puedes conocer cómo ejercer tus derechos de acceso,
               rectificación y supresión en nuestra Política de Privacidad.
             </p>
-            <button className="button-19">Enviar</button>
+            <button className="bn54">Enviar</button>
           </form>
         </div>
       </div>

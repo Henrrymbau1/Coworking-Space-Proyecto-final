@@ -61,30 +61,30 @@ export const Locations = () => {
   return (<>
     <FormContainer>
       <div className="form-container">
-        <h2>Envianos un correo con la Informacion del Coworking que estas interesado!</h2>
+        <h2>¡Envianos un correo con la Información del Coworking que estás interesado!</h2>
         <form className="form-container2" ref={form} onSubmit={sendEmail}>
           <label>Nombre</label>
           <input placeholder="Tu nombre" type="text" name="name" />
           <label>Email</label>
           <input placeholder="Email" type="email" name="email" />
-          <label>Informacion</label>
+          <label>Información</label>
           <textarea name="message" />
           <button className="bn54">
             <span class="bn54span">Enviar</span>
           </button>
           <div className="dataSecur">
-            <p className="pClass" >Spot at Work tratará tus datos únicamente para tramitar tu solicitud. Puedes conocer cómo ejercer tus derechos de acceso, rectificación y supresión en nuestra Politica de Privacidad</p>
+            <p className="pClass" >Spot at Work tratará tus datos únicamente para tramitar tu solicitud. Puedes conocer cómo ejercer tus derechos de acceso, rectificación y supresión en nuestra Política de Privacidad.</p>
           </div>
         </form>
 
       </div>
     </FormContainer>
     <InputContainer>
-      <h2>Haz tu busqueda colocando el nombre o tu ubicacion favorita.</h2>
+      <h2>Haz tu busqueda colocando el nombre o tu ubicación favorita.</h2>
       <input
         className="searchInput"
         onChange={(e) => searchCoworking(e)}
-        placeholder="Coloca el nombre o ubicacion del Coworking"
+        placeholder="Coloca el nombre o ubicación del Coworking"
         type="text"
       />
 

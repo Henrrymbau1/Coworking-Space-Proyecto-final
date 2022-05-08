@@ -29,12 +29,12 @@ export const ContactUs = () => {
           <p className="p-footer">Política de Privacidad</p>
           <p className="p-footer">Política de cookies</p>
         </div>
-        <p>Todos los precios sin IVA incluido</p>
+        <p>Todos los precios sin IVA incluído</p>
       </div>
 
 
       <div className="form-container">
-        <h2>Suscribete a nuestra newsletter</h2>
+        <h2>Suscríbete a nuestra newsletter</h2>
         <form className="form-container2" ref={form} onSubmit={sendEmail}>
           <label>Name</label>
           <input className="input-footer" placeholder="Tu nombre" type="text" name="name" />
@@ -42,11 +42,11 @@ export const ContactUs = () => {
           <input className="input-footer" placeholder="Email" type="email" name="email" />
           <div className="classCheckBox">
             <input type="checkbox" />
-            <span className="text-footer">Acepto recibir noticias e invitaciones a eventos de Spot at Home</span>
+            <span className="text-footer">Acepto recibir noticias e invitaciones a eventos de Spot at Home.</span>
           </div>
           <div className="classCheckBox">
             <input type="checkbox" />
-            <span className="text-footer">Acepto recibir información sobre productos y servicios de Spot at Home</span>
+            <span className="text-footer">Acepto recibir información sobre productos y servicios de Spot at Home.</span>
           </div>
           <button id="btn-footer-enviar">Enviar</button>
         </form>
@@ -58,7 +58,6 @@ export const ContactUs = () => {
         <h2> <AiOutlineInstagram style={{ color: "white" }} /> </h2>
         <h2> <AiOutlineFacebook style={{ color: "white" }} /> </h2>
         <h2> <AiFillGithub style={{ color: "white" }} /> </h2>
-        {/* <BsFillChatLeftDotsFill style={{ color: "#F68B3C" }} onClick={() => setNumber(1)} /> */}
       </div>
     </div>
   );
