@@ -104,12 +104,12 @@ export const Fares = () => {
 const ContainerService = styled.div`
 display:flex;
 flex-direction: row;
-width: 100%;
+max-width:100%;
 
 
 .serviceContain{
   display:flex;
-  width: 100%;
+  max-width: 100%;
   height: 100%;
   align-items: center;
   margin: 0px;
@@ -134,6 +134,7 @@ width: 100%;
   margin: 0 auto;
    padding: 0 2rem;
  }
+ 
 .form{
   display:flex;
   width: 100%;
@@ -187,7 +188,7 @@ const ContainerFares = styled.div`
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 
 display: flex;
-width: 100%;
+max-width:100%;
 justify-content: center;
 flex-direction: column;
 margin: 2rem 0;
@@ -195,7 +196,7 @@ margin: 2rem 0;
 .containFares{
   display: flex;
   width: 100%;
-  padding: 10px;
+  /* padding: 10px; */
   flex-direction: column;
 }
 .cardFares{
@@ -203,10 +204,13 @@ margin: 2rem 0;
   height: 600px;
   display: flex;
   flex-direction: row;
-  padding: 1rem;
+  /* padding: 1rem; */
   
 }
-
+.title{
+   padding: 0 0 0 2rem;
+   
+ }
 .parrafo{
   text-align: justify;
   padding: 0px 2rem;

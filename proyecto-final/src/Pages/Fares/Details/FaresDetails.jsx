@@ -61,6 +61,9 @@ const FaresDetails = () => {
 }
 
 const Header = styled.div`
+margin-bottom: 10px;
+padding: 0px;
+max-width:100%;
 
 .headerFares{
   margin: 5px 0px;
@@ -173,6 +176,15 @@ img{max-width:100%;}
   height: 450px;
   background-size: cover;
   background-image: url('https://images.unsplash.com/photo-1497366811353-6870744d04b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=869&q=80');
+}
+
+@media (max-width: 600px) {
+  p{
+  font-size: 16px;}
+  
+}
+.parrafo{
+  font-size:14px;
 }
 
 
