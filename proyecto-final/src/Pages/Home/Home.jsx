@@ -38,12 +38,12 @@ const Home = () => {
                 <div className="info-container">
                     <div className="img-container">
                         <h1>Reinventa tu forma de trabajar</h1>
-                        <h2>Coworking a medida para empresas y autonomos</h2>
+                        <h2>Coworking a medida para empresas y autónomos</h2>
                     </div>
 
                     <div className="form-container">
                         <div className="form-witdh">
-                            <h3>Que tipo de puesto de coworking necesitas?</h3>
+                            <h3>¿Que tipo de puesto de coworking necesitas?</h3>
                             <div className="form-1">
                                 <div className="form-11">
                                     <div className="classCheckBox">
@@ -75,7 +75,7 @@ const Home = () => {
                                 </div>
                             </div>
 
-                            <h3>En que espacio?</h3>
+                            <h3>¿En que espacio?</h3>
                             <div className="form-2">
                                 <div className="form-21">
                                     <div className="classCheckBox">
@@ -94,7 +94,7 @@ const Home = () => {
                                 <div className="form-22">
                                     <div className="classCheckBox">
                                         <input type="checkbox" />
-                                        <span className="text-checkbox">Malaga</span>
+                                        <span className="text-checkbox">Málaga</span>
                                     </div>
                                     <div className="classCheckBox">
                                         <input type="checkbox" />
@@ -185,7 +185,7 @@ const Home = () => {
                                     </div>}
                                 {number1 === 12 &&
                                     <div class="texto-1" >
-                                        <p className="titulo-texto">Atencion a visitas</p>
+                                        <p className="titulo-texto">Atención a visitas</p>
                                         <p>Recibimos a tus visitas con toda la profesionalidad</p>
                                     </div>}
                                 {number1 === 13 &&
@@ -317,12 +317,14 @@ const Information = styled.div`
                 text-align: center;
                 max-width: 647px;
                 font-size: 71px;
+                text-shadow: -4px 3px #000000;
             }
 
             h2{
                 color: white;
                 text-align: center;
                 font-size: 35px;
+                text-shadow: -4px 3px #000000;
             }
         }
 

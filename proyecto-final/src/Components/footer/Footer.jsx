@@ -26,8 +26,8 @@ export const ContactUs = () => {
         <img className="footer-logo" src="./logofoot.png" alt="logo foot" />
         <div className="politicas">
           <p className="p-footer">Visita nuestras Oficinas</p>
-          <p className="p-footer">Politica de Privacidad</p>
-          <p className="p-footer">Politica de cookies</p>
+          <p className="p-footer">Política de Privacidad</p>
+          <p className="p-footer">Política de cookies</p>
         </div>
         <p>Todos los precios sin IVA incluido</p>
       </div>
