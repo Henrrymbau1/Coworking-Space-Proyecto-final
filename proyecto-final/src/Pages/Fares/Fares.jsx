@@ -328,10 +328,10 @@ margin: 2rem 0;
   height:100%;
 }
 .nameCowork{
-  font-size: 35px;
   color:#EB984E; 
   text-shadow: -2px 3px #000000;
-
+  font-size: 50px;
+  margin: 0px
 }
 .space{
   font-size:18px;
@@ -339,15 +339,15 @@ margin: 2rem 0;
   color:#FDF2E9;
   text-shadow: -2px 3px #000000;
 }
-.location{ font-size:13;
+.location{ font-size:15;
   margin: 0px;
   color:#FDF2E9;
   text-shadow: -2px 3px #000000;}
-.capacity{ font-size:10;
+.capacity{ font-size:12;
   margin: 0px;
   color:#FDF2E9;
   text-shadow: -2px 3px #000000;}
-.category{ font-size:11;
+.category{ font-size:12;
   margin: 0px;
   color:#FDF2E9;
   text-shadow: -2px 3px #000000;}
