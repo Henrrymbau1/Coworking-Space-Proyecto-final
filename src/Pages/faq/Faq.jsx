@@ -96,8 +96,7 @@ export default function Faq() {
           <div class="box">
             <img src="./assets/services1.jpg" alt="coworking" />
 
-            <p className="pClass"><b>Puestos flexibles | </b>Los puestos flexibles te permitirán trabajar por horas o días con tu portátil y elegir dónde sentarte cada vez que vengas a Impact Hub. Elige venir por la mañana, por la tarde o el día completo.</p>
-            <h4>Desde 100 €/mes</h4>
+            <p className="pClass"><b>Puestos flexibles | </b>Los puestos flexibles te permitirán trabajar por horas o días con tu portátil y elegir dónde sentarte cada vez que vengas a SPOT AT WORK. Organiza tus tiempos de manera flexible, puedes venir por la mañana, por la tarde o el día completo.</p>            <h4>Desde 100 €/mes</h4>
 
           </div>
           <div class="box">
