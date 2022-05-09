@@ -43,7 +43,7 @@ export const RegisterForm = () => {
           required: true,
           pattern:{
             value :/^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-            message : '🚨 Chequear que el email es correcto'
+            message : '🚨 Chequear que el e-mail sea correcto'
             }
         })}
       />
@@ -64,7 +64,7 @@ export const RegisterForm = () => {
           required: true,
           pattern:
           {  value : /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$/,
-            message : '🚨 Recuerda que la contraseña debe tener al menos 8 caracteres y maximo 12, 1 de ellos especial, 1 letra mayuscula, 1 letra minuscula, 1 numero.'}
+            message : '🚨 Recuerda que la contraseña debe tener al menos 8 caracteres y máximo 12, 1 de ellos especial, 1 letra mayúscula, 1 letra minúscula, 1 número.'}
         })}
       />
        {errors.password ? (
@@ -75,7 +75,7 @@ export const RegisterForm = () => {
                     </p>
                   )}
                 </>
-              ) : <p className="passFrase">Recuerda que la contraseña debe tener al menos 8 caracteres y maximo 12, 1 de ellos especial, 1 letra mayuscula, 1 letra minuscula, 1 numero.</p>}
+              ) : <p className="passFrase">Recuerda que la contraseña debe tener al menos 8 caracteres y máximo 12, 1 de ellos especial, 1 letra mayúscula, 1 letra minúscula, 1 número.</p>}
               <button
               className="button-19"
               type="submit"

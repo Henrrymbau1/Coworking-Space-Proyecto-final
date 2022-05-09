@@ -31,8 +31,8 @@ export const LoginForm = () => {
     <div className="formContainer">
     
     <form className="formInfo" onSubmit={handleSubmit(onSubmit)}>
-      <h3 className="login">Iniciar Sesion</h3>
-      <label>Email</label>
+      <h3 className="login">Iniciar Sesión</h3>
+      <label>E-mail</label>
       <input className="inputEmail"
         type="email"
         name="email"
@@ -40,7 +40,7 @@ export const LoginForm = () => {
           required: true,
           pattern:{
             value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i,
-            message: "🚨 Recuerda que debe ser un email valido: spotatwork@spotatwork.com"}
+            message: "🚨 Recuerda que debe ser un e-mail valido: spotatwork@spotatwork.com"}
         })}
       />
       {errors.email ? (
@@ -57,7 +57,7 @@ export const LoginForm = () => {
           required: true,
           pattern:
           { value:  /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$/,
-          message: '🚨 Recuerda que la contraseña debe tener al menos 8 caracteres y maximo 12, 1 de ellos especial, 1 letra mayuscula, 1 letra minuscula, 1 numero.'}
+          message: '🚨 Recuerda que la contraseña debe tener al menos 8 caracteres y máximo 12, 1 de ellos especial, 1 letra mayúscula, 1 letra minúscula, 1 número.'}
         })}
       />
         {errors.password ? (
@@ -66,7 +66,7 @@ export const LoginForm = () => {
             <p className="errorFrase">{errors.password.message}</p>
           )}
         </>): null } 
-      <button   className="button-19" type="submit">Iniciar Sesion</button>
+      <button   className="button-19" type="submit">Iniciar Sesión</button>
     </form>
     </div>
   );

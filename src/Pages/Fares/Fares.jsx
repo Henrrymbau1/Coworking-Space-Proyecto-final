@@ -246,8 +246,7 @@ margin: 2rem 0;
   height: 600px;
   display: flex;
   flex-direction: row;
-  /* padding: 1rem; */
-  
+ 
 }
 .title{
    padding: 0 0 0 2rem;

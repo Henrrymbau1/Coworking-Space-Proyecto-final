@@ -38,23 +38,23 @@ export const About = () => {
 
         <div className="form-container">
 
-          <h2> Pide informacion sin compromiso</h2>
+          <h2> Pide información sin compromiso</h2>
           <form className="form-container2" ref={form} onSubmit={sendEmail}>
           <div className="inputs-container">
             <input placeholder="Tu nombre" type="text" className="form-control" name='name' />
             <input placeholder="Email" type="text" className="form-control" name="email" />
-            <input placeholder="Telefono" type="text" className="form-control" name='message' />
+            <input placeholder="Teléfono" type="text" className="form-control" name='message' />
           </div>
 
           <div className="form-text">
-            <p>Spot at work tratara tus datos unicamente para tramitar tu solicitud. Puedes conocer como ejercer tus derechos de acceso, rectificacion y supresion en nuestra Politica de Privacidad</p>
+            <p>Spot at work tratara tus datos únicamente para tramitar tu solicitud. Puedes conocer como ejercer tus derechos de acceso, rectificacion y supresion en nuestra Politica de Privacidad</p>
             <div className="checkbox-text">
               <input type="checkbox" />
-              <span className="text-footer">Recibir noticias e invitaciones a eventos de Spot at work</span>
+              <span className="text-footer">Recibir noticias e invitaciones a eventos de Spot at work.</span>
             </div>
             <div className="checkbox-text">
               <input type="checkbox" />
-              <span className="text-footer">Recibir comunicaciones comerciales que puedan ser de mi interes</span>
+              <span className="text-footer">Recibir comunicaciones comerciales que puedan ser de mi interés.</span>
             </div>
             <button className='bn54'>Enviar</button>
           </div>
@@ -75,37 +75,37 @@ export const About = () => {
           <div className="double-container">
             <div className="card">
               <img src="https://madrid.impacthub.net/wp-content/uploads/2021/12/emprendimiento-01.svg" alt="imgen" />
-              <h3>Hackathons y procesos Creatiavos</h3>
-              <p>Disenamos y facilitamos procesos creativos para el desarrollo de competencias innovadoras y emprendedoras</p>
+              <h3>Hackathons y procesos Creativos</h3>
+              <p>Diseñamos y facilitamos procesos creativos para el desarrollo de competencias innovadoras y emprendedoras.</p>
             </div>
             <div className="card">
               <img src="https://madrid.impacthub.net/wp-content/uploads/2021/12/emprendimiento-02.svg" alt="imgen" />
               <h3>Programas de emprendimiento</h3>
-              <p>Planificamos y ejecutamos programas de impulso al emprendimiento de diferentes colectivos apoyandonos en nuestro red internacional</p>
+              <p>Planificamos y ejecutamos programas de impulso al emprendimiento de diferentes colectivos apoyándonos en nuestro red internacional.</p>
             </div>
           </div>
           <div className="double-container">
             <div className="card">
               <img src="https://madrid.impacthub.net/wp-content/uploads/2021/12/emprendimiento-03.svg" alt="imgen" />
-              <h3>Incubacion de start ups</h3>
-              <p>Disenamos y facilitamos procesos creativos para el desarrollo de competencias innovadoras y emprendedoras</p>
+              <h3>Incubación de start ups</h3>
+              <p>Diseñamos y facilitamos procesos creativos para el desarrollo de competencias innovadoras y emprendedoras.</p>
             </div>
             <div className="card">
               <img src="https://madrid.impacthub.net/wp-content/uploads/2021/12/emprendimiento-04.svg" alt="imgen" />
-              <h3>Acelaracion de StartUps</h3>
-              <p>Planificamos y ejecutamos programas de impulso al emprendimiento de diferentes colectivos apoyandonos en nuestro red internacional</p>
+              <h3>Acelaración de StartUps</h3>
+              <p>Planificamos y ejecutamos programas de impulso al emprendimiento de diferentes colectivos apoyandonos en nuestro red internacional.</p>
             </div>
           </div>
         </div>
       </Impulso>
 
       <Porque>
-        <h1>Por que Spot at Work</h1>
+        <h1>¿Por qué Spot at Work?</h1>
         <div className='box-container'>
           <div className='vox'>
-            <p>Contamos con una solida metodologia y experiencia ayudando a grandes y pequenas corporaciones a desarrollar programas con proposito de impacto positivo desarrollada desde el ano</p>
+            <p>Contamos con una solida metodología y experiencia ayudando a grandes y pequeñas corporaciones a desarrollar programas con propósito de impacto positivo desarrollada desde el año</p>
             <h2>2010</h2>
-            <p>tanto a nivel local como a nivel regional a traves de nuestra red.</p>
+            <p>tanto a nivel local como a nivel regional a través de nuestra red.</p>
           </div>
           <div className='vox'>
             <p>Colaboramos con multitud de stakeholders y participamos activamente en redes y alianzas que promueven el desarrollo sostenible y la economia de impacto. El </p>
@@ -115,7 +115,7 @@ export const About = () => {
           <div className='vox'>
             <p>Somos expertos en dinamizar comunidades y resolver retos complejos, articulando conversaciones valiosas y creando vinculos. El </p>
             <h2>83%</h2>
-            <p>de los miembros confia en la comunidad de Spot at Work</p>
+            <p>de los miembros confia en la comunidad de Spot at Work.</p>
           </div>
         </div>
 
@@ -139,6 +139,7 @@ const InformationContainer = styled.div`
     width: 60%;
     max-height: 100%;
     margin: 0px;
+    opacity: .7;
     
 
     h1{
@@ -146,6 +147,7 @@ const InformationContainer = styled.div`
       position: relative;
       top: 40px; left: 40px;
       font-size: 70px;
+    
     }
   }
   
@@ -211,11 +213,16 @@ const InformationContainer = styled.div`
 
     .logo-container{
       width: 100%;
-      height: 559px;
-
+      height: 350px;
       justify-content: center;
       align-items: center;
       margin: 0;
+      
+      .h1Class{
+        padding: 0 15px;
+        font-size: 36px;
+        
+      }
     
       h1{
         position: relative;
@@ -252,7 +259,7 @@ const Impulso = styled.div`
     p{
       max-width: 90%;
       text-align:justify;
-      font-size:24px;
+      font-size:21px;
     }
   }
 
@@ -343,8 +350,9 @@ const Porque = styled.div`
       p{
         position: relative;
         padding: 0 10px;
-        max-width: 250px;
+        max-width: 260px;
         text-align: left;
+        font-size:15px;
         
       }
     }

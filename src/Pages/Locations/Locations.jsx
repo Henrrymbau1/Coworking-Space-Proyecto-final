@@ -121,15 +121,11 @@ export const Locations = () => {
                     <h1 className="h1Title">{searched.name}</h1>
                     <p>{searched.description}</p>
                   </div>
-                  <NavLink to={`/locations/${searched._id}`}>
+                  <NavLink className="btnLink" to={`/locations/${searched._id}`}>
                   <button className="bn54">
-                    <span class="bn54span">Ver mas Info</span>
+                    <span class="bn54span">Más Info</span>
                   </button>
                   </NavLink>
-
-                
-                  
-
                 </div>
 
               </div>
@@ -166,8 +162,8 @@ export const Locations = () => {
                         <h1 className="h1Title">{coworking.name}</h1>
                         <p>{coworking.description}</p>
                       </div>
-                      <NavLink to={`/locations/${coworking._id}`}><button className="bn54">
-                        <span class="bn54span">Ver mas Info</span>
+                      <NavLink className="btnLink" to={`/locations/${coworking._id}`}><button className="bn54">
+                        <span class="bn54span">Más Info</span>
                       </button></NavLink>
 
                     </div>
@@ -263,12 +259,16 @@ label{
         font-size: 12px;
     }
 }
+.btnLink{
+  text-decoration: none;
+
+}
 
 .bn54 {
     margin-top:20px;
     position: relative;
     outline: none;
-    text-decoration: none;
+    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -426,12 +426,12 @@ const Container = styled.div`
     color:#f78a3c;
     letter-spacing:1px;
   }
+  .btnLink{text-decoration: none;}
 
   .bn54 {
     position: relative;
     outline: none;
-    text-decoration: none;
-    border-radius: 50px;
+    border-radius: 10px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -439,7 +439,7 @@ const Container = styled.div`
     height: 30px;
     width: 120px;
     opacity: 1;
-    background-color: #F68B3C;
+    background-color: none;
     border: 1px solid rgba(0, 0, 0, 0.6);
   }
   

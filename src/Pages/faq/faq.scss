@@ -52,7 +52,6 @@
         text-align: justify;
     }
 }
-
 .container-main-query{
     display: flex;
     flex-direction: column;
@@ -126,6 +125,7 @@
     flex-direction: column;
     .title-form {
         font-size: 28px;
+        padding: 10px;
     }
     
 }
@@ -144,9 +144,12 @@
 }
 .pClass{
     
-    margin: 0 auto;
+    margin: 10px auto;
     text-align: justify;
     width: 90%;
+}
+h4{
+    margin: 0 auto;
 }
 
 .box-servicios{
@@ -235,10 +238,6 @@
     margin: 1rem 2rem;
     display: none;
 }
-// #show{
-//     display: none;
-// }
-
 @media screen and (min-width: 280px) and (max-width:1080px){
     .container{
         display: flex;
