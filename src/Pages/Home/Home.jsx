@@ -38,7 +38,7 @@ const Home = () => {
                 <div className="info-container">
                     <div className="img-container">
                         <h1>Reinventa tu forma de trabajar</h1>
-                        <h2>Coworking a medida para empresas y autonomos</h2>
+                        <h2>Coworking a medida para empresas y autónomos</h2>
                     </div>
 
                     <div className="form-container">
