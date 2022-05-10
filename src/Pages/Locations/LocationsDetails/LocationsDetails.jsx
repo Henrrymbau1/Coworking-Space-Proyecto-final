@@ -262,4 +262,12 @@ const ContainerDetail = styled.div`
      padding-bottom:25px ;
   }
 
+  @media screen and (min-width: 280px) and (max-width: 1080px){
+    .subInfo{
+      text-align:center;
+     font-size: 15px;
+      width: 70%;
+  }
+  }
+
 `;

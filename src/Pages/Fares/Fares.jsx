@@ -9,7 +9,7 @@ import emailjs from "@emailjs/browser";
 
 export const Fares = () => {
   const [fares, setFares] = useState([]);
-  const url = "https://co-working-back.vercel.app/api/fares";
+  const url = "http://localhost:8000/api/fares";
   useEffect(() => {
     axios.get(url).then((response) => {
       setFares(response.data);

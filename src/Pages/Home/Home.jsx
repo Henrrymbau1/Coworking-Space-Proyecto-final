@@ -43,7 +43,7 @@ const Home = () => {
 
                     <div className="form-container">
                         <div className="form-witdh">
-                            <h3>Que tipo de puesto de coworking necesitas?</h3>
+                            <h3>¿Qué tipo de puesto de coworking necesitas?</h3>
                             <div className="form-1">
                                 <div className="form-11">
                                     <div className="classCheckBox">
@@ -75,7 +75,7 @@ const Home = () => {
                                 </div>
                             </div>
 
-                            <h3>En que espacio?</h3>
+                            <h3>¿En qué espacio?</h3>
                             <div className="form-2">
                                 <div className="form-21">
                                     <div className="classCheckBox">
@@ -109,7 +109,7 @@ const Home = () => {
 
                             <div className="input-container">
                                 <input placeholder="Tu nombre" type="text" className="form-control" />
-                                <input placeholder="Email" type="text" className="form-control" />
+                                <input placeholder="E-mail" type="text" className="form-control" />
                                 <input placeholder="Telefono" type="text" className="form-control" />
                             </div>
 
@@ -165,7 +165,7 @@ const Home = () => {
 
                                 {number1 === 20 &&
                                     <div class="texto-1" >
-                                        <p className="titulo-texto">Incluidos Si o Si!</p>
+                                        <p className="titulo-texto">Incluídos Sí o Sí!</p>
                                         <p>Estos son los servivios que ofrecen cualquiera de nuestros espacios</p>
                                     </div>}
                                 {number1 === 9 &&
@@ -283,9 +283,7 @@ const Home = () => {
                     </div>
                 </div>
 
-                {/* <div className="map-container">
-                    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=148O7f5leFm19kzdHAYmvkchFf3EWeVWm&ehbc=2E312F" width="640" height="480"></iframe>
-                </div> */}
+            
 
 
             </Servicios>
@@ -459,6 +457,7 @@ const Texto = styled.div`
         display: flex;
         flex-direction: column;
         align-items: center;
+        text-align: justify;
 
         img{
             max-width: 80%;

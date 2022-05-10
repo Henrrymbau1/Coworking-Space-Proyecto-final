@@ -8,7 +8,7 @@ export const Locations = () => {
   const [coworkings, setCoworking] = useState([]);
   const [search, setSearch] = useState([]);
 
-  const urlPage = "https://co-working-back.vercel.app/api/coworking"
+  const urlPage = "http://localhost:8000/api/coworking"
 
   useEffect(() => {
     axios.get(urlPage).then((response) => {
@@ -90,6 +90,7 @@ export const Locations = () => {
 
 
     </InputContainer>
+
     <h1 className="locationTitle">Coworkings</h1>
     <Container>
       {search.length > 0 ? (
@@ -175,6 +176,9 @@ export const Locations = () => {
               })}
             </div>
           </Container></>)}
+          <div className="map-container">
+                    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=148O7f5leFm19kzdHAYmvkchFf3EWeVWm&ehbc=2E312F" width="640" height="480" title="Map"></iframe>
+                </div> 
     </Container>
   </>
 
@@ -345,6 +349,19 @@ const Container = styled.div`
   justify-content:center;
 }
 
+.map-container{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 4rem 0 4rem 0;
+
+        iframe{
+            width: 80%;
+            height: 600px;
+        }
+    }
+
 .cardContainer{
   width:320px;
   padding:20px;
@@ -361,7 +378,15 @@ const Container = styled.div`
   }
   .coworkInfo{
     p{
-      text-align: justify;
+        text-align: justify;
+        display: -webkit-box;
+        /* //FORMATO VERTICAL EN QUE SE LEERA EL TEXTO */
+        -webkit-box-orient: vertical;
+        /* LA CANTIDAD DE LINEAS QUE VAMOS A MOSTRAR ANTES DE CORTARLO */
+        -webkit-line-clamp: 4;
+        /* OCULTA EL RESTO DEL TEXTO */
+        overflow: hidden;
+      
     }
   }
 

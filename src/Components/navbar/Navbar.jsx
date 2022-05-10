@@ -49,7 +49,7 @@ function Navbar() {
               {!jwt && (
                 <>
                   <NavLink to="/login">
-                    <li>Iniciar Sesion</li>
+                    <li>Iniciar Sesión</li>
                   </NavLink>
 
                   <NavLink to="/register">
@@ -86,7 +86,7 @@ function Navbar() {
             {!jwt && (
               <>
                 <NavLink to="/login" onClick={() => setBurgerStatus(false)}>
-                  <li>Iniciar Sesion</li>
+                  <li>Iniciar Sesión</li>
                 </NavLink>
                 <NavLink to="/register" onClick={() => setBurgerStatus(false)}>
                   <li>Registrarse</li>
@@ -251,6 +251,10 @@ const BurgerNav = styled.nav`
   text-align: start;
   transform: ${(props) => (props.show ? "translateX(0)" : "translateX(100%)")};
   transition: transform 0.2s;
+
+  li {
+    margin-bottom: 10px;
+  }
 
   a {
     color: black;

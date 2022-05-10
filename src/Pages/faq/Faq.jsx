@@ -51,7 +51,7 @@ export default function Faq() {
           <form className="form-container2" ref={form} onSubmit={sendEmail}>
             <h2 class="title-form">Solicita información sobre nuestros servicios.</h2>
             <div class="contact">
-              <input className="inputClass" type="text" placeholder="Tu nombre" name="nombre"/>
+              <input className="inputClass" type="text" placeholder="Tu nombre" name="name"/>
               <input className="inputClass" type="text" placeholder="E-mail" name="email" />
               <input className="inputClass" type="text" placeholder="Teléfono" name="message" />
             </div>
